@@ -1,0 +1,44 @@
+/* Footer.css */
+/* Estilo para el footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3366CC;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px; /* Ajusta el relleno según tus necesidades */
+  }
+  
+  /* Estilo para las columnas del footer */
+.footer-column {
+    width: 25%; /* Cada columna ocupa el 25% del ancho del footer */
+    text-align: center;
+  }
+  
+  /* Ajustar el ancho de las columnas según tus necesidades */
+  .footer-column:nth-child(1) {
+    width: 12%; /* Por ejemplo, el primer 20% */
+  }
+  
+  .footer-column:nth-child(2) {
+    width: 30%; /* Por ejemplo, el segundo 30% */
+    padding-top: 10px;
+  }
+  
+  .footer-column:nth-child(3) {
+    width: 13%; /* Por ejemplo, el tercer 13% */
+  }
+  
+  .footer-column:nth-child(4) {
+    width: 25%; /* Por ejemplo, el cuarto 25% */
+    padding-top: 8px;
+  }
+  
+  /* Estilo para el texto "Alcaldía de Medellín" */
+.footer-column p {
+    color: #fff; /* Color blanco */
+    font-size: 12px; /* Tamaño de fuente más pequeño, ajusta según tus necesidades */
+    white-space: nowrap; /* Evitar el salto de línea */
+  }
