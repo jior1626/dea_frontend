@@ -6,8 +6,6 @@ import Footer from "./components/Footer";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-import axios from 'axios';
-
 export default function Home() {
   const router = useRouter();
 
