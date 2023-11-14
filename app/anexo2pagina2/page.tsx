@@ -59,8 +59,10 @@ export default function Options() {
             });
           });
           
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
+          //const latitude = position.coords.latitude;
+          //const longitude = position.coords.longitude;
+          const latitude = 0;
+          const longitude = 0;
           setUserLocation(`${latitude},${longitude}`);
           setMapCenter({ lat: latitude, lng: longitude });
         } catch (error) {

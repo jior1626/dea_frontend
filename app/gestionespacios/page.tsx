@@ -122,22 +122,23 @@ export default function Options() {
     titulo={`Detalles de ${detalleRegistro.dea_nombrecompleto}`}
     contenido={
       <div>
-        <p>Número de serie: {detalleRegistro.dea_nombrecompleto}</p>
-        <p>Nombre completo: {detalleRegistro.dea_docidentificacion}</p>
-        <p>Documento de identificación: {detalleRegistro.REG_DOCIDENTIFICACION}</p>
-        <p>Cantidad: {detalleRegistro.REG_CANTIDAD}</p>
-        <p>Ubicación: {detalleRegistro.REG_NOMBREUBICACION}</p>
-        <p>Dirección Ubicación: {detalleRegistro.REG_DIRECCIONUBICACION}</p>
-        <p>Codigo Postal: {detalleRegistro.REG_CODIGOPOSTAL}</p>
-        <p>Ciudad: {detalleRegistro.REG_CIUDADMUNICIPIO}</p>
-        <p>Tipo instalación: {detalleRegistro.REG_TIPOINSTALACION}</p>
-        <p>Tipo declaración: {detalleRegistro.REG_TIPODECLARACION}</p>
-        <p>Tipo espacio: {detalleRegistro.REG_TIPOESPACIO}</p>
-        <p>Modelo: {detalleRegistro.REG_MODELO}</p>
-        <p>Marca: {detalleRegistro.REG_MARCA}</p>
-        <p>Importador distribuidor: {detalleRegistro.REG_IMPORTADORDISTRIBUIDOR}</p>
-        <p>GPS: {detalleRegistro.REG_GPS}</p>
-        <p>Fecha de registro: {detalleRegistro.createdAt}</p>
+        <p>Nombre Completo: {detalleRegistro.dea_nombrecompleto}</p>
+        <p>Documento de identificación: {detalleRegistro.dea_docidentificacion}</p>
+        <p>Cantidad: {detalleRegistro.dea_cantidad}</p>
+        <p>Ubicación: {detalleRegistro.dea_nombreubicacion}</p>
+        <p>Direccion de la Ubicación: {detalleRegistro.dea_direccionubicacion}</p>
+        <p>Codigo postal: {detalleRegistro.dea_codigopostal}</p>
+        <p>Cidad: {detalleRegistro.dea_ciudadmunicipio}</p>
+        <p>Departamento: {detalleRegistro.dea_departamento}</p>
+        <p>Tipo de instalacion: {detalleRegistro.dea_tipoinstalacion}</p>
+        <p>Tipo de declaracion: {detalleRegistro.dea_tipodeclaracion}</p>
+        <p>Tipo de espacio: {detalleRegistro.dea_tipoespacio}</p>
+        <p>Numero de serie: {detalleRegistro.dea_numserie}</p>
+        <p>Modelo: {detalleRegistro.dea_modelo}</p>
+        <p>Marca: {detalleRegistro.dea_marca}</p>
+        <p>Importador distribuidor: {detalleRegistro.dea_importadordistribuidor}</p>
+        <p>Lugar Ubicación: {detalleRegistro.dea_desclugarubicacion}</p>
+        <p>GPS: {detalleRegistro.dea_gps}</p>
       </div>
     }
     cerrarModal={cerrarModal}
