@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 // Nueva importación
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import './page.css'
 
 export default function Home() {
   const router = useRouter();
@@ -73,16 +74,15 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex-container">
       <Header></Header>
-
-      <div className="relative flex place-items-center before:absolute z-[-1]">
+      <div className="relative-container">
         <h1 className="text-white font-bold">¡Bienvenido/a!</h1>
       </div>
 
-      <div className="mt-32 min-h-[500px] flex items-center justify-center">
-        <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full">
-          <h2 className="text-2xl font-bold mb-4">Iniciar Sesión</h2>
+      <div className="containerLogin">
+        <div className="white-container">
+          <h2 className="text-2xl font-bold">Iniciar Sesión</h2>
           <input
             type="email"
             className="w-full p-3 rounded-full shadow-sm border text-black"
@@ -91,12 +91,12 @@ export default function Home() {
           />
           <input
             type="password"
-            className="mt-4 w-full p-3 rounded-full shadow-sm border text-black"
+            className="mt-4 mb-4 w-full p-3 rounded-full shadow-sm border text-black"
             placeholder="Contraseña"
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            className="mt-4 w-full bg-custom-purple text-white py-3 rounded-full shadow-lg"
+            className="buttonLogin "
             onClick={handleLogin}
           >
             Ingresar

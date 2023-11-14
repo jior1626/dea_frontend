@@ -1,0 +1,99 @@
+/* Estilos generales */
+
+
+/* Estilo del contenedor principal */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+
+/* Estilo del contenedor relativo */
+/* Contenedor relativo con estilos flexibles y centrado de elementos */
+.relative-container {
+  position: relative;
+  display: flex;
+  place-items: center;
+}
+
+/* Pseudo-elemento antes del contenedor relativo */
+.relative-container::before {
+  content: ""; /* Contenido vacío, necesario para que el pseudo-elemento sea visible */
+  position: absolute;
+  z-index: -1; /* Coloca el pseudo-elemento detrás del contenido principal */
+  /* Agrega otros estilos según sea necesario */
+}
+
+
+/* Estilos flexibles con centrado de elementos */
+.containerLogin {
+  min-height: 450px;
+  margin: 0 auto;
+  display: flex;
+/*   align-items: center;
+ */  justify-content: center;
+}
+
+h2{
+  margin-bottom: 1rem;
+}
+
+h1{
+  font-size: x-large;
+}
+
+/* Estilo del contenedor blanco */
+.white-container {
+  background-color: white;
+  border-radius: 30px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 380px;
+  margin: 0 5px;
+  width: 100%;
+}
+
+
+/* Estilo del botón */
+.buttonLogin {
+  align-items: "center";
+  width: 100%;
+  background-color: #AE3E97; /* Reemplaza con el color personalizado deseado */
+  color: white;
+  padding: 12px 5px;
+  border-radius: 9999px; /* Utiliza un valor grande para hacer que el botón sea redondo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 1200px) {
+  body{
+    overflow: hidden;
+  }
+
+  .relative-container{
+    margin: auto 0;
+
+  }
+  .white-container {
+    max-width: 1000px;
+    max-height: 400px;
+  }
+
+  .containerLogin {
+    min-height: 500px;
+    margin: auto 0;
+
+  }
+  h1{
+    font-size: xx-large;
+  }
+  h2{
+    margin-bottom: 3rem;
+  }
+}
+
