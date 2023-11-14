@@ -20,7 +20,6 @@ export default function Options() {
   const [ACT_OBJETOVISITA, setACT_OBJETOVISITA] = useState("");
   const [ACT_RESPONSABLEVISITA, setACT_RESPONSABLEVISITA] = useState("");
   const [ACT_VISITANTES, setACT_VISITANTES] = useState("");
-  const [ACT_HALLAZGOS, setACT_HALLAZGOS] = useState(false);
   const [ACT_RECOMENDACIONES, setACT_RECOMENDACIONES] = useState(false);
   const [ACT_CONCLUSIONES, setACT_CONCLUSIONES] = useState("Semanal");
   const [ACT_OBSERVACIONES, setACT_OBSERVACIONES] = useState("Media");
@@ -36,7 +35,6 @@ export default function Options() {
       !ACT_OBJETOVISITA ||
       !ACT_RESPONSABLEVISITA ||
       !ACT_VISITANTES ||
-      !ACT_HALLAZGOS ||
       !ACT_RECOMENDACIONES ||
       !ACT_CONCLUSIONES ||
       !ACT_OBSERVACIONES
@@ -53,7 +51,6 @@ export default function Options() {
         ACT_OBJETOVISITA:ACT_OBJETOVISITA,
         ACT_RESPONSABLEVISITA:ACT_RESPONSABLEVISITA,
         ACT_VISITANTES:ACT_VISITANTES,
-        ACT_HALLAZGOS:ACT_HALLAZGOS,
         ACT_RECOMENDACIONES:ACT_RECOMENDACIONES,
         ACT_CONCLUSIONES:ACT_CONCLUSIONES,
         ACT_OBSERVACIONES:ACT_OBSERVACIONES
@@ -151,17 +148,6 @@ export default function Options() {
         className="w-full p-3 rounded-full shadow-sm border text-black"
         onChange={(e) => setACT_VISITANTES(e.target.value)}
       />
-
-
-  <div className="text-black ley font-bold">Hallazgos:</div>
-  <input
-    type="text"
-    name="ACT_HALLAZGOS"
-    placeholder="Hallazgos"
-    className="w-200px p-3 rounded-full shadow-sm border text-black"
-    checked={ACT_HALLAZGOS}
-    onChange={(e) => setACT_HALLAZGOS(e.target.value)}
-  />
 
 
   <div className="text-black ley font-bold">Recomendaciones:</div>
