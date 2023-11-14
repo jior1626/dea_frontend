@@ -34,7 +34,6 @@ export default function Options() {
         tipoIdentificacion === 'Selecciona' ||
         !numeroIdentificacion || 
         rol === 'Selecciona' || 
-        !edad ||
         !validateEmail(email) ||
         !validatePassword(password)
       ) {
@@ -43,19 +42,19 @@ export default function Options() {
       }
 
       const data = {
-            "username": nombreCompleto,
-            "email":email,
-            "password":password,
-            "RolAsignado":rol,
-            "TipoDocumento": tipoIdentificacion,
-            "NumeroDocumento":numeroIdentificacion,
-            "Edad":edad   
+            "action": "register",
+            "nombrecompleto": nombreCompleto,
+            "correo":email,
+            "contrasena":password,
+            "rol":rol,
+            "tipodocumento": tipoIdentificacion,
+            "numeroidentificacion":numeroIdentificacion
       };
 
       alert(JSON.stringify(data))
 
       try {
-        const response = await fetch('https://nodosalud1.com/api/auth/local/register', {
+        const response = await fetch('https://dea-auth.azurewebsites.net/api.php/api.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -122,7 +121,7 @@ export default function Options() {
             
             <p className="font-bold ley text-black">Numero identificación:</p>
             <input
-              type="text"
+              type="number"
               className="w-full p-3 rounded-full shadow-sm border text-black"
               placeholder="Numero identificación"
               onChange={(e) => setNumeroIdentificacion(e.target.value)}
@@ -155,16 +154,6 @@ export default function Options() {
             <br></br>
             <br></br>
 
-            <p className="font-bold ley text-black">Edad:</p>
-            <input
-              type="number"
-              className="w-full p-3 rounded-full shadow-sm border text-black"
-              placeholder="Edad"
-              onChange={(e) => setEdad(e.target.value)}
-            />
-
-            <br></br>
-            <br></br>
 
             <p className="font-bold ley text-black">Correo:</p>
             <input

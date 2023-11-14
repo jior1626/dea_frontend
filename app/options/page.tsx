@@ -42,6 +42,16 @@ export default function Options() {
     router.push("gestion");
   };
 
+  const navigateToSectionTableros = () => {
+    router.push("tableros");
+  };
+
+  const navigateToSectionReportes = () => {
+    router.push("reportes");
+  };
+
+  
+
   useEffect(() => {
     // Suponiendo que el valor almacenado en localStorage es una cadena JSON
     // Obtener el token JWT del localStorage
@@ -97,14 +107,14 @@ export default function Options() {
 
             <div
               className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
-              onClick={navigateToSectionAnexo3}
+              onClick={navigateToSectionReportes}
             >
               <p className="text-center text-black">Consulta de reportes</p>
             </div>
 
             <div
               className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
-              onClick={navigateToSectionAnexo3}
+              onClick={navigateToSectionTableros}
             >
               <p className="text-center text-black">Tableros informativos</p>
             </div>

@@ -10,12 +10,12 @@ export default function Options() {
   const router = useRouter();
   const [rolAsignado, setRolAsignado] = useState("");
 
-  const navigateToSectionAnexo2 = () => {
-    router.push("anexo2");
+  const navigateToSectionGestionUsuarios = () => {
+    router.push("gestionusuarios");
   };
 
-  const navigateToSectionAnexo3 = () => {
-    router.push("anexo3");
+  const navigateToSectionGestionEspacios = () => {
+    router.push("gestionespacios");
   };
 
   const navigateToSectionCreacionoperador = () => {
@@ -57,14 +57,14 @@ export default function Options() {
 
             <div
               className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
-              onClick={navigateToSectionAnexo3}
+              onClick={navigateToSectionGestionEspacios}
             >
               <p className="text-center text-black">Información de espacios o lugares</p>
             </div>
 
             <div
               className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
-              onClick={navigateToSectionAnexo3}
+              onClick={navigateToSectionGestionUsuarios}
             >
               <p className="text-center text-black">Información de usuarios</p>
             </div>
