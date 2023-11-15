@@ -1,6 +1,6 @@
 .anexo2{
     border-color: #AE3E97;
-    border-left-width: 12px;
+    border-left-width: 20px;
 }
 
 .anexo3{
@@ -25,3 +25,84 @@
 .tituloanexo{
     font-size: 11px;
 }
+
+/* anexo2.css */
+
+.min-h-container {
+    min-height: 700px;
+  }
+  
+  .bg-white-container {
+    background-color: white;
+  }
+  
+  .rounded-container {
+    border-radius: 8px;
+  }
+  
+  .p-8-container {
+    padding: 8px;
+  }
+  
+  .border-l-container {
+    border-left-width: 12px;
+  }
+  
+  .max-w-md-container {
+    max-width: 2xl;
+  }
+  
+  .p-3-input {
+    padding: 3px;
+  }
+  
+  .shadow-md-container {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .rounded-full-input {
+    border-radius: 9999px;
+  }
+  
+  .text-red-500 {
+    color: #EF4444;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .text-black {
+    color: #000000;
+  }
+  
+  .tituloanexo {
+    font-size: 11px;
+  }
+  
+  .ley {
+    font-size: 10px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .desktop-container-father{
+        width: 1000px;
+    }
+    .desktop-container {
+        max-width: 70%; 
+        height: 900px;
+        display: grid;
+    }
+    .dekstop-input-container{
+        display: grid;
+        padding: 50px;
+    }
+    .anexo2{
+        border-color: #AE3E97;
+        border-left-width: 35px;
+    }
+    .mb-4{
+        margin-bottom: 0px;
+    }
+  }
+  
