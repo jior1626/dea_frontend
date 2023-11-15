@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import "./options.css";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import {User} from "../components/iconos"
 
 export default function Options() {
   const router = useRouter();
@@ -51,6 +50,8 @@ export default function Options() {
     router.push("reportes");
   };
 
+  
+
   useEffect(() => {
     // Suponiendo que el valor almacenado en localStorage es una cadena JSON
     // Obtener el token JWT del localStorage
@@ -63,66 +64,56 @@ export default function Options() {
   return (
     <main className="flex-containerOptions">
       <Header></Header>
-      <User/>
+
       {rolAsignado != "Consultor" && (
         <div className="containerOptions">
           <div className="white-containerOptions">
+            <div
+              className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo2"
+              onClick={navigateToSectionAnexo2}
+            >
+              <p className="text-center text-black">
+                Registro de espacios o lugares de instalación
+              </p>
+            </div>
+
             {rolAsignado === "Operador1" && (
               <div
-                className="bg-white rounded-lg  border-l-12 shadow-md mb-4 anexo2 hijo"
-                onClick={navigateToSectionAnexo2}
-              >
-                <p className="text-center text-black">
-                  Reporte de instalación del DEA
-                </p>
-              </div>
-            )}
-            {rolAsignado === "Operador1" && (
-              <div
-                className="bg-white rounded-lg  border-l-12 shadow-md mb-4 anexo3 hijo"
+                className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo3"
                 onClick={navigateToSectionAnexo3}
               >
                 <p className="text-center text-black">
-                  Reporte del uso del DEA
+                  Anexo 3: Reporte del uso del Desfibrilador Externo Automático
+                  (DEA). Formulario Dinámico.
                 </p>
               </div>
             )}
 
             {rolAsignado === "Administrador" && (
-              <div>
-                <div
-                  className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo2 hijo"
-                  onClick={navigateToSectionAnexo2}
-                >
-                  <p className="text-center text-black">
-                    Registro de espacios o lugares de instalación
-                  </p>
-                </div>
-                <div
-                  className="bg-white rounded-lg p-8 border-l-12 shadow-md usuarioperador"
-                  onClick={navigateToSectionCreacionoperador}
-                >
-                  <p className="text-center text-black">Registro de Usuarios</p>
-                </div>
+              <div
+                className="bg-white rounded-lg p-8 border-l-12 shadow-md usuarioperador"
+                onClick={navigateToSectionCreacionoperador}
+              >
+                <p className="text-center text-black">Registro de Usuarios</p>
               </div>
             )}
 
             <div
-              className="bg-white rounded-lg  border-l-12 shadow-md anexo3 hijo"
+              className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
               onClick={navigateToSectionGestion}
             >
               <p className="text-center text-black">Gestión de información</p>
             </div>
 
             <div
-              className="bg-white rounded-lg  border-l-12 shadow-md anexo3 hijo"
+              className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
               onClick={navigateToSectionReportes}
             >
               <p className="text-center text-black">Consulta de reportes</p>
             </div>
 
             <div
-              className="bg-white rounded-lg  border-l-12 shadow-md  anexo3 hijo"
+              className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
               onClick={navigateToSectionTableros}
             >
               <p className="text-center text-black">Tableros informativos</p>
