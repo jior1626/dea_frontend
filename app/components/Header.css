@@ -1,10 +1,9 @@
-
 :root {
   --azul: #3366CC;
   --azul2: #004884;
   --azul-claro: #E6EFFD;
-  --fuente-work: 'Work Sans',sans-serif;
-  --fuente-montserrat: 'Montserrat',sans-serif;
+  --fuente-work: 'Work Sans', sans-serif;
+  --fuente-montserrat: 'Montserrat', sans-serif;
   --naranja: #fb8406;
   --blue: #00aeef;
   --morado: #ae3e97;
@@ -13,39 +12,41 @@
   --scrollbarBG: #fff;
   --thumbBG: #00aeef
 }
+
 /* Estilo para el header */
 header {
-    width: 100%;
-    background-color: #fff;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px; /* Ajusta el relleno según tus necesidades */
-  }
-  
-  /* Estilo para el contenedor del logo */
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Estilo para la imagen del logo */
-  .logo-container img {
-    /* Ajusta el tamaño y otros estilos de la imagen del logo según tus necesidades */
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  .top_nav {
-    display: none;
-  }
-  
+  width: 100%;
+  background-color: #fff;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* Ajusta el relleno según tus necesidades */
+}
 
-.container_desktop{
+/* Estilo para el contenedor del logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para la imagen del logo */
+.logo-container img {
+  /* Ajusta el tamaño y otros estilos de la imagen del logo según tus necesidades */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.top_nav {
+  display: none;
+}
+
+
+.container_desktop {
   display: none;
 }
 
@@ -65,60 +66,65 @@ header {
     justify-content: center;
     align-items: center;
   }
+
   .logo-container {
     display: none;
   }
+
   .top_nav {
     position: sticky;
     top: 0px;
     z-index: 999;
   }
-  .fa-light{
+
+  .fa-light {
     display: flex;
     width: 10px;
   }
+
   .centradototal_ {
     width: 100%;
     max-width: 1160px;
     margin: auto;
   }
-  
+
   .top_nav .alcaldia_menu_top {
     float: right;
     padding-left: 50px;
     width: 100%;
     max-width: 22%;
   }
-  
+
   .secre_depen_links .grid_ .titulo_ente_ {
-    background-color: var(--blue)!important;
-}
+    background-color: var(--blue) !important;
+  }
 
-.secre_depen_links .grid_ li a {
-  color: #000;
-}
+  .secre_depen_links .grid_ li a {
+    color: #000;
+  }
 
-.secre_depen_links .grid_ .titulo_ente_ b {
-  color: #fff;
-}
+  .secre_depen_links .grid_ .titulo_ente_ b {
+    color: #fff;
+  }
 
-.secre_depen_links .grid_ li {
-  list-style: none;
-  padding: 7px 20px;
-  font-size: 14px;
-  background-color: #e4e4e4;
-  background-color: #eff6fe;
-}
+  .secre_depen_links .grid_ li {
+    list-style: none;
+    padding: 7px 20px;
+    font-size: 14px;
+    background-color: #e4e4e4;
+    background-color: #eff6fe;
+  }
+
   .otrocentrado_ {
     overflow: hidden;
     max-width: 1200px
   }
-  
+
   .mod_conspasing {
     padding-top: 30px;
     padding-bottom: 30px
   }
-  
+
   .top_nav {
     background-color: var(--azul);
     color: #fff;
@@ -130,11 +136,11 @@ header {
     top: 0;
     z-index: 99999
   }
-  
+
   .top_nav .logo_gov {
     float: left
   }
-  
+
   .top_nav .logo_gov img {
     width: 116px;
     height: auto;
@@ -142,11 +148,27 @@ header {
     margin-top: 5px;
     margin-left: -10px
   }
-  
+
   .top_nav .buscador_nav {
     float: right
   }
-  
+
+  .titulalcaldia_ .dropdownMenuLink {
+    margin-left: 4px;
+    font-size: 13px;
+    position: absolute;
+    margin-top: -2px;
+  }
+
+  .drop {
+    display: flex;
+    align-items: center;
+  }
+
+  #dropdownMenuLink {
+    width: 400px;
+  }
+
   .top_nav .buscador_nav input[type=text] {
     border: 1.9px solid #fff;
     color: #fff;
@@ -158,20 +180,20 @@ header {
     max-width: 172px;
     margin-top: 2px
   }
-  
+
   .top_nav .buscador_nav input[type=text]:focus {
     outline: 0
   }
-  
+
   .top_nav .buscador_nav input[type=text]::-webkit-input-placeholder {
     color: #fff
   }
-  
+
   .contenido_buscador_modal {
     padding: 30px
   }
-  
-  
+
+
   .top_nav .alcaldia_menu_top .titulalcaldia_ {
     font-weight: 500;
     font-size: 14px;
@@ -181,7 +203,18 @@ header {
     font-family: var(--fuente-work);
     cursor: pointer
   }
-  
+
+  .alcaldia_menu_top .titulalcaldia_ p {
+    font-size: 13px;
+    line-height: 10px;
+    display: block;
+    margin-bottom: 0;
+    color: #fff;
+    padding-top: 5px;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
   .alcaldia_menu_top .titulalcaldia_ p {
     font-size: 11px;
     line-height: 7px;
@@ -192,29 +225,32 @@ header {
     font-weight: 300;
     cursor: pointer
   }
-  
-  .titulalcaldia_ ion-icon {
-    margin-left: 4px;
+
+  .titulalcaldia_ .iconChevron {
+    margin-left: 140px;
     font-size: 13px;
     position: absolute;
-    margin-top: -2px
+    margin-top: -12px;
+
   }
-  
+
+
+
   .titulalcaldia_2_ .titulo_alcaldiamob {
     font-size: 15px;
     line-height: 12px;
     margin-top: 6px;
     font-weight: 600
   }
-  
+
   .titulalcaldia_2_ .titulo_alcaldiamob a {
     color: #fff
   }
-  
+
   .titulalcaldia_2_ .titulo_alcaldiamob a:hover {
     text-decoration: none
   }
-  
+
   .titulalcaldia_2_ .tituloportal_mob {
     font-size: 12px;
     margin-top: -1px;
@@ -222,16 +258,16 @@ header {
     line-height: 12px;
     margin-bottom: 0
   }
-  
+
   .titulalcaldia_2_ .punteromobile {
     cursor: pointer
   }
-  
+
   .titulalcaldia_2_ ion-icon {
     margin-left: 3px;
     margin-bottom: -2px
   }
-  
+
   .iconosmed_ {
     padding: 10px;
     width: 60px;
@@ -242,41 +278,32 @@ header {
     align-items: center;
     justify-content: center
   }
-  
+
   .iconosmed_ img {
     width: 100%;
     height: auto
   }
+
   .icon-inner, .ionicon, svg {
     display: block;
     height: 100%;
     width: 100%;
   }
-  .top_nav .idioma_nav {
-    float: right;
-    font-size: 12px;
-    margin-left: 20px;
-    padding-top: 8px;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    padding-bottom: 14px;
-  }
+
+
   .dropdown-menu.show {
     display: block;
-}
+  }
+
   .hydrated {
-      visibility: inherit;
+    visibility: inherit;
   }
-  .top_nav .idioma_nav ion-icon:first-child {
-    float: left;
-    font-size: 17px;
-    margin-right: 7px;
-  }
-  
+
+
   :host .ionicon {
-      stroke: currentcolor;
+    stroke: currentcolor;
   }
+
   .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -293,7 +320,7 @@ header {
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 0.25rem;
   }
 
@@ -304,9 +331,11 @@ header {
     left: 0px;
     will-change: transform;
   }
+
   ol, ul {
     overflow-wrap: break-word;
-}
+  }
+
   .alcaldia_menu_top .dropdown-menu {
     background: 0 0;
     width: 250px;
@@ -320,7 +349,7 @@ header {
     padding: 0;
     border-bottom: 1px solid #f5f5f5
   }
-  
+
   .top_nav .accesibilidad_nav {
     float: right;
     font-size: 12px;
@@ -332,28 +361,28 @@ header {
     position: relative;
     padding-bottom: 14px
   }
-  
+
   .top_nav .accesibilidad_nav a {
     color: #fff
   }
-  
+
   .top_nav .accesibilidad_nav a:hover {
     text-decoration: none
   }
-  
+
   .top_nav .accesibilidad_nav ion-icon:first-child {
     float: left;
     font-size: 17px;
     margin-right: 7px
   }
-  
+
   .top_nav .accesibilidad_nav ion-icon:last-child {
     font-size: 15px;
     margin-right: 0;
     position: absolute;
     margin-left: 7px
   }
-  
+
   .down_accesibilidad .accesi_top {
     display: none;
     width: 100%;
@@ -367,27 +396,27 @@ header {
     padding: 40px;
     margin-top: 40px
   }
-  
+
   .down_accesibilidad:hover .accesi_top {
     display: inline-block;
     transition: all .5s;
-    -webkit-box-shadow: 3px 21px 80px -21px rgba(163,163,163,1);
-    -moz-box-shadow: 3px 21px 80px -21px rgba(163,163,163,1);
-    box-shadow: 3px 21px 80px -21px rgba(163,163,163,1)
+    -webkit-box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1);
+    -moz-box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1);
+    box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1)
   }
-  
+
   .accesi_top .cabeza_acce_ {
     overflow: hidden;
     margin-bottom: 20px
   }
-  
+
   .accesi_top .cabeza_acce_ .titule_acce {
     float: left;
     font-size: 18px;
     color: var(--azul2);
     font-weight: 600
   }
-  
+
   .accesi_top .content_acc li {
     list-style: none;
     font-family: var(--fuente-work);
@@ -395,12 +424,12 @@ header {
     margin-bottom: 10px;
     font-weight: 300
   }
-  
+
   .accesi_top .content_acc li a {
     font-weight: 600;
     color: #36c
   }
-  
+
   .top_nav .idioma_nav {
     float: right;
     font-size: 12px;
@@ -409,39 +438,45 @@ header {
     cursor: pointer;
     overflow: hidden;
     position: relative;
-    padding-bottom: 14px
+    padding-bottom: 14px;
+    align-items: center;
   }
-  
+
   #flags.size18 a {
     margin-right: 10px
   }
-  
+
   .top_nav .idioma_nav ion-icon:first-child {
     float: left;
     font-size: 17px;
     margin-right: 7px
   }
-  
+
+  .idioma_nav {
+    display: flex;
+    margin: auto;
+  }
+
   .top_nav .idioma_nav ion-icon:last-child {
     font-size: 15px;
     margin-top: 3px;
     float: right;
     margin-left: 7px
   }
-  
+
   .login_nav_top {
     float: right;
     padding-left: 40px
   }
-  
+
   .login_nav_top a {
     color: #fff
   }
-  
+
   .login_nav_top a:hover {
     text-decoration: none
   }
-  
+
   .login_nav_top li {
     font-size: 12px;
     float: left;
@@ -449,53 +484,53 @@ header {
     padding-right: 10px;
     margin-top: 7px
   }
-  
+
   .menu_user {
     display: flex;
     font-size: 12px;
     padding-top: 7px
   }
-  
+
   .menu_user ion-icon {
     font-size: 20px;
     padding-right: 10px
   }
-  
+
   .linksmenu_userlogin {
     color: #a7a7a7;
     font-size: 14px;
     width: 250px
   }
-  
+
   .linksmenu_userlogin a {
     color: #000;
     text-decoration: none
   }
-  
+
   .linksmenu_userlogin a:hover {
     color: var(--azul)
   }
-  
+
   .linksmenu_userlogin li {
     padding: 4px 10px;
     background-color: #eff6fe;
-    border-bottom: 1px solid #f0f0f0 (153,153,153)
+    border-bottom: 1px solid #f0f0f0 (153, 153, 153)
   }
-  
+
   .linksmenu_userlogin li:nth-child(2n+1) {
     background-color: #fff
   }
-  
+
   .estilosidiomas {
     margin: auto;
     background: #fff;
     z-index: 1000;
     padding: 10px 20px;
-    -webkit-box-shadow: 3px 21px 80px -21px rgba(163,163,163,1);
-    -moz-box-shadow: 3px 21px 80px -21px rgba(163,163,163,1);
-    box-shadow: 3px 21px 80px -21px rgba(163,163,163,1);
+    -webkit-box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1);
+    -moz-box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1);
+    box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1);
   }
-  
+
   .down_idioma .idiomas_alcaldia_ {
     display: none;
     width: 20%;
@@ -510,36 +545,37 @@ header {
     padding: 10px 20px;
     margin-top: 35px;
     border-radius: 4px;
-    -webkit-box-shadow: 3px 21px 80px -21px rgba(163,163,163,1);
-    -moz-box-shadow: 3px 21px 80px -21px rgba(163,163,163,1);
-    box-shadow: 3px 21px 80px -21px rgba(163,163,163,1)
+    -webkit-box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1);
+    -moz-box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1);
+    box-shadow: 3px 21px 80px -21px rgba(163, 163, 163, 1)
   }
-  
+
   .down_idioma:hover .idiomas_alcaldia_ {
     display: inline-block;
     transition: all .5s
   }
-  
+
   .idiomas_alcaldia_ .idioma_titulo {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 10px
   }
+
   .dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=top] {
     right: auto;
     bottom: auto;
-}
+  }
 
-#flags {
-  width: 165px;
-}
-  
+  #flags {
+    width: 165px;
+  }
+
   #loginform_head {
     display: none;
     border-top: 7px solid var(--blue);
     padding: 30px
   }
-  
+
   .formulario_login .grid {
     width: 100%;
     max-width: 600px;
@@ -551,7 +587,7 @@ header {
     margin-top: 50px;
     margin-bottom: 50px
   }
-  
+
   .formulario_registro {
     width: 100%;
     box-shadow: 0 3px 20px #00000029;
@@ -559,7 +595,7 @@ header {
     margin-top: 30px;
     margin-bottom: 50px
   }
-  
+
   .dronwalcaldia_ .menualcaldias_lista {
     display: none;
     width: 100%;
@@ -573,16 +609,16 @@ header {
     padding-top: 14px;
     margin-left: -100px
   }
-  
 
-  
+
+
   .menualcaldias_lista .secre_depen_links {
     background-color: #fff;
-    -webkit-box-shadow: -2px 20px 26px -12px rgba(130,130,130,1);
-    -moz-box-shadow: -2px 20px 26px -12px rgba(130,130,130,1);
-    box-shadow: -2px 20px 26px -12px rgba(130,130,130,1)
+    -webkit-box-shadow: -2px 20px 26px -12px rgba(130, 130, 130, 1);
+    -moz-box-shadow: -2px 20px 26px -12px rgba(130, 130, 130, 1);
+    box-shadow: -2px 20px 26px -12px rgba(130, 130, 130, 1)
   }
-  
+
   .idiomas_alcaldia_ .idioma_titulo {
     font-size: 14px;
     color: #7e7e7e;
@@ -590,7 +626,7 @@ header {
     margin-bottom: 10px;
     display: block
   }
-  
+
   .menualcaldias_lista .secre_depen_links {
     height: 500px;
     background: red;
@@ -599,71 +635,74 @@ header {
     padding: 0px;
     background: #fff;
   }
-  
+
   .dronwalcaldia_:hover .menualcaldias_lista {
     display: inline-block;
     transition: all .5s;
-}
-.secre_depen_links::-webkit-scrollbar {
-  width: 11px
-}
-.secre_depen_links {
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-  padding-bottom: 40px
-}
+  }
 
-.secre_depen_links::-webkit-scrollbar-track {
-  background: var(--scrollbarBG)
-}
+  .secre_depen_links::-webkit-scrollbar {
+    width: 11px
+  }
 
-.secre_depen_links::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG);
-  border-radius: 6px;
-  border: 3px solid var(--scrollbarBG)
-}
+  .secre_depen_links {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    padding-bottom: 40px
+  }
+
+  .secre_depen_links::-webkit-scrollbar-track {
+    background: var(--scrollbarBG)
+  }
+
+  .secre_depen_links::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG)
+  }
+
   .galerry_footer_::-webkit-scrollbar {
     width: 11px
   }
-  
+
   .galerry_footer_ {
     scrollbar-width: thin;
     scrollbar-color: #fff #fff
   }
-  
+
   .galerry_footer_::-webkit-scrollbar-track {
     background: #fff
   }
-  
+
   .galerry_footer_::-webkit-scrollbar-thumb {
     background-color: #fff;
     border-radius: 6px;
     border: 3px solid #fff
   }
-  
+
   .asistencia_::-webkit-scrollbar {
     width: 11px
   }
-  
+
   .asistencia_ {
     scrollbar-width: thin;
     scrollbar-color: #fff #fff
   }
-  
+
   .asistencia_::-webkit-scrollbar-track {
     background: #fff
   }
-  
+
   .asistencia_::-webkit-scrollbar-thumb {
     background-color: #fff;
     border-radius: 6px;
     border: 3px solid #fff
   }
-  
+
   .menu_secretaria_m {
     background-color: #fff
   }
-  
+
   .menu_secretaria_m .moditutlo_Secre {
     background-color: var(--blue);
     color: #fff;
@@ -671,51 +710,51 @@ header {
     display: block;
     padding: 12px 30px
   }
-  
+
   .menu_secretaria_m li {
     font-size: 15px;
     border-bottom: 1px solid #dadada;
     list-style: none
   }
-  
+
   .menu_secretaria_m li a {
     display: block;
     padding: 12px 30px;
     color: #000
   }
-  
+
   .menu_secretaria_m li a:hover {
     text-decoration: none;
     background-color: var(--naranja);
     color: #fff
   }
-  
+
   .menu_secretaria_m .dropdown-menu {
-    position: relative!important;
+    position: relative !important;
     width: 100%;
-    float: none!important;
+    float: none !important;
     border-radius: 0
   }
-  
+
   .menu_secretaria_m .dropdown-menu {
     padding: 0;
     background-color: #e2e2e2
   }
-  
+
   .menu_secretaria_m .dropdown-menu li {
     padding: 0
   }
-  
+
   .menu_secretaria_m .dropdown-toggle::after {
     display: none
   }
-  
+
   .menu_secretaria_m ion-icon {
     color: var(--blue);
     padding-top: 3px;
     float: right
   }
-  
+
   .secre_depen_links .grid_ .titulolistado_ {
     background-color: #4b4b4b;
     color: #fff;
@@ -723,7 +762,7 @@ header {
     padding: 10px;
     text-align: center
   }
-  
+
   .secre_depen_links .grid_ li {
     list-style: none;
     padding: 7px 20px;
@@ -731,28 +770,28 @@ header {
     background-color: #e4e4e4;
     background-color: #eff6fe
   }
-  
 
-  
+
+
   .secre_depen_links .grid_ li:nth-child(2n+1) {
     background-color: #fff
   }
-  
+
   .secre_depen_links .grid_ li a {
     color: #000
   }
-  
+
   .secre_depen_links .grid_ li a:hover {
     color: var(--naranja);
     text-decoration: none
   }
-  
+
   .menumobile_ .dropdown-menu {
     background-color: #fff;
     margin-left: 5px;
     width: 100%
   }
-  
+
   .secresmobile_listado .listaditoscro li {
     list-style: none;
     padding: 7px 20px;
@@ -760,24 +799,24 @@ header {
     border-bottom: 1px solid #dadada;
     background-color: #eff6fe
   }
-  
+
   .secresmobile_listado .listaditoscro li:nth-child(2n+1) {
     background-color: #f1f1f1
   }
-  
+
   .secresmobile_listado .listaditoscro li a {
     color: #000
   }
-  
+
   .secresmobile_listado .listaditoscro .titulo_ente_ {
-    background-color: var(--blue)!important;
-    color: #fff!important
+    background-color: var(--blue) !important;
+    color: #fff !important
   }
-  
+
   .secresmobile_listado .listaditoscro .titulo_ente_ b {
     color: #fff
   }
-  
+
   .header_alcaldia {
     background-color: var(--azul-claro);
     padding-top: 7px;
@@ -789,7 +828,7 @@ header {
     top: 55px;
     z-index: 9999
   }
-  
+
   .header_alcaldia.fixed {
     width: 100%;
     position: fixed;
@@ -797,46 +836,46 @@ header {
     z-index: 100;
     transition: .5s
   }
-  
+
   .header_alcaldia .header_content {
     display: flex
   }
-  
+
   .logo_alcaldia_22 {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 260px
   }
-  
+
   .logo_alcaldia_22 .logonuevo_img {
     width: 175px;
     height: auto
   }
-  
+
   .logo_alcaldia_22 .escudo_armas {
     width: 100%;
     max-width: 20%
   }
-  
+
   .logo_alcaldia_22 .escudo_armas img {
     width: 40px;
     height: auto
   }
-  
+
   .logo_alcaldia_22 .cont_logo {
     width: 100%;
     min-width: 80%
   }
-  
+
   .logo_alcaldia_22 .cont_logo a {
     color: #1e1e1e
   }
-  
+
   .logo_alcaldia_22 .cont_logo a:hover {
     text-decoration: none
   }
-  
+
   .logo_alcaldia_22 .cont_logo .adm {
     font-size: 21.4px;
     line-height: 20px;
@@ -844,7 +883,7 @@ header {
     letter-spacing: -.4px;
     margin-bottom: 6px
   }
-  
+
   .logo_alcaldia_22 .cont_logo .distrito {
     font-size: 11px;
     line-height: 11px;
@@ -860,7 +899,7 @@ header {
     margin-bottom: 5px;
     position: relative
   }
-  
+
   .logo_alcaldia_22 .cont_logo .ctei {
     font-size: 13px;
     line-height: 13px;
@@ -868,12 +907,12 @@ header {
     letter-spacing: -.3px;
     text-align: center
   }
-  
+
   .logo_alcaldia_22 .cont_logo .linea_logo_desk {
     background-color: #1e1e1e;
     height: 4px
   }
-  
+
   .header_alcaldia .menu_alcaldia_ {
     width: 100%;
     max-width: 80%;
@@ -882,7 +921,7 @@ header {
     padding-top: 15px;
     text-align: right
   }
-  
+
   .header_alcaldia .menu_alcaldia_ li {
     list-style: none;
     padding: 0 7px;
@@ -890,21 +929,21 @@ header {
     display: inline;
     justify-content: flex-end
   }
-  
+
   .header_alcaldia .menu_alcaldia_ li a {
     color: #000
   }
-  
+
   .header_alcaldia .menu_alcaldia_ li .orange_ {
     color: #ff8403;
     font-weight: 600
   }
-  
+
   .header_alcaldia .menu_alcaldia_ li a:hover {
     color: #ff8403;
     text-decoration: none
   }
-  
+
   .header_alcaldia .menu_alcaldia_ ion-icon {
     color: #36c;
     background-color: #fff;
@@ -913,28 +952,28 @@ header {
     float: right;
     font-size: 19px
   }
-  
+
   .header_alcaldia .logo_alcaldia {
     float: left;
     width: 100%;
     max-width: 20%
   }
-  
+
   .header_alcaldia .logo_alcaldia a {
     color: #4b4b4b
   }
-  
+
   .header_alcaldia .logo_alcaldia a:hover {
     text-decoration: none
   }
-  
+
   .header_alcaldia .logo_alcaldia img {
     float: left;
     margin-right: 16px;
     width: 38px;
     height: auto
   }
-  
+
   .header_alcaldia .logo_alcaldia .t_l_a {
     font-weight: 700;
     font-size: 16px;
@@ -942,65 +981,65 @@ header {
     padding-top: 19px;
     display: block
   }
-  
+
   .header_alcaldia .logo_alcaldia .site_desc_ {
     font-size: 13px;
     margin-top: -5px
   }
-  
+
   .carousel-control-next {
     width: 6%
   }
-  
+
   .carousel-control-prev {
     width: 6%
   }
-  
+
   .cover_home_slider {
     width: 100%;
     overflow: hidden;
     background-color: #14b8ce;
     height: 390px
   }
-  
+
   .cover_top_home_ {
     padding-bottom: 30px
   }
-  
+
   .cover_top_home_ .carousel-indicators {
     justify-content: initial;
     padding-left: 60px
   }
-  
+
   .cover_top_home_ .carousel-indicators>li {
     background-color: #fff;
     width: 12px;
     height: 12px;
-    border-radius: 100%!important
+    border-radius: 100% !important
   }
-  
+
   .cover_top_home_ .carousel-indicators .active {
     background-color: #ff8403;
     width: 25px;
     height: 25px;
     margin-top: -9px
   }
-  
+
   .cover_home_slider .texto_slider_ {
     width: 100%;
     max-width: 45%;
     float: left;
     min-height: 270px
   }
-  
+
   .cover_home_slider .naranajatotal {
     background-color: var(--naranja)
   }
-  
+
   .cover_home_slider .bluetotal {
     background-color: #14b8ce
   }
-  
+
   .texto_slider_ .elcon_ {
     width: 100%;
     max-width: 500px;
@@ -1009,19 +1048,19 @@ header {
     padding-left: 0;
     color: #fff
   }
-  
+
   .texto_slider_ .eventosslider_ {
     float: left;
     padding-left: 50px
   }
-  
+
   .texto_slider_ .elcon_ small {
     font-weight: 300;
     font-size: 13px;
     margin-bottom: 10px;
     display: block
   }
-  
+
   .texto_slider_ .elcon_ h2 {
     font-size: 27px;
     line-height: 30px;
@@ -1029,7 +1068,7 @@ header {
     font-weight: 500;
     font-family: var(--fuente-montserrat)
   }
-  
+
   .texto_slider_ .elcon_ h2 a {
     color: #fff;
     text-decoration: none;
@@ -1037,7 +1076,7 @@ header {
     letter-spacing: -1.08px;
     letter-spacing: -1.08px
   }
-  
+
   .texto_slider_ .elcon_ h3 {
     font-size: 27px;
     line-height: 30px;
@@ -1045,7 +1084,7 @@ header {
     font-weight: 500;
     font-family: var(--fuente-montserrat)
   }
-  
+
   .texto_slider_ .elcon_ h3 a {
     color: #fff;
     text-decoration: none;
@@ -1053,14 +1092,14 @@ header {
     letter-spacing: -1.08px;
     letter-spacing: -1.08px
   }
-  
+
   .texto_slider_ .elcon_ p {
     letter-spacing: -.16px;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px
   }
-  
+
   .texto_slider_ .elcon_ .botonslider_ {
     background-color: #fff;
     border-radius: 31px;
@@ -1075,13 +1114,13 @@ header {
     transition: .5s;
     z-index: 9909
   }
-  
+
   .texto_slider_ .elcon_ .botonslider_:hover {
     background-color: #ff8403;
     color: #fff;
     text-decoration: none
   }
-  
+
   .texto_slider_ .elcon_ .tag_s_ {
     display: block;
     width: 100%;
@@ -1089,7 +1128,7 @@ header {
     margin-bottom: 10px;
     margin-top: -5px
   }
-  
+
   .texto_slider_ .elcon_ .tag_s_ li {
     color: #fff;
     float: left;
@@ -1098,71 +1137,71 @@ header {
     text-transform: capitalize;
     list-style: none
   }
-  
+
   .texto_slider_ .elcon_ .tag_s_ li a {
     color: #fff;
     transition: .3s
   }
-  
+
   .texto_slider_ .elcon_ .tag_s_ li a:hover {
     font-weight: 700;
     text-decoration: none
   }
-  
+
   .texto_slider_ .elcon_ .tag_s_ li ion-icon {
     float: left;
     font-size: 14px;
     margin-right: 5px
   }
-  
+
   .cover_home_slider .imagen_slider_ {
     width: 100%;
     max-width: 55%;
     float: right;
     height: 390px
   }
-  
+
   .cover_home_slider .imagen_slider_ img {
     object-fit: cover;
     width: 100%;
     height: 390px
   }
-  
+
   .menu_ancla_ {
     padding: 20px 10px;
     z-index: 98
   }
-  
+
   .menu_ancla_ ul {
     width: 100%;
     height: 20px;
     text-align: center
   }
-  
+
   .menu_ancla_ li {
     display: inline-block;
     color: #fff;
     margin-right: 10px;
     font-size: 15px;
-    border-right: 1px solid rgba(0,0,0,.33);
+    border-right: 1px solid rgba(0, 0, 0, .33);
     padding-right: 20px;
     padding-left: 10px
   }
-  
+
   .menu_ancla_ li a {
     color: #000
   }
-  
+
   .menu_ancla_ li a:hover {
     border-bottom: 2px solid #ff8403;
     text-decoration: none
   }
-  
+
   .menu_ancla_ li:last-child {
     border-right: 0;
     padding-right: 0
   }
-  
+
   .menu_ancla_.fixed {
     width: 100%;
     position: fixed;
@@ -1176,56 +1215,56 @@ header {
     padding-bottom: 0;
     padding-top: 12px
   }
-  
+
   .menu_ancla_.fixed li a {
     color: #fff
   }
-  
+
   .menu_ancla_.fixed li :last-child {
     border-right: 1px solid var(--blue)
   }
-  
+
   #ANoticias {
     scroll-padding-top: 170px
   }
-  
+
   .busacor_modal_ {
     z-index: 999999900;
     overflow: hidden;
     width: 100%
   }
-  
+
   .busacor_modal_ .formulario_ {
     width: 100%;
     max-width: 70%;
     float: left;
     padding-right: 30px
   }
-  
+
   .busacor_modal_ .formulario_ ::-webkit-input-placeholder {
     text-align: center;
     color: #36c;
     font-weight: 600
   }
-  
+
   .busacor_modal_ .formulario_ :-moz-placeholder {
     text-align: center;
     color: #36c;
     font-weight: 600
   }
-  
+
   .busacor_modal_ .formulario_ ::-moz-placeholder {
     text-align: center;
     color: #36c;
     font-weight: 600
   }
-  
+
   :-ms-input-placeholder {
     text-align: center;
     color: #36c;
     font-weight: 600
   }
-  
+
   .busacor_modal_ .formulario_ input[type=text] {
     border: 0;
     border-bottom: 1px solid #797979;
@@ -1236,14 +1275,14 @@ header {
     color: #36c;
     font-weight: 600
   }
-  
+
   .busacor_modal_ .boton_biscmodal_ {
     float: left;
     width: 100%;
     max-width: 20%;
     padding-top: 10px
   }
-  
+
   .boton_biscmodal_ input[type=submit] {
     background-color: #00aeef;
     color: #fff;
@@ -1255,7 +1294,7 @@ header {
     font-size: 13px;
     transition: .5s
   }
-  
+
   .boton_biscmodal_ input[type=submit]:hover {
     background-color: #ff8403
   }

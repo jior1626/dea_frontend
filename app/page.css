@@ -30,15 +30,18 @@
 
 /* Estilos flexibles con centrado de elementos */
 .containerLogin {
-  min-height: 450px;
-  margin: 0 auto;
+  min-height: auto;
+  margin: 0 10px;
   display: flex;
-/*   align-items: center;
- */  justify-content: center;
+ justify-content: center;
 }
 
 h2{
-  margin-bottom: 1rem;
+  color: #000;
+  font-size:medium;
+  text-align: center;
+  font-weight: bold;
+
 }
 
 h1{
@@ -48,18 +51,18 @@ h1{
 /* Estilo del contenedor blanco */
 .white-container {
   background-color: white;
-  border-radius: 30px;
-  padding: 24px;
+  border-radius: 20px;
+  padding: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 380px;
-  margin: 0 5px;
+  margin: auto auto;
   width: 100%;
 }
 
 
 /* Estilo del botón */
 .buttonLogin {
-  align-items: "center";
+  align-items: center;
   width: 100%;
   background-color: #AE3E97; /* Reemplaza con el color personalizado deseado */
   color: white;
@@ -67,6 +70,33 @@ h1{
   border-radius: 9999px; /* Utiliza un valor grande para hacer que el botón sea redondo */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+.buttonContainer{
+  padding: 12px 40px;
+
+}
+
+.inputPassword{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 15px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #878787;
+  color: #000;
+}
+
+.inputUser{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 15px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #878787;
+  color: #000;
 }
 
 
@@ -80,20 +110,33 @@ h1{
 
   }
   .white-container {
-    max-width: 500px;
+    max-width: 600px;
     max-height: 400px;
+    padding: 53px;
+    margin: auto auto;
+
+
   }
 
   .containerLogin {
-    min-height: 500px;
+    min-height: auto;
     margin: auto 0;
 
   }
+
   h1{
     font-size: xx-large;
   }
   h2{
-    margin-bottom: 3rem;
+    color: #000;
+    font-size:medium;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .buttonContainer{
+    padding: 12px 80px;
+  
   }
 }
 
