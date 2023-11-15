@@ -39,8 +39,6 @@ export default function Options() {
     useState("");
   const [errorREG_DESCLUGARUBICACION, setErrorREG_DESCLUGARUBICACION] =
     useState("");
-    const [fields, setFields] = useState([]);
-    const [fields2, setFields2] = useState([]);
 
   const [userLocation, setUserLocation] = useState(null);
 
@@ -48,36 +46,7 @@ export default function Options() {
     lat: 0,
     lng: 0,
   });
-  useEffect(() => {
-    // Obtener los campos de la API al cargar el componente
-    fetch('https://dea-crud.azurewebsites.net/apiTipoInstalacion.php')
-      .then(response => response.json())
-      .then(data => {
-        // Filtrar para excluir el campo 'id'
-        const filteredFields = data.filter(field => field !== 'id');
-        setFields(filteredFields);
-        //console.log(JSON.stringify(data));
-      })
-      .catch(error => {
-        // Manejo de errores aquí
-        console.error('Error al obtener los campos:', error);
-      });
-    },[]);
-    useEffect(() => {
-      // Obtener los campos de la API al cargar el componente
-      fetch('https://dea-crud.azurewebsites.net/apiTipoDeclaracion.php')
-        .then(response => response.json())
-        .then(data => {
-          // Filtrar para excluir el campo 'id'
-          const filteredFields2 = data.filter(field => field !== 'id');
-          setFields2(filteredFields2);
-          console.log(JSON.stringify(data));
-        })
-        .catch(error => {
-          // Manejo de errores aquí
-          console.error('Error al obtener los campos:', error);
-        });
-      },[]);
+
   useEffect(() => {
     const getUserLocation = async () => {
       if ("geolocation" in navigator) {
@@ -90,9 +59,10 @@ export default function Options() {
             });
           });
           
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-
+          //const latitude = position.coords.latitude;
+          //const longitude = position.coords.longitude;
+          const latitude = 0;
+          const longitude = 0;
           setUserLocation(`${latitude},${longitude}`);
           setMapCenter({ lat: latitude, lng: longitude });
         } catch (error) {
@@ -286,18 +256,18 @@ export default function Options() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-    <Header />
+      <Header></Header>
 
-    <div className="container-father min-h-[700px] flex items-center justify-center mt-5">
-      <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full mb-8">
-        <div className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo2">
-            <h6 className="title font-bold text-sm tituloanexo text-black">
+      <div className="min-h-[700px] flex items-center justify-center mt-5">
+        <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full mb-8">
+          <div className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo2">
+            <h6 className="font-bold text-sm tituloanexo text-black">
               DESFIBRILADORES EXTERNOS
             </h6>
             <br></br>
 
             <select
-              className="element p-3 rounded-full shadow-sm border text-black"
+              className="p-3 rounded-full shadow-sm border text-black"
               placeholder="Municipio"
               onChange={(e) => setREG_CIUDADMUNICIPIO(e.target.value)}
             >
@@ -318,7 +288,7 @@ export default function Options() {
             <br></br>
 
             <select
-              className="element p-3 rounded-full shadow-sm border text-black"
+              className="p-3 rounded-full shadow-sm border text-black"
               placeholder="Departamento"
               onChange={(e) => setREG_DEPARTAMENTO(e.target.value)}
             >
@@ -330,33 +300,24 @@ export default function Options() {
             <br></br>
             <br></br>
 
-            <select 
-              className="element p-3 rounded-full shadow-sm border text-black"
+            <input
+              type="text"
+              className="p-3 rounded-full shadow-sm border text-black"
               placeholder="Tipo de instalacion"
               onChange={(e) => setREG_TIPOINSTALACION(e.target.value)}
-            >
-              {fields.map(field => (
-                <option value={field.tii_nombre}>{field.tii_nombre}</option>  
-              ))}
-
-
-            </select>
+            />
             <br></br>
             <span className="text-red-500">{errorREG_TIPOINSTALACION}</span>
 
             <br></br>
             <br></br>
 
-            <select
-              className="element p-3 rounded-full shadow-sm border text-black"
+            <input
+              type="text"
+              className="p-3 rounded-full shadow-sm border text-black"
               placeholder="Tipo de declaracion"
               onChange={(e) => setREG_TIPODECLARACION(e.target.value)}
-            > 
-            {fields2.map(field => (
-              <option value={field.tid_nombre}>{field.tid_nombre}</option>  
-            ))}
-
-            </select>
+            />
             <br></br>
             <span className="text-red-500">{errorREG_TIPODECLARACION}</span>
 
@@ -365,7 +326,7 @@ export default function Options() {
 
             <input
               type="text"
-              className="element p-3 rounded-full shadow-sm border text-black"
+              className="p-3 rounded-full shadow-sm border text-black"
               placeholder="Tipo de espacio"
               onChange={(e) => setREG_TIPOESPACIO(e.target.value)}
             />
@@ -421,7 +382,7 @@ export default function Options() {
 
             <input
               type="text"
-              className="element p-3 rounded-full shadow-sm border text-black"
+              className="p-3 rounded-full shadow-sm border text-black"
               placeholder="Descripcion lugar"
               onChange={(e) => setREG_DESCLUGARUBICACION(e.target.value)}
             />
