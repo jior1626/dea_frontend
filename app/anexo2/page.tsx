@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 
 export default function Options() {
   const router = useRouter();
-
+  
   // Estados para cada uno de los campos del formulario y para los errores
   const [nombreCompleto, setNombreCompleto] = useState('');
   const [documentoIdentificacion, setDocumentoIdentificacion] = useState('');
@@ -61,12 +61,12 @@ export default function Options() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-container flex-col items-center justify-between">
       <Header />
 
-      <div className="min-h-[700px] flex items-center justify-center mt-5">
-        <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full mb-8">
-          <div className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo2">
+      <div className="desktop-container-father min-h-container flex items-center justify-center mt-5 ">
+        <div className="desktop-container bg-white-container rounded-container p-8-container shadow-md-container max-w-md-container mx-5 w-full mb-8">
+          <div className="dekstop-input-container bg-white-container rounded-container p-8-container border-l-container shadow-md-container mb-4 anexo2">
             <h6 className="font-bold text-sm tituloanexo text-black">
               REGISTRO DE INSTALACIÓN DESFIBRILADORES EXTERNOS (DEA)
             </h6>
