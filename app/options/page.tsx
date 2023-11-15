@@ -62,12 +62,12 @@ export default function Options() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex-containerOptions">
       <Header></Header>
 
       {rolAsignado != "Consultor" && (
-        <div className="min-h-[700px] flex items-center justify-center">
-          <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full mb-8">
+        <div className="containerOptions">
+          <div className="white-containerOptions">
             <div
               className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo2"
               onClick={navigateToSectionAnexo2}
@@ -127,8 +127,8 @@ export default function Options() {
       )}
 
       {rolAsignado === "Consultor" && (
-        <div className="min-h-[700px] flex items-center justify-center mt-5">
-          <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full mb-8">
+        <div className="containerOptions">
+          <div className="white-containerOptions">
             <div
               className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo2"
               onClick={navigateToSectionConsultaInstalacion}

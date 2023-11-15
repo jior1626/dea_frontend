@@ -1,3 +1,18 @@
+
+:root {
+  --azul: #3366CC;
+  --azul2: #004884;
+  --azul-claro: #E6EFFD;
+  --fuente-work: 'Work Sans',sans-serif;
+  --fuente-montserrat: 'Montserrat',sans-serif;
+  --naranja: #fb8406;
+  --blue: #00aeef;
+  --morado: #ae3e97;
+  --vinotinto: #952828;
+  --verdeazul: #14b8ce;
+  --scrollbarBG: #fff;
+  --thumbBG: #00aeef
+}
 /* Estilo para el header */
 header {
     width: 100%;
@@ -8,7 +23,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Ajusta el relleno según tus necesidades */
+    padding: 10px; /* Ajusta el relleno según tus necesidades */
   }
   
   /* Estilo para el contenedor del logo */
@@ -34,7 +49,7 @@ header {
   display: none;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
 
   header {
     width: 100%;
@@ -58,7 +73,10 @@ header {
     top: 0px;
     z-index: 999;
   }
-  
+  .fa-light{
+    display: flex;
+    width: 10px;
+  }
   .centradototal_ {
     width: 100%;
     max-width: 1160px;
@@ -72,7 +90,25 @@ header {
     max-width: 22%;
   }
   
-  
+  .secre_depen_links .grid_ .titulo_ente_ {
+    background-color: var(--blue)!important;
+}
+
+.secre_depen_links .grid_ li a {
+  color: #000;
+}
+
+.secre_depen_links .grid_ .titulo_ente_ b {
+  color: #fff;
+}
+
+.secre_depen_links .grid_ li {
+  list-style: none;
+  padding: 7px 20px;
+  font-size: 14px;
+  background-color: #e4e4e4;
+  background-color: #eff6fe;
+}
   .otrocentrado_ {
     overflow: hidden;
     max-width: 1200px
@@ -226,6 +262,9 @@ header {
     position: relative;
     padding-bottom: 14px;
   }
+  .dropdown-menu.show {
+    display: block;
+}
   .hydrated {
       visibility: inherit;
   }
@@ -257,6 +296,17 @@ header {
     border: 1px solid rgba(0,0,0,.15);
     border-radius: 0.25rem;
   }
+
+  .dropdown-menu {
+    position: absolute;
+    transform: translate3d(723px, 54px, 0px);
+    top: 0px;
+    left: 0px;
+    will-change: transform;
+  }
+  ol, ul {
+    overflow-wrap: break-word;
+}
   .alcaldia_menu_top .dropdown-menu {
     background: 0 0;
     width: 250px;
@@ -475,6 +525,14 @@ header {
     font-weight: 700;
     margin-bottom: 10px
   }
+  .dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=top] {
+    right: auto;
+    bottom: auto;
+}
+
+#flags {
+  width: 165px;
+}
   
   #loginform_head {
     display: none;
@@ -516,10 +574,7 @@ header {
     margin-left: -100px
   }
   
-  .dronwalcaldia_:hover .menualcaldias_lista {
-    display: inline-block;
-    transition: all .5s
-  }
+
   
   .menualcaldias_lista .secre_depen_links {
     background-color: #fff;
@@ -541,30 +596,32 @@ header {
     background: red;
     overflow-x: hidden;
     overflow: auto;
+    padding: 0px;
     background: #fff;
-    font-family: var(--fuente-work)
   }
   
-  .secre_depen_links::-webkit-scrollbar {
-    width: 11px
-  }
-  
-  .secre_depen_links {
-    scrollbar-width: thin;
-    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-    padding-bottom: 40px
-  }
-  
-  .secre_depen_links::-webkit-scrollbar-track {
-    background: var(--scrollbarBG)
-  }
-  
-  .secre_depen_links::-webkit-scrollbar-thumb {
-    background-color: var(--thumbBG);
-    border-radius: 6px;
-    border: 3px solid var(--scrollbarBG)
-  }
-  
+  .dronwalcaldia_:hover .menualcaldias_lista {
+    display: inline-block;
+    transition: all .5s;
+}
+.secre_depen_links::-webkit-scrollbar {
+  width: 11px
+}
+.secre_depen_links {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  padding-bottom: 40px
+}
+
+.secre_depen_links::-webkit-scrollbar-track {
+  background: var(--scrollbarBG)
+}
+
+.secre_depen_links::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG)
+}
   .galerry_footer_::-webkit-scrollbar {
     width: 11px
   }
@@ -675,13 +732,7 @@ header {
     background-color: #eff6fe
   }
   
-  .secre_depen_links .grid_ .titulo_ente_ {
-    background-color: var(--blue)!important
-  }
-  
-  .secre_depen_links .grid_ .titulo_ente_ b {
-    color: #fff
-  }
+
   
   .secre_depen_links .grid_ li:nth-child(2n+1) {
     background-color: #fff
