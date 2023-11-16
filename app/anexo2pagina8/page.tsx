@@ -54,7 +54,7 @@ export default function Options() {
   };
 
   const navigateToSectionAnexoPag7 = () => {
-    router.push("options");
+    router.push("anexo2");
   };
 
   const [userLocation, setUserLocation] = useState(null);
@@ -229,7 +229,7 @@ export default function Options() {
             className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
             onClick={navigateToSectionAnexoPag7}
           >
-            Siguiente
+            Cerrar
           </button>
           <Home />
         </div>
