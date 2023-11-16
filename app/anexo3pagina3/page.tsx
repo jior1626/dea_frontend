@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo3pagina3.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -69,15 +70,37 @@ export default function Options() {
   const [uso_datoseventonumerodocumento, setUso_datoseventonumerodocumento] =
     useState("");
 
-    const [uso_datoseventohorainicioevento, setUso_datoseventohorainicioevento] = useState(""+horaActual);
-    const [uso_datoseventohoraactivacioncadenasupervivencia, setUso_datoseventohoraactivacioncadenasupervivencia] = useState(""+horaActual);
-    const [uso_datoseventohorautilizaciondea, setUso_datoseventohorautilizaciondea] = useState(""+horaActual);
-    const [uso_datoseventohoratrasladopersonaatendida, setUso_datoseventohoratrasladopersonaatendida] = useState(""+horaActual);
-    const [uso_datosmediotransportenombreencargado, setUso_datosmediotransportenombreencargado] = useState("");
-    const [uso_datosmediotransportemediotransporte, setUso_datosmediotransportemediotransporte] = useState("");
-    const [uso_datosmediotransporteempresaambulancia, setUso_datosmediotransporteempresaambulancia] = useState("");
-    const [uso_datosmediotransporteobservaciones, setUso_datosmediotransporteobservaciones] = useState("");
-    const [uso_FUso_firma, setUso_firma] = useState("");
+  const [uso_datoseventohorainicioevento, setUso_datoseventohorainicioevento] =
+    useState("" + horaActual);
+  const [
+    uso_datoseventohoraactivacioncadenasupervivencia,
+    setUso_datoseventohoraactivacioncadenasupervivencia,
+  ] = useState("" + horaActual);
+  const [
+    uso_datoseventohorautilizaciondea,
+    setUso_datoseventohorautilizaciondea,
+  ] = useState("" + horaActual);
+  const [
+    uso_datoseventohoratrasladopersonaatendida,
+    setUso_datoseventohoratrasladopersonaatendida,
+  ] = useState("" + horaActual);
+  const [
+    uso_datosmediotransportenombreencargado,
+    setUso_datosmediotransportenombreencargado,
+  ] = useState("");
+  const [
+    uso_datosmediotransportemediotransporte,
+    setUso_datosmediotransportemediotransporte,
+  ] = useState("");
+  const [
+    uso_datosmediotransporteempresaambulancia,
+    setUso_datosmediotransporteempresaambulancia,
+  ] = useState("");
+  const [
+    uso_datosmediotransporteobservaciones,
+    setUso_datosmediotransporteobservaciones,
+  ] = useState("");
+  const [uso_FUso_firma, setUso_firma] = useState("");
 
   // Estados para cada uno de los campos del formulario y para los errores
   const [nombreCompleto, setNombreCompleto] = useState("");
@@ -138,86 +161,89 @@ export default function Options() {
   return (
     <main>
       <Header />
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
       <br></br>
       <div className="contenedor">
-        <div className="bloque">
-          <h2>
-          Medio de transporte utilizado para el traslado:
-          </h2>
+        <div className="bloque1">
+          <h2>Medio de transporte utilizado para el traslado:</h2>
         </div>
 
         <div className="bloque">
-          <select 
-          className="inputData mt-1 p-2 w-full border rounded text-black"
-          onChange={(e) =>
-            setUso_datosmediotransportemediotransporte(e.target.value)
-          }>
-           <option value="Ambulancia" >Ambulancia</option>
-           <option value="Transporte particular" >Transporte particular</option>
-           <option value="Otro" >Otro</option>
+          <select
+            className="inputData"
+            onChange={(e) =>
+              setUso_datosmediotransportemediotransporte(e.target.value)
+            }
+          >
+            <option value="Ambulancia">Ambulancia</option>
+            <option value="Transporte particular">Transporte particular</option>
+            <option value="Otro">Otro</option>
           </select>
         </div>
 
-        <div className="bloque" >
-        <input
-          type="text"
-          id="edad"
-          placeholder="Nombre de la empresa de la ambulancia"
-          className="inputData mt-1 p-2 w-full border rounded text-black"
-          onChange={(e) =>
-            setUso_datosmediotransporteempresaambulancia(e.target.value)
-          }
-        />
+        <div className="bloque">
+          <input
+            type="text"
+            id="edad"
+            placeholder="Nombre de la empresa de la ambulancia"
+            className="inputData"
+            onChange={(e) =>
+              setUso_datosmediotransporteempresaambulancia(e.target.value)
+            }
+          />
+        </div>
+        <br></br>
+        <div className="bloque">
+          <strong>Observaciones:</strong>
+          <textarea
+            id="edad"
+            placeholder=""
+            className="inputData"
+            onChange={(e) =>
+              setUso_datosmediotransporteobservaciones(e.target.value)
+            }
+          ></textarea>
         </div>
 
-        <div className="bloque" >
-        <strong>Observaciones:</strong>
-        <textarea
-          id="edad"
-          placeholder=""
-          className="inputData mt-1 p-2 w-full border rounded text-black"
-          onChange={(e) =>
-            setUso_datosmediotransporteobservaciones(e.target.value)
-          }
-        >
-        </textarea>
+        <div className="bloque">
+          <input
+            type="text"
+            id="edad"
+            placeholder="Nombre persona de la institución responsable del DEA utilizado"
+            className="inputData"
+            onChange={(e) => setUso_firma(e.target.value)}
+          />
         </div>
-
-        <div className="bloque" >
-        <input
-          type="text"
-          id="edad"
-          placeholder="Firma"
-          className="inputData mt-1 p-2 w-full border rounded text-black"
-          onChange={(e) =>
-            setUso_firma(e.target.value)
-          }
-        />
+        <div className="bloque">
+          <input
+            type="text"
+            id="edad"
+            placeholder="Firma"
+            className="inputData"
+            onChange={(e) => setUso_firma(e.target.value)}
+          />
         </div>
 
         <br></br>
         <button
-          className="btnNext btn-sesenta mt-4 rutavital text-white py-3 rounded-full shadow-lg"
+          className="btn-sesenta1  btn-sesenta mt-4 rutavital text-white py-3 rounded-full shadow-lg"
           onClick={navigateToSectionActivarRutaVital}
         >
           Ruta vital
         </button>
         <br></br>
 
-        <button
-          className="btnNext btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
-          onClick={navigateToSectionAnexo3Finalizo}
-        >
-          Siguiente
-        </button>
-
-        <br></br>
-
         <div className="contenedorCasita">
-          <img
-            src="https://nivel99.com/desfibriladores/casita.png"
-            onClick={navigateToSectionOptions}
-          />
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+            onClick={navigateToSection}
+          >
+            Enviar
+          </button>
+          <Home />
           <br />
         </div>
 
