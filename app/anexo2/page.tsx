@@ -100,7 +100,9 @@ export default function Options() {
             REGISTRO DE INSTALACIÓN DESFIBRILADORES EXTERNOS (DEA)
             <p className="ley">(Ley 1831 del 12 de mayo de 2017)</p>
           </h6>
-          <CicleInfo />
+          <a href="/anexo2pagina8">
+            <CicleInfo />
+          </a>
         </div>
         <div className="bloque">
           <strong>Representante legal:</strong>
@@ -137,8 +139,11 @@ export default function Options() {
             </p>
           )}
         </div>
-
         <div className="bloque">
+          <p>
+            Comunica la existencia de desfibrilador/es externo/s ubicados en:
+          </p>
+
           <input
             type="text"
             className="inputForm"
