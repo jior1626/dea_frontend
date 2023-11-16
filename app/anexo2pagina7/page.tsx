@@ -19,8 +19,8 @@ export default function Anexo3Finalizo() {
     <main className="flex flex-col items-center justify-between">
       <Header></Header>
 
-      <div className="mt-32 min-h-[400px] flex items-center justify-center">
-        <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full text-center">
+      <div className="min-h-[400px] flex items-center justify-center container">
+        <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full text-center ">
           <div className="mx-auto">
             <img
               src="https://nivel99.com/desfibriladores/circle-check-regular 1.png"

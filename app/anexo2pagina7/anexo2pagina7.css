@@ -69,9 +69,6 @@ main {
     text-align: center;
 }
 
-.mt-32 {
-    margin-top: 8rem;
-}
 
 .flex {
     display: flex;
@@ -89,7 +86,14 @@ main {
     color: black;
 }
 
-/* Estilos para versión desktop */
-@media (min-width: 900px) {
+.container{
+    margin: auto auto;
 
+}
+
+/* Estilos para versión desktop */
+@media screen and (min-width: 900px) {
+    .w-full {
+        width: 40%;
+    }
 }
