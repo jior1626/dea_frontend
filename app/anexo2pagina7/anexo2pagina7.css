@@ -1,7 +1,3 @@
-.anexo2{
-    border-color: #AE3E97;
-    border-left-width: 12px;
-}
 
 .anexo3{
     border-color: #00904C;
@@ -25,3 +21,29 @@
 .tituloanexo{
     font-size: 11px;
 }
+
+.contenedor {
+    margin: auto auto;
+    display: flex;
+    border-left: 15px solid #AE3E97; /* Borde izquierdo morado */
+
+  /*   align-items: center;
+   */  justify-content: center;
+}
+
+.white-container {
+    background-color: white;
+    border-radius: 30px;
+    padding: 24px;
+    max-width: 380px;
+    margin: 0 5px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 900px) {
+    .contenedor {
+        height: auto;
+        width: 30%;
+    }
+
+  }
