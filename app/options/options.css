@@ -1,145 +1,109 @@
-/* .flex-containerOptions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 100vh;
-}
-
-.containerOptions {
-    min-height: 300px;
-    margin: auto 0;
-    display: flex;
-    justify-content: center;
-}
-
-.white-containerOptions {
-    background-color: white;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-
-    width: 100%;
-}
-
-.anexo2 {
-    border-color: #AE3E97;
-    border-left-width: 12px;
-    width: auto;
-    height: 100px;
-}
-
-.anexo3 {
-    border-color: #00904C;
-    border-left-width: 12px;
-    width: auto;
-    height: 100px;
-
-}
-
-.hijo {
-
-    margin-bottom: 1rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #F0F3F4;
-}
-
-.usuarioperador {
-    border-color: #FF8403;
-    border-left-width: 12px;
-}
-
-@media screen and (min-width: 1000px) {
-
-
-    .white-containerOptions {
-        width: 1300px;
-        max-height: auto;
-        display: flex;
-        margin: auto auto;
-
-    }
-
-
-    .containerOptions {
-        min-height: auto;
-        margin: auto 0;
-
-
-    }
-
-
-    .anexo2 {
-        width: 500px;
-        height: 100px;
-
-    }
-
-    .anexo3 {
-        width: 500px;
-        height: 100px;
-
-    }
-
-    .hijo {
-        flex: 1;
-        padding: 20px;
-        text-align: center;
-        margin: auto 20px;
-        margin-bottom: 8rem;
-        margin-top: 8rem;
-        cursor: pointer;
-        background-color: #F0F3F4;
-
-
-    }
-} */
-
-
 .contenedor {
     width: 80%;
     background-color: white;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* Acomoda los divs en una columna (verticalmente) */
-    align-items: center; /* Centra los divs internos horizontalmente */
-    margin: auto; /* Centra el contenedor en la pantalla */
+    flex-direction: column;
+    /* Acomoda los divs en una columna (verticalmente) */
+    align-items: center;
+    /* Centra los divs internos horizontalmente */
+    margin: auto;
+    /* Centra el contenedor en la pantalla */
     border-radius: 10px;
 }
 
 .div-interno {
     border-radius: 10px;
-    border-left: 5px solid purple; /* Borde izquierdo morado */
-    width: 100%; /* Hace que los divs ocupen todo el ancho del contenedor */
-    margin: 10px 0; /* Espacio arriba y abajo de cada div interno */
-    text-align: center; /* Centra el texto dentro de los divs internos */
+    border-left: 5px solid purple;
+    /* Borde izquierdo morado */
+    width: 100%;
+    /* Hace que los divs ocupen todo el ancho del contenedor */
+    margin: 10px 0;
+    /* Espacio arriba y abajo de cada div interno */
+    text-align: center;
+    /* Centra el texto dentro de los divs internos */
     padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra a los divs internos */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Añade una sombra a los divs internos */
+    color: #000;
 }
 
 /* Estilos específicos para cada div interno */
 .div-interno:nth-child(1) {
-    border-left: 5px solid #AE3E97; /* Borde izquierdo para el primer div */
+    border-left: 15px solid #AE3E97;
+    /* Borde izquierdo para el primer div */
 }
 
 .div-interno:nth-child(2) {
-    border-left: 5px solid #FF8403; /* Borde izquierdo para el segundo div */
+    border-left: 15px solid #FF8403;
+    /* Borde izquierdo para el segundo div */
 }
 
 .div-interno:nth-child(3) {
-    border-left: 5px solid #00904C; /* Borde izquierdo para el tercer div */
+    border-left: 15px solid #00904C;
+    /* Borde izquierdo para el tercer div */
 }
 
 main {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    min-height: 100vh; /* Usa al menos el 100% de la altura de la ventana del navegador */
-    flex-direction: column; /* Organiza el contenido en una columna */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    min-height: 100vh;
+    /* Usa al menos el 100% de la altura de la ventana del navegador */
+    flex-direction: column;
+    /* Organiza el contenido en una columna */
+}
+
+@media screen and (min-width: 900px) {
+    .contenedor {
+        width: 80%;
+        background-color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        /* Acomoda los divs en una columna (verticalmente) */
+        align-items: center;
+        /* Centra los divs internos horizontalmente */
+        margin: auto 0;
+        /* Centra el contenedor en la pantalla */
+        border-radius: 10px;
+    }
+
+    .div-interno {
+        width: 50%;
+        height: 130px;
+        margin-left: 15px;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .iconos {
+        align-items: center;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .div-interno:nth-child(1):hover {
+        border-left: 15px solid #FF8403;
+        /* Borde izquierdo para el primer div */
+    }
+
+    .div-interno:nth-child(2):hover {
+        border-left: 15px solid #00904C  ;
+        /* Borde izquierdo para el segundo div */
+    }
+
+    .div-interno:nth-child(3):hover {
+        border-left: 15px solid #AE3E97;
+        /* Borde izquierdo para el tercer div */
+    }
 }

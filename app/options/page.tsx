@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./options.css";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import {User} from "../components/iconos"
+import { User, ChevronLeft } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -63,15 +63,24 @@ export default function Options() {
   return (
     <main className="flex-containerOptions">
       <Header></Header>
-      <User/>
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
       <br></br>
       {rolAsignado === "Operador1" && (
-      <div className="contenedor">
-        <div className="div-interno" onClick={navigateToSectionAnexo2} >Anexo 2. Reporte de instalación del Desfibrilador Externo Automático (DEA). Formulario Dinámico. </div>
-        <div className="div-interno">Anexo 3. Reporte del uso del Desfibrilador Externo Automático (DEA). Formulario Dinámico.</div>
-        <div className="div-interno">Tableros de visualización</div>
-    </div>
-    )}
+        <div className="contenedor">
+          <div className="div-interno" onClick={navigateToSectionAnexo2}>
+            Anexo 2. Reporte de instalación del Desfibrilador Externo Automático
+            (DEA). Formulario Dinámico.{" "}
+          </div>
+          <div className="div-interno">
+            Anexo 3. Reporte del uso del Desfibrilador Externo Automático (DEA).
+            Formulario Dinámico.
+          </div>
+          <div className="div-interno">Tableros de visualización</div>
+        </div>
+      )}
 
       <Footer></Footer>
     </main>
