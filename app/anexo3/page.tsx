@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo3.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function Options() {
   const handleKeyDown2 = (e) => {
     // Crear una expresión regular que coincida con caracteres no permitidos
     const invalidChars = /[0-9]/;
-  
+
     // Si el carácter es un número, prevenir la entrada
     if (invalidChars.test(e.key)) {
       e.preventDefault();
@@ -41,11 +42,22 @@ export default function Options() {
 
   const [uso_fechaevento, setUso_fechaevento] = useState("");
   const [uso_nombrelugarevento, setUso_nombrelugarevento] = useState("");
-  const [uso_personaatendidaeventotipodocumento,setUso_personaatendidaeventotipodocumento] = useState("");
-  const [uso_personaatendidaeventonumerodocumento,setUso_personaatendidaeventonumerodocumento] = useState("");
-  const [uso_personaatendidaeventoedad, setUso_personaatendidaeventoedad] = useState("");
-  const [uso_personaatendidaeventosexo, setUso_personaatendidaeventosexo] = useState("");
-  const [uso_personaatendidaeventoaseguradorsalud, setUso_personaatendidaeventoaseguradorsalud] = useState("");
+  const [
+    uso_personaatendidaeventotipodocumento,
+    setUso_personaatendidaeventotipodocumento,
+  ] = useState("");
+  const [
+    uso_personaatendidaeventonumerodocumento,
+    setUso_personaatendidaeventonumerodocumento,
+  ] = useState("");
+  const [uso_personaatendidaeventoedad, setUso_personaatendidaeventoedad] =
+    useState("");
+  const [uso_personaatendidaeventosexo, setUso_personaatendidaeventosexo] =
+    useState("");
+  const [
+    uso_personaatendidaeventoaseguradorsalud,
+    setUso_personaatendidaeventoaseguradorsalud,
+  ] = useState("");
 
   // Estados para cada uno de los campos del formulario y para los errores
   const [nombreCompleto, setNombreCompleto] = useState("");
@@ -106,11 +118,21 @@ export default function Options() {
   return (
     <main>
       <Header />
-<br></br>
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
+      <br></br>
       <div className="contenedor">
         <div className="columnas">
           <div className="columna-texto">
-            <h2>Formulario de reporte uso de Desfibrilador Externo Automático - DEA en ambiente extrahospitalario</h2>
+            <h6 className=" tituloanexo">
+              Formulario de reporte uso de Desfibrilador Externo Automático -
+              DEA en ambiente extrahospitalario
+            </h6>
+            <a href="/anexo2pagina8">
+            <CicleInfo />
+          </a>
           </div>
           <div className="columna-imagen">
             <img
@@ -121,10 +143,10 @@ export default function Options() {
         </div>
 
         <div className="bloque">
-        <input
+          <input
             type="date"
             id="fecha"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) => setUso_fechaevento(e.target.value)}
             max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
           />
@@ -136,29 +158,28 @@ export default function Options() {
         </div>
 
         <div className="bloque">
-        <input
+          <input
             type="text"
             id="lugar"
             placeholder="Nombre del lugar del evento"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) => setUso_nombrelugarevento(e.target.value)}
           />
         </div>
 
-        <div className="bloque" >
+        <div className="bloque">
           <strong>Datos de la persona atendida en el evento:</strong>
           <input
             type="text"
             id="nombre"
             placeholder="Nombre completo"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) => setUso_personaatendidaeventonombre(e.target.value)}
           />
-           
-            <br /><br />
-            <select
+
+          <select
             id="numeroidentificacion"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) =>
               setUso_personaatendidaeventotipodocumento(e.target.value)
             }
@@ -166,69 +187,58 @@ export default function Options() {
             <option value="Cedula">Cedula</option>
             <option value="Pasaporte">Pasaporte</option>
           </select>
-            <br /><br />
-            <input
+
+          <input
             type="text"
             id="documentoidentificacion"
             placeholder="Número de doc. de identifición"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) =>
               setUso_personaatendidaeventonumerodocumento(e.target.value)
             }
           />
-          <br></br>
-          <br></br>
+
           <input
             type="number"
             id="edad"
             placeholder="Edad"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) => setUso_personaatendidaeventoedad(e.target.value)}
           />
 
-          <br></br>
-          <br></br>
-          <select 
-          className="inputData mt-1 p-2 w-full border rounded text-black"
-          onChange={(e) =>
-            setUso_personaatendidaeventosexo(e.target.value)
-          }
+          <select
+            className="inputForm"
+            onChange={(e) => setUso_personaatendidaeventosexo(e.target.value)}
           >
-           <option value="Hombre">Hombre</option>
-           <option value="Mujer">Mujer</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
           </select>
 
-          <br></br>
-          <br></br>
 
           <input
-          type="text"
-          id="edad"
-          placeholder="Asegurador en Salud"
-          className="inputData mt-1 p-2 w-full border rounded text-black"
-          onChange={(e) =>
-            setUso_personaatendidaeventoaseguradorsalud(e.target.value)
-          }
-        />
-
-
+            type="text"
+            id="edad"
+            placeholder="Asegurador en Salud"
+            className="inputForm"
+            onChange={(e) =>
+              setUso_personaatendidaeventoaseguradorsalud(e.target.value)
+            }
+          />
         </div>
 
-        <button
-              className="btnNext btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
-              onClick={navigateToSectionAnexo3Pagina2}
-            >
-              Siguiente
-            </button>
+        <div className="contenedorCasita">
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+            onClick={navigateToSection}
+          >
+            Siguiente
+          </button>
+          <Home />
+          <br />
+        </div>
 
-            <br></br>
-
-            <div className="contenedorCasita">
-              <img src="https://nivel99.com/desfibriladores/casita.png" onClick={navigateToSectionOptions} /><br/>
-            </div>
-
-            <br></br><br></br>
-
+        <br></br>
+        <br></br>
       </div>
       <br></br>
 
