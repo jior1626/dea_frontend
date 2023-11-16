@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo3pagina4.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { User, ChevronLeft, Home, CirclePlus } from "../components/iconos";
+import { User, ChevronLeft, HomeOut, CirclePlus } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
@@ -220,7 +220,7 @@ export default function Options() {
           >
             Cerrar
           </button>
-          <Home />
+          <HomeOut />
         </div>
 
         <br></br>

@@ -6,14 +6,15 @@ import {
   faCircleInfo,
   faHome,
   faChevronLeft,
-  faCirclePlus
+  faCirclePlus,
+  faArrowRightFromBracket
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./iconos.css";
 
 // Configura el sistema de iconos
 import { library } from "@fortawesome/fontawesome-svg-core";
-library.add(faUser, faGlobe, faChevronDown, faCircleInfo, faHome, faChevronLeft, faCirclePlus);
+library.add(faUser, faGlobe, faChevronDown, faCircleInfo, faHome, faChevronLeft, faCirclePlus,faArrowRightFromBracket);
 
 const User = () => {
   return (
@@ -21,6 +22,7 @@ const User = () => {
       <div className="white-containerOptionsUser">
         <FontAwesomeIcon icon={faHome} size="xl" className="icono" />
         <FontAwesomeIcon icon={faUser} size="xl" className="icono" />
+        <a href="/" ><FontAwesomeIcon icon={faArrowRightFromBracket} size="xl" className="icono1"  /></a>
       </div>
     </div>
   );
@@ -62,6 +64,17 @@ const ChevronLeft = () => {
   );
 };
 
+const HomeOut = () => {
+  return (
+    <div className="containerOptionsUser">
+      <div className="white-containerOptionsHomeOut">
+        <FontAwesomeIcon icon={faHome} size="xl" className="Home" />
+        <a href="/" ><FontAwesomeIcon icon={faArrowRightFromBracket} size="xl" className="Home"  /></a>
+      </div>
+    </div>
+  );
+};
 
 
-export { User, Idioma, ChevronDown, CicleInfo, ChevronLeft, Home, CirclePlus };
+
+export { User, Idioma, ChevronDown, CicleInfo, ChevronLeft, Home, CirclePlus, HomeOut };

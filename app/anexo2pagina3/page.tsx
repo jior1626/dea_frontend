@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2pagina3.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { User, ChevronLeft, Home } from "../components/iconos";
+import { User, ChevronLeft, HomeOut } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
@@ -138,7 +138,7 @@ export default function Options() {
           >
             Siguiente
           </button>
-          <Home />
+          <HomeOut />
         </div>
 
         <br></br>
