@@ -9,15 +9,15 @@ import { useRouter } from "next/navigation";
 
 export default function Options() {
   const router = useRouter();
-  const [REG_DOCUMENTOPERSONALCERTIFICADO, setREG_DOCUMENTOPERSONALCERTIFICADO] = useState("");
-  const [REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO, setREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO] = useState("");
-  const [REG_ENTIDADCERTIFICADORA, setREG_ENTIDADCERTIFICADORA] = useState("");
-  const [REG_FECHACERTIFICACION, setREG_FECHACERTIFICACION] = useState("");
+  const [dea_documentopersonalcertificado, setdea_documentopersonalcertificado] = useState("");
+  const [dea_nombresapellidospersonalcertificado, setdea_nombresapellidospersonalcertificado] = useState("");
+  const [dea_entidadcertificadora, setdea_entidadcertificadora] = useState("");
+  const [dea_fechacertificacion, setdea_fechacertificacion] = useState("");
 
-  const [errorREG_DOCUMENTOPERSONALCERTIFICADO, setErrorREG_DOCUMENTOPERSONALCERTIFICADO] = useState("");
-  const [errorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO, setErrorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO] = useState("");
-  const [errorREG_ENTIDADCERTIFICADORA, setErrorREG_ENTIDADCERTIFICADORA] = useState("");
-  const [errorREG_FECHACERTIFICACION, setErrorREG_FECHACERTIFICACION] = useState("");
+  const [errordea_documentopersonalcertificado, setErrordea_documentopersonalcertificado] = useState("");
+  const [errordea_nombresapellidospersonalcertificado, setErrordea_nombresapellidospersonalcertificado] = useState("");
+  const [errordea_entidadcertificadora, setErrordea_entidadcertificadora] = useState("");
+  const [errordea_fechacertificacion, setErrordea_fechacertificacion] = useState("");
  
   const handleKeyDown = (e) => {
     // Permitir solo teclas de control y números
@@ -35,48 +35,48 @@ export default function Options() {
   };
 
   const handleSubmit = async () => {
-    localStorage.setItem("REG_DOCUMENTOPERSONALCERTIFICADO", REG_DOCUMENTOPERSONALCERTIFICADO);
-    localStorage.setItem("REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO", REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO);
-    localStorage.setItem("REG_ENTIDADCERTIFICADORA", REG_ENTIDADCERTIFICADORA);
-    localStorage.setItem("REG_FECHACERTIFICACION", REG_FECHACERTIFICACION);
+    localStorage.setItem("dea_documentopersonalcertificado", dea_documentopersonalcertificado);
+    localStorage.setItem("dea_nombresapellidospersonalcertificado", dea_nombresapellidospersonalcertificado);
+    localStorage.setItem("dea_entidadcertificadora", dea_entidadcertificadora);
+    localStorage.setItem("dea_fechacertificacion", dea_fechacertificacion);
     
     // Validar que todos los campos estén llenos
     let hasError = false;
 
-    if (!REG_DOCUMENTOPERSONALCERTIFICADO || REG_DOCUMENTOPERSONALCERTIFICADO.length < 8) {
-      setErrorREG_DOCUMENTOPERSONALCERTIFICADO(
+    if (!dea_documentopersonalcertificado || dea_documentopersonalcertificado.length < 8) {
+      setErrordea_documentopersonalcertificado(
         "El documento de identidad debe tener al menos 8 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_DOCUMENTOPERSONALCERTIFICADO("");
+      setErrordea_documentopersonalcertificado("");
     }
 
-    if (!REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO || REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO.length < 4) {
-      setErrorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO(
+    if (!dea_nombresapellidospersonalcertificado || dea_nombresapellidospersonalcertificado.length < 4) {
+      setErrordea_nombresapellidospersonalcertificado(
         "Nombres y apellidos debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO("");
+      setErrordea_nombresapellidospersonalcertificado("");
     }
 
-    if (!REG_ENTIDADCERTIFICADORA || REG_ENTIDADCERTIFICADORA.length < 4) {
-      setErrorREG_ENTIDADCERTIFICADORA(
+    if (!dea_entidadcertificadora || dea_entidadcertificadora.length < 4) {
+      setErrordea_entidadcertificadora(
         "Entidad certificadora debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_ENTIDADCERTIFICADORA("");
+      setErrordea_entidadcertificadora("");
     }
 
-    if (!REG_FECHACERTIFICACION || REG_FECHACERTIFICACION.length < 4) {
-      setErrorREG_FECHACERTIFICACION(
+    if (!dea_fechacertificacion || dea_fechacertificacion.length < 4) {
+      setErrordea_fechacertificacion(
         "La fecha es obligatoria"
       );
       hasError = true;
     } else {
-      setErrorREG_FECHACERTIFICACION("");
+      setErrordea_fechacertificacion("");
     }
 
     if (hasError) {
@@ -112,10 +112,10 @@ export default function Options() {
             className="element"
             placeholder="Documento de identidad"
             onKeyDown={handleKeyDown}
-            onChange={(e) => setREG_DOCUMENTOPERSONALCERTIFICADO(e.target.value)}
+            onChange={(e) => setdea_documentopersonalcertificado(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_DOCUMENTOPERSONALCERTIFICADO}</span>
+          <span className="text-red-500">{errordea_documentopersonalcertificado}</span>
         </div>
 
         <div className="bloque">
@@ -123,10 +123,10 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Nombres y apellidos"
-            onChange={(e) => setREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO(e.target.value)}
+            onChange={(e) => setdea_nombresapellidospersonalcertificado(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO}</span>
+          <span className="text-red-500">{errordea_nombresapellidospersonalcertificado}</span>
         </div>
 
         <div className="bloque">
@@ -134,10 +134,10 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Entidad que certifica la capacitación en DEA"
-            onChange={(e) => setREG_ENTIDADCERTIFICADORA(e.target.value)}
+            onChange={(e) => setdea_entidadcertificadora(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_ENTIDADCERTIFICADORA}</span>
+          <span className="text-red-500">{errordea_entidadcertificadora}</span>
         </div>
 
         <div className="bloque">
@@ -145,10 +145,10 @@ export default function Options() {
             type="date"
             className="element"
             placeholder="Fecha de certificación / última capacitación"
-            onChange={(e) => setREG_FECHACERTIFICACION(e.target.value)}
+            onChange={(e) => setdea_fechacertificacion(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_FECHACERTIFICACION}</span>
+          <span className="text-red-500">{errordea_fechacertificacion}</span>
         </div>
         <div>
           {/* <CirclePlus/> */}

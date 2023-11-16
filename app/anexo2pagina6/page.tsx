@@ -10,13 +10,13 @@ import { useRouter } from "next/navigation";
 export default function Options() {
   const router = useRouter();
 
-  const [REG_FIRMA, setREG_FIRMA] = useState("");
-  const [REG_CIUDADPERSONAL, setREG_CIUDADPERSONAL] = useState("");
-  const [REG_FECHAPERSONAL, setREG_FECHAPERSONAL] = useState("");
+  const [dea_firma, setdea_firma] = useState("");
+  const [dea_ciudadpersonal, setdea_ciudadpersonal] = useState("");
+  const [dea_fechapersonal, setdea_fechapersonal] = useState("");
 
-  const [errorREG_FIRMA, setErrorREG_FIRMA] = useState("");
-  const [errorREG_CIUDADPERSONAL, setErrorREG_CIUDADPERSONAL] = useState("");
-  const [errorREG_FECHAPERSONAL, setErrorREG_FECHAPERSONAL] = useState("");
+  const [errordea_firma, setErrordea_firma] = useState("");
+  const [errordea_ciudadpersonal, setErrordea_ciudadpersonal] = useState("");
+  const [errordea_fechapersonal, setErrordea_fechapersonal] = useState("");
 
   const navigateToSectionOptions = () => {
     router.push("options");
@@ -27,55 +27,66 @@ export default function Options() {
   };
 
   const handleSubmit = async () => {
+    const dea_nombrecompleto = localStorage.getItem("dea_nombrecompleto");
+    const dea_cantidad = localStorage.getItem("dea_cantidad");
+    const dea_docidentificacion = localStorage.getItem("dea_docidentificacion");
+    const dea_codigopostal = localStorage.getItem("dea_codigopostal");
+    const dea_nombreubicacion = localStorage.getItem("dea_nombreubicacion");
+    const dea_direccionubicacion = localStorage.getItem(
+      "dea_direccionubicacion"
+    );
+    const dea_ciudadmunicipio = localStorage.getItem("dea_ciudadmunicipio");
+    const dea_departamento = localStorage.getItem("dea_departamento");
+    const dea_tipodeclaracion = localStorage.getItem("dea_tipodeclaracion");
+    const dea_tipoinstalacion = localStorage.getItem("dea_tipoinstalacion");
+    const dea_tipoespacio = localStorage.getItem("dea_tipoespacio");
+    const dea_otros = localStorage.getItem("dea_otros");
+    const dea_fecha = localStorage.getItem("dea_fecha");
+    const dea_numserie = localStorage.getItem("dea_numserie");
+    const dea_modelo = localStorage.getItem("dea_modelo");
+    const dea_marca = localStorage.getItem("dea_marca");
+    const dea_importadordistribuidor = localStorage.getItem(
+      "dea_importadordistribuidor"
+    );
+    const dea_desclugarubicacion = localStorage.getItem(
+      "dea_desclugarubicacion"
+    );
+    const dea_gps = localStorage.getItem("dea_gps");
+    const dea_documentopersonalcertificado = localStorage.getItem(
+      "dea_documentopersonalcertificado"
+    );
+    const dea_nombresapellidospersonalcertificado = localStorage.getItem(
+      "dea_nombresapellidospersonalcertificado"
+    );
+    const dea_entidadcertificadora = localStorage.getItem(
+      "dea_entidadcertificadora"
+    );
+    const dea_fechacertificacion = localStorage.getItem(
+      "dea_fechacertificacion"
+    );
 
-    const REG_CODIGOPOSTAL = localStorage.getItem("REG_CODIGOPOSTAL");
-    const REG_MODELO = localStorage.getItem("REG_MODELO");
-    const REG_NUMSERIE = localStorage.getItem("REG_NUMSERIE");
-    const REG_OTRO = localStorage.getItem("REG_OTRO");
-    const REG_IMPORTADORDISTRIBUIDOR = localStorage.getItem("REG_IMPORTADORDISTRIBUIDOR");
-    const REG_DOCIDENTIFICACION = localStorage.getItem("REG_DOCIDENTIFICACION");
-    const REG_DESCLUGARUBICACION = localStorage.getItem("REG_DESCLUGARUBICACION");
-    const REG_TIPOESPACIO = localStorage.getItem("REG_TIPOESPACIO");
-    const REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO = localStorage.getItem("REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO");
-    const REG_ENTIDADCERTIFICADORA = localStorage.getItem("REG_ENTIDADCERTIFICADORA");
-    const REG_CANTIDAD = localStorage.getItem("REG_CANTIDAD");
-    const REG_DIRECCIONUBICACION = localStorage.getItem("REG_DIRECCIONUBICACION");
-    const REG_DOCUMENTOPERSONALCERTIFICADO = localStorage.getItem("REG_DOCUMENTOPERSONALCERTIFICADO");
-    const REG_FECHACERTIFICACION = localStorage.getItem("REG_FECHACERTIFICACION");
-    const REG_MARCA = localStorage.getItem("REG_MARCA");
-    const REG_NOMBREUBICACION = localStorage.getItem("REG_NOMBREUBICACION");
-    const REG_DeaFecha = localStorage.getItem("REG_DeaFecha");
-    const REG_GPS = localStorage.getItem("REG_GPS");
-    const REG_NOMBRECOMPLETO = localStorage.getItem("REG_NOMBRECOMPLETO");
-    
     // Validar que todos los campos estén llenos
     let hasError = false;
 
-    if (!REG_FIRMA || REG_FIRMA.length < 8) {
-      setErrorREG_FIRMA(
-        "La firma es obligatoria"
-      );
+    if (!dea_firma) {
+      setErrordea_firma("La firma es obligatoria");
       hasError = true;
     } else {
-      setErrorREG_FIRMA("");
+      setErrordea_firma("");
     }
 
-    if (!REG_CIUDADPERSONAL || REG_CIUDADPERSONAL.length < 8) {
-      setErrorREG_CIUDADPERSONAL(
-        "La ciudad es obligatoria"
-      );
+    if (!dea_ciudadpersonal) {
+      setErrordea_ciudadpersonal("La ciudad es obligatoria");
       hasError = true;
     } else {
-      setErrorREG_CIUDADPERSONAL("");
+      setErrordea_ciudadpersonal("");
     }
 
-    if (!REG_FECHAPERSONAL || REG_FECHAPERSONAL.length < 8) {
-      setErrorREG_FECHAPERSONAL(
-        "La ciudad es obligatoria"
-      );
+    if (!dea_fechapersonal) {
+      setErrordea_fechapersonal("La ciudad es obligatoria");
       hasError = true;
     } else {
-      setErrorREG_FECHAPERSONAL("");
+      setErrordea_fechapersonal("");
     }
 
     if (hasError) {
@@ -83,36 +94,67 @@ export default function Options() {
     }
 
     const data = {
-      dea_nombrecompleto: REG_NOMBRECOMPLETO,
-      dea_docidentificacion: REG_DOCIDENTIFICACION,
-      dea_cantidad: REG_CANTIDAD,
-      dea_nombreubicacion: REG_NOMBREUBICACION,
-      dea_direccionubicacion: REG_DIRECCIONUBICACION,
-      dea_codigopostal: REG_CODIGOPOSTAL,
-      dea_ciudadmunicipio: "falta",
-      dea_departamento: "falta",
-      dea_tipoinstalacion: "falta",
-      dea_tipodeclaracion: "declaracion",
-      dea_tipoespacio: REG_CODIGOPOSTAL,
-      dea_numserie: REG_NOMBREUBICACION,
-      dea_modelo: REG_NOMBRECOMPLETO,
-      dea_marca: REG_DOCIDENTIFICACION,
-      dea_importadordistribuidor: REG_CANTIDAD,
-      dea_desclugarubicacion: userLocation,
-      dea_gps: userLocation,
-      dea_otros: userLocation,
-      dea_fecha: userLocation,
-      dea_documentopersonalcertificado: userLocation,
-      dea_nombresapellidospersonalcertificado: userLocation,
-      dea_entidadcertificadora: userLocation,
-      dea_fechacertificacion: userLocation,
-      dea_firma: userLocation,
-      dea_ciudadpersonal: userLocation,
-      dea_fechapersonal: userLocation,
+      dea_nombrecompleto:dea_nombrecompleto,
+      dea_docidentificacion:dea_docidentificacion,
+      dea_cantidad:dea_cantidad,
+      dea_nombreubicacion:dea_nombreubicacion,
+      dea_direccionubicacion:dea_direccionubicacion,
+      dea_codigopostal:dea_codigopostal,
+      dea_ciudadmunicipio:dea_ciudadmunicipio,
+      dea_departamento:dea_departamento,
+      dea_tipoinstalacion:dea_tipoinstalacion,
+      dea_tipodeclaracion:dea_tipodeclaracion,
+      dea_tipoespacio:dea_tipoespacio,
+      dea_numserie:dea_numserie,
+      dea_modelo:dea_modelo,
+      dea_marca:dea_marca,
+      dea_importadordistribuidor:dea_importadordistribuidor,
+      dea_desclugarubicacion:dea_desclugarubicacion,
+      dea_gps:dea_gps,
+      dea_otros:dea_otros,
+      dea_fecha:dea_fecha,
+      dea_documentopersonalcertificado:dea_documentopersonalcertificado,
+      dea_nombresapellidospersonalcertificado:dea_nombresapellidospersonalcertificado,
+      dea_entidadcertificadora:dea_entidadcertificadora,
+      dea_fechacertificacion:dea_fechacertificacion,
+      dea_firma:dea_firma,
+      dea_ciudadpersonal:dea_ciudadpersonal,
+      dea_fechapersonal:dea_fechapersonal,
     };
 
+    // Realizar la solicitud POST
+    try {
+      const jsonBody = JSON.stringify(data);
+      const response = await fetch(
+        "https://dea-crud.azurewebsites.net/api.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      //alert(JSON.stringify(data))
+      if (response.ok) {
+        const responseData = await response.json();
+        if (responseData.message === "dea creado") {
+          // La solicitud se completó con éxito y el mensaje es "dea creado"
+          router.push("anexo2pagina7");
+        } else {
+          // El mensaje no es "dea creado"
+          alert("El DEA no se pudo registrar. Por favor, intente de nuevo.");
+        }
+      } else {
+        // Hubo un error en la solicitud
+        alert("Error al enviar los datos.");
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+    }
+
     //router.push("anexo2pagina7");
-  }
+  };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -146,9 +188,9 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Firma"
-            onChange={(e) => setREG_FIRMA(e.target.value)}
+            onChange={(e) => setdea_firma(e.target.value)}
           />
-          <span className="text-red-500">{errorREG_FIRMA}</span>
+          <span className="text-red-500">{errordea_firma}</span>
         </div>
 
         <div className="bloque">
@@ -157,9 +199,9 @@ export default function Options() {
             type="text"
             className="element"
             placeholder=""
-            onChange={(e) => setREG_CIUDADPERSONAL(e.target.value)}
+            onChange={(e) => setdea_ciudadpersonal(e.target.value)}
           />
-          <span className="text-red-500">{errorREG_CIUDADPERSONAL}</span>
+          <span className="text-red-500">{errordea_ciudadpersonal}</span>
         </div>
 
         <div className="bloque">
@@ -168,19 +210,15 @@ export default function Options() {
             type="date"
             className="element"
             placeholder=""
-            onChange={(e) => setREG_FECHAPERSONAL(e.target.value)}
+            onChange={(e) => setdea_fechapersonal(e.target.value)}
           />
-          <span className="text-red-500">{errorREG_FECHAPERSONAL}</span>
+          <span className="text-red-500">{errordea_fechapersonal}</span>
         </div>
 
         <div className="bloque">
           <label>Cargar imagen:</label>
           <p>Solo se permite formatos png, jpg, jpeg Tamaño maximo 2MB</p>
-          <input
-            type="file"
-            className="element"
-            placeholder=""
-          />
+          <input type="file" className="element" placeholder="" />
         </div>
 
         <div className="contenedorCasita">

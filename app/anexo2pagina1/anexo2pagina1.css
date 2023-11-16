@@ -1,0 +1,168 @@
+
+.contenedor {
+    width: 90%;
+    display: flex;
+    /* Establece un contenedor flex */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    border-left: 15px solid #AE3E97;
+    /* Borde izquierdo morado */
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Asegura que los hijos no sobresalgan de los bordes redondeados */
+    margin: auto 0;
+    /* Esto añadirá el margen automáticamente en la parte superior e inferior */
+    flex-direction: column;
+    /* Las columnas se apilan verticalmente en pantallas pequeñas */
+  
+  }
+  
+  .containerTituloAnexo {
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+  
+  }
+  
+  .tituloanexo {
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  .ley {
+    font-size: 11px;
+    color: #000;
+    font-weight: normal;
+  }
+  
+  .columna-imagen {
+    flex: 0.5;
+    /* Permite que la imagen ocupe el espacio necesario */
+    padding: 10px;
+    display: flex;
+    /* Establece un contenedor flex */
+    justify-content: center;
+    /* Centra la imagen horizontalmente */
+  }
+  
+  .columna-imagen img {
+    max-width: 100%;
+    /* La imagen se escala dentro de su columna */
+    height: auto;
+  }
+  
+  
+  
+  main {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    min-height: 100vh;
+    /* Usa al menos el 100% de la altura de la ventana del navegador */
+    flex-direction: column;
+    /* Organiza el contenido en una columna */
+  }
+  
+  .bloque strong {
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .bloque {
+    width: 100%;
+    padding: 0 19px;
+    color: #000;
+  }
+  
+  .inputForm {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #878787;
+    color: #000;
+    font-size: 12px;
+  }
+  
+  
+  .btn-sesenta {
+    width: 60%;
+    /* Establece el ancho del botón al 60% del contenedor padre */
+    margin: 0 auto;
+    /* Centra el botón horizontalmente */
+  }
+  
+  .contenedorCasita {
+    text-align: right;
+    /* Alinea el contenido a la derecha */
+    display: flex;
+    width: 70%;
+    padding-top: 20px;
+    /* Otros estilos que puedas necesitar */
+    align-items: center;
+  }
+  
+  .iconHome {
+    width: 45px;
+  
+  }
+  
+  /* Estilos para pantallas más pequeñas */
+  @media screen and (min-width: 900px) {
+    .contenedor {
+      flex-direction: column;
+      /* Cambiado a columna para apilar elementos verticalmente */
+      width: 60%;
+      height: 800px;
+      display: flex;
+      /* Establece un contenedor flex */
+      align-items: center;
+      /* Centra los elementos verticalmente */
+      justify-content: center; /* Centra horizontalmente los elementos */
+      border-left: 30px solid #AE3E97;
+      /* Borde izquierdo morado */
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Asegura que los hijos no sobresalgan de los bordes redondeados */
+      margin: auto 0 10% 0;
+      /* Esto añadirá el margen automáticamente en la parte superior e inferior */
+  }
+    .containerTituloAnexo {
+      width: 100%;
+      display: flex;
+      justify-content: left;
+      padding: 30px 10%;
+    }
+    .tituloanexo {
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .bloque {
+      width: 100%;
+      padding: 0 10%;
+      text-align: left;
+    }
+  
+    .ley {
+      font-size: 11px;
+      color: #000;
+      font-weight: normal;
+    }
+    .iconos {
+      align-items: center;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .inputForm{
+      margin-bottom: 3rem;
+    }
+  }

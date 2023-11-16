@@ -79,7 +79,7 @@ export default function Options() {
       localStorage.setItem("dea_direccionubicacion", direccion);
       localStorage.setItem("dea_codigopostal", codigoPostal);
 
-      router.push("/anexo2pagina2"); // Asegúrate de que esta ruta es la correcta
+      router.push("/anexo2pagina1"); // Asegúrate de que esta ruta es la correcta
     } else {
       // Mostrar los mensajes de error si la validación falla
       errores.forEach((error) => alert(error));
@@ -99,9 +99,12 @@ export default function Options() {
             REGISTRO DE INSTALACIÓN DESFIBRILADORES EXTERNOS (DEA)
             <p className="ley">(Ley 1831 del 12 de mayo de 2017)</p>
           </h6>
+<<<<<<< Updated upstream
           <a href="/anexo2pagina8">
             <CicleInfo />
           </a>
+=======
+>>>>>>> Stashed changes
         </div>
         <div className="bloque">
           <strong>Representante legal:</strong>

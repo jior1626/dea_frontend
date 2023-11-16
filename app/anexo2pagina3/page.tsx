@@ -26,9 +26,9 @@ export default function Options() {
     router.push("anexo2pagina4");
   };
 
-  const [REG_DESCLUGARUBICACION, setREG_DESCLUGARUBICACION] = useState("");
+  const [dea_desclugarubicacion, setdea_desclugarubicacion] = useState("");
 
-  const [errorREG_DESCLUGARUBICACION, setErrorREG_DESCLUGARUBICACION] = useState("");
+  const [errordea_desclugarubicacion, setErrordea_desclugarubicacion] = useState("");
 
   const [userLocation, setUserLocation] = useState(null);
 
@@ -70,18 +70,18 @@ export default function Options() {
   }, []);
 
   const handleSubmit = async () => {
-    localStorage.setItem("REG_DESCLUGARUBICACION", REG_DESCLUGARUBICACION);
-    localStorage.setItem("REG_GPS", ''+userLocation);
+    localStorage.setItem("dea_desclugarubicacion", dea_desclugarubicacion);
+    localStorage.setItem("dea_gps", ''+userLocation);
     // Validar que todos los campos estén llenos
     let hasError = false;
 
-    if (!REG_DESCLUGARUBICACION || REG_DESCLUGARUBICACION.length < 4) {
-      setErrorREG_DESCLUGARUBICACION(
+    if (!dea_desclugarubicacion || dea_desclugarubicacion.length < 4) {
+      setErrordea_desclugarubicacion(
         "El tipo de espacio debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_DESCLUGARUBICACION("");
+      setErrordea_desclugarubicacion("");
     }
 
     if (hasError) {
@@ -109,10 +109,10 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Desripción"
-             onChange={(e) => setREG_DESCLUGARUBICACION(e.target.value)}
+             onChange={(e) => setdea_desclugarubicacion(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_DESCLUGARUBICACION}</span>
+          <span className="text-red-500">{errordea_desclugarubicacion}</span>
         </div>
 
         <div className="bloque">

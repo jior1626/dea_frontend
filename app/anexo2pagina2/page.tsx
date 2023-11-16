@@ -10,21 +10,21 @@ import { useRouter } from "next/navigation";
 export default function Options() {
   const router = useRouter();
   
-  const [REG_TIPOESPACIO, setREG_TIPOESPACIO] = useState("");
-  const [REG_OTRO, setREG_OTRO] = useState("");
-  const [REG_DeaFecha, setREG_DeaFecha] = useState("");
-  const [REG_NUMSERIE, setREG_NUMSERIE] = useState("");
-  const [REG_MODELO, setREG_MODELO] = useState("");
-  const [REG_MARCA, setREG_MARCA] = useState("");
-  const [REG_IMPORTADORDISTRIBUIDOR, setREG_IMPORTADORDISTRIBUIDOR] = useState("");
+  const [dea_tipoespacio, setdea_tipoespacio] = useState("");
+  const [dea_otros, setdea_otros] = useState("");
+  const [dea_fecha, setdea_fecha] = useState("");
+  const [dea_numserie, setdea_numserie] = useState("");
+  const [dea_modelo, setdea_modelo] = useState("");
+  const [dea_marca, setdea_marca] = useState("");
+  const [dea_importadordistribuidor, setdea_importadordistribuidor] = useState("");
 
-  const [errorREG_TIPOESPACIO, setErrorREG_TIPOESPACIO] = useState("");
-  const [errorREG_OTRO, setErrorREG_OTRO] = useState("");
-  const [errorREG_DeaFecha, setErrorREG_DeaFecha] = useState("");
-  const [errorREG_NUMSERIE, setErrorREG_NUMSERIE] = useState("");
-  const [errorREG_MODELO, setErrorREG_MODELO] = useState("");
-  const [errorREG_MARCA, setErrorREG_MARCA] = useState("");
-  const [errorREG_IMPORTADORDISTRIBUIDOR, setErrorREG_IMPORTADORDISTRIBUIDOR] = useState("");
+  const [errordea_tipoespacio, setErrordea_tipoespacio] = useState("");
+  const [errordea_otros, setErrordea_otros] = useState("");
+  const [errordea_fecha, setErrordea_fecha] = useState("");
+  const [errordea_numserie, setErrordea_numserie] = useState("");
+  const [errordea_modelo, setErrordea_modelo] = useState("");
+  const [errordea_marca, setErrordea_marca] = useState("");
+  const [errordea_importadordistribuidor, setErrordea_importadordistribuidor] = useState("");
   
 
   const navigateToSectionOptions = () => {
@@ -41,80 +41,80 @@ export default function Options() {
 
   const handleSubmit = async () => {
 
-      localStorage.setItem("REG_TIPOESPACIO", REG_TIPOESPACIO);
-      localStorage.setItem("REG_OTRO", REG_OTRO);
-      localStorage.setItem("REG_DeaFecha", REG_DeaFecha);
-      localStorage.setItem("REG_NUMSERIE", REG_NUMSERIE);
-      localStorage.setItem("REG_MODELO", REG_MODELO);
-      localStorage.setItem("REG_MARCA", REG_MARCA);
-      localStorage.setItem("REG_IMPORTADORDISTRIBUIDOR", REG_IMPORTADORDISTRIBUIDOR);
+      localStorage.setItem("dea_tipoespacio", dea_tipoespacio);
+      localStorage.setItem("dea_otros", dea_otros);
+      localStorage.setItem("dea_fecha", dea_fecha);
+      localStorage.setItem("dea_numserie", dea_numserie);
+      localStorage.setItem("dea_modelo", dea_modelo);
+      localStorage.setItem("dea_marca", dea_marca);
+      localStorage.setItem("dea_importadordistribuidor", dea_importadordistribuidor);
 
     const jwt = localStorage.getItem("jwt");
 
     // Validar que todos los campos estén llenos
     let hasError = false;
 
-    if (!REG_TIPOESPACIO || REG_TIPOESPACIO.length < 4) {
-      setErrorREG_TIPOESPACIO(
+    if (!dea_tipoespacio || dea_tipoespacio.length < 4) {
+      setErrordea_tipoespacio(
         "El tipo de espacio debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_TIPOESPACIO("");
+      setErrordea_tipoespacio("");
     }
 
-    if (!REG_OTRO || REG_OTRO.length < 4) {
-      setErrorREG_OTRO(
+    if (!dea_otros || dea_otros.length < 4) {
+      setErrordea_otros(
         "El campo otro debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_OTRO("");
+      setErrordea_otros("");
     }
 
-    if (!REG_DeaFecha) {
-      setErrorREG_DeaFecha(
+    if (!dea_fecha) {
+      setErrordea_fecha(
         "La fecha es obligatoria"
       );
       hasError = true;
     } else {
-      setErrorREG_DeaFecha("");
+      setErrordea_fecha("");
     }
 
-    if (!REG_NUMSERIE || REG_NUMSERIE.length < 4) {
-      setErrorREG_NUMSERIE(
+    if (!dea_numserie || dea_numserie.length < 4) {
+      setErrordea_numserie(
         "El campo numero de serie debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_NUMSERIE("");
+      setErrordea_numserie("");
     }
 
-    if (!REG_MODELO || REG_MODELO.length < 4) {
-      setErrorREG_MODELO(
+    if (!dea_modelo || dea_modelo.length < 4) {
+      setErrordea_modelo(
         "El campo modelo debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_MODELO("");
+      setErrordea_modelo("");
     }
 
-    if (!REG_MARCA || REG_MARCA.length < 4) {
-      setErrorREG_MARCA(
+    if (!dea_marca || dea_marca.length < 4) {
+      setErrordea_marca(
         "El campo marca debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_MARCA("");
+      setErrordea_marca("");
     }
 
-    if (!REG_IMPORTADORDISTRIBUIDOR || REG_IMPORTADORDISTRIBUIDOR.length < 4) {
-      setErrorREG_IMPORTADORDISTRIBUIDOR(
+    if (!dea_importadordistribuidor || dea_importadordistribuidor.length < 4) {
+      setErrordea_importadordistribuidor(
         "El campo importador debe tener al menos 4 caracteres"
       );
       hasError = true;
     } else {
-      setErrorREG_IMPORTADORDISTRIBUIDOR("");
+      setErrordea_importadordistribuidor("");
     }
 
     if (hasError) {
@@ -144,19 +144,19 @@ export default function Options() {
             placeholder="De conformidad con el presente acto administrativo, indique el tipo de espacio o lugar de alta afluencia de personas."
             className="element"
             rows="5" // Ajusta este número según tus necesidades
-            onChange={(e) => setREG_TIPOESPACIO(e.target.value)}
+            onChange={(e) => setdea_tipoespacio(e.target.value)}
           ></textarea>
           <br></br>
-          <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
+          <span className="text-red-500">{errordea_tipoespacio}</span>
 
           <input
             type="text"
             className="element"
             placeholder="Otros"
-            onChange={(e) => setREG_OTRO(e.target.value)}
+            onChange={(e) => setdea_otros(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_OTRO}</span>
+          <span className="text-red-500">{errordea_otros}</span>
         </div>
         <br></br>
 
@@ -170,11 +170,11 @@ export default function Options() {
         <input
             type="date"
             id="fecha"
-            onChange={(e) => setREG_DeaFecha(e.target.value)}
+            onChange={(e) => setdea_fecha(e.target.value)}
             className="inputData mt-1 p-2 w-full border rounded text-black"
             max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
           />
-          <span className="text-red-500">{errorREG_DeaFecha}</span>
+          <span className="text-red-500">{errordea_fecha}</span>
         </div>
 
         <br></br>
@@ -184,38 +184,38 @@ export default function Options() {
               <input
                 type="number"
                 onKeyDown={handleKeyDown}
-                onChange={(e) => setREG_NUMSERIE(e.target.value)}
+                onChange={(e) => setdea_numserie(e.target.value)}
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="No. de serie"
               />
-              <span className="text-red-500">{errorREG_NUMSERIE}</span>
+              <span className="text-red-500">{errordea_numserie}</span>
             </div>
             <div className="grid-item">
               <input
                 type="text"
-                onChange={(e) => setREG_MODELO(e.target.value)}
+                onChange={(e) => setdea_modelo(e.target.value)}
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="Modelo"
               />
-              <span className="text-red-500">{errorREG_MODELO}</span>
+              <span className="text-red-500">{errordea_modelo}</span>
             </div>
             <div className="grid-item">
               <input
                 type="text"
-                onChange={(e) => setREG_MARCA(e.target.value)}
+                onChange={(e) => setdea_marca(e.target.value)}
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="Marca"
               />
-              <span className="text-red-500">{errorREG_MARCA}</span>
+              <span className="text-red-500">{errordea_marca}</span>
             </div>
             <div className="grid-item">
               <input
                 type="text"
-                onChange={(e) => setREG_IMPORTADORDISTRIBUIDOR(e.target.value)}
+                onChange={(e) => setdea_importadordistribuidor(e.target.value)}
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="Importador "
               />
-              <span className="text-red-500">{errorREG_IMPORTADORDISTRIBUIDOR}</span>
+              <span className="text-red-500">{errordea_importadordistribuidor}</span>
             </div>
           </div>
         </div>

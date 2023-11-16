@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@icon/ionicons": "^5.4.0-alpha.0",
     "@ionic/react": "^7.5.4",
     "@react-google-maps/api": "^2.19.2",
