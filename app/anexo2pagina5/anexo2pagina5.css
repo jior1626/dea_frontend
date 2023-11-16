@@ -1,312 +1,197 @@
-/* .anexo2{
-    border-color: #AE3E97;
-    border-left-width: 12px;
-}
-
-.anexo3{
-    border-color: #00904C;
-    border-left-width: 12px;
-}
-
-.anexo3{
-    border-color: #00904C;
-    border-left-width: 12px;
-}
-
-.usuarioperador{
-    border-color: #FF8403;
-    border-left-width: 12px;
-}
-
-.ley{
-    font-size: 10px;
-}
-
-.tituloanexo{
-    font-size: 11px;
-}
-
-.min-h-screen {
-    min-height: 100vh;
-  }
-  
-  .flex {
-    display: flex;
-  }
-  
-  .flex-col {
-    flex-direction: column;
-  }
-  
-  .items-center {
-    align-items: center;
-  }
-  
-  .justify-between {
-    justify-content: space-between;
-  } */
-  
-  /* Contenedor principal */
-  /* .bg-white {
-    background-color: #fff;
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-  
-  .p-8 {
-    padding: 2rem;
-  }
-  
-  .shadow-md {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-  
-  .max-w-md {
-    max-width: 28rem;
-  }
-  
-  .mx-5 {
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
-  }
-  
-  .w-full {
-    width: 100%;
-  }
-  
-  .mb-8 {
-    margin-bottom: 2rem;
-  }
-  
-  .border-l-12 {
-    border-left-width: 0.75rem;
-  } */
-  
-  /* Encabezado del formulario */
-  /* .font-bold {
-    font-weight: 700;
-  }
-  
-  .text-sm {
-    font-size: 0.875rem;
-  }
-  
-  .tituloanexo {
-    font-size: 1.25rem;
-  }
-  
-  .text-black {
-    color: #000;
-  } */
-  
-  /* Formulario */
-  /* .p-3 {
-    padding: 0.75rem;
-  }
-  
-  .rounded-full {
-    border-radius: 9999px;
-  }
-  
-  .border {
-    border-width: 1px;
-  }
-  
-  .text-red-500 {
-    color: #ef4444;
-  } */
-  
-  /* Selector */
-  /* .grid {
-    display: grid;
-  }
-  
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  
-  .gap-4 {
-    gap: 1rem;
-  }
-  
-  #google-map {
-    width: 100%;
-    height: 400px;
-  } */
-  
-  /* Botón */
-  /* .py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-  
-  .bg-custom-azul {
-    background-color: #2563eb;
-  }
-  
-  .text-white {
-    color: #fff;
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-  
-  .shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  }
-
-  .element{
-    width: 100%;
-}
-
-  @media screen and (min-width: 768px) {
-    .container-father{
-        width: 700px;
-    }
-    .max-w-md{
-        max-width: 50rem;
-    }
-    .anexo2{
-        border-color: #AE3E97;
-        border-left-width: 40px;
-    }
-    .p-8 {
-        padding: 0.7rem;
-      }
-
-    .element{
-        width: 100%;
-    }
-    .title{
-        padding-top: 10px;
-    }
-  } */
-
   .contenedor {
     width: 90%;
-    display: flex; /* Establece un contenedor flex */
-    align-items: center; /* Centra los elementos verticalmente */
-    border-left: 8px solid #AE3E97; /* Borde izquierdo morado */
+    display: flex;
+    /* Establece un contenedor flex */
+    align-items: center;
+    flex-direction: column;
+    /* Centra los elementos verticalmente */
+    border-left: 15px solid #AE3E97;
+    /* Borde izquierdo morado */
     border-radius: 15px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Asegura que los hijos no sobresalgan de los bordes redondeados */
-    margin: auto 0; /* Esto añadirá el margen automáticamente en la parte superior e inferior */
-}
+    overflow: hidden;
+    /* Asegura que los hijos no sobresalgan de los bordes redondeados */
+    margin: auto 0;
+    /* Esto añadirá el margen automáticamente en la parte superior e inferior */
+  }
 
-.columnas {
-  display: flex; /* Esto define la disposición en fila */
-  justify-content: space-between; /* Espacio entre las columnas */
-  align-items: center; /* Alineación vertical */
-  width: 100%; /* Ocupa todo el ancho del contenedor padre */
-}
+  .columnas {
+    display: flex;
+    /* Esto define la disposición en fila */
+    justify-content: space-between;
+    /* Espacio entre las columnas */
+    align-items: center;
+    /* Alineación vertical */
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor padre */
+  }
 
 
-.columna-texto {
-    flex: 1; /* Permite que el texto ocupe el espacio necesario */
+  .columna-texto {
+    flex: 1;
+    /* Permite que el texto ocupe el espacio necesario */
     padding: 15px;
-    text-align: left; /* Alinea el texto a la izquierda */
-}
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+  }
 
-.columna-imagen {
-    flex: 0.5; /* Permite que la imagen ocupe el espacio necesario */
+  .columna-imagen {
+    flex: 0.5;
+    /* Permite que la imagen ocupe el espacio necesario */
     padding: 10px;
-    display: flex; /* Establece un contenedor flex */
-    justify-content: center; /* Centra la imagen horizontalmente */
-}
+    display: flex;
+    /* Establece un contenedor flex */
+    justify-content: center;
+    /* Centra la imagen horizontalmente */
+  }
 
-.columna-imagen img {
-    max-width: 100%; /* La imagen se escala dentro de su columna */
+  .columna-imagen img {
+    max-width: 100%;
+    /* La imagen se escala dentro de su columna */
     height: auto;
-}
+  }
 
-/* Estilos para pantallas más pequeñas */
-@media (max-width: 768px) {
+
+  main {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    min-height: 100vh;
+    /* Usa al menos el 100% de la altura de la ventana del navegador */
+    flex-direction: column;
+    /* Organiza el contenido en una columna */
+  }
+
+  .columna-texto h2 {
+    font-weight: bold;
+    /* Hace que el texto sea negrita */
+    font-size: 14px;
+  }
+
+  .bloque p {
+    text-align: justify;
+  }
+
+  .bloque {
+    width: 100%;
+    padding: 10px 8%;
+    color: #000;
+  }
+
+  .bloque1 {
+    width: 100%;
+    padding: 10px 8%;
+    color: #000;
+
+  }
+
+  .input-ochenta {
+    width: 80%;
+    /* Establece el ancho del input al 80% del contenedor padre */
+    padding: 3px;
+    /* Puedes ajustar el padding según sea necesario */
+    height: 40px;
+    border-radius: 9999px;
+    /* Para bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para el input */
+    border: 1px solid #ccc;
+    /* Borde del input */
+    text-align: left;
+    /* Alineación del texto dentro del input */
+    display: block;
+    /* Asegura que el input sea un bloque para aplicar el ancho */
+    margin: 0 auto;
+    /* Centra el input dentro del contenedor si es necesario */
+  }
+
+  .btn-sesenta {
+    width: 60%;
+    /* Establece el ancho del botón al 60% del contenedor padre */
+    margin: 0 auto;
+    /* Centra el botón horizontalmente */
+  }
+
+  .contenedorCasita {
+    text-align: right;
+    /* Alinea el contenido a la derecha */
+    display: flex;
+    width: 70%;
+    padding: 15px 0;
+    /* Otros estilos que puedas necesitar */
+    align-items: center;
+  }
+
+
+  .titulo-desfibrilador-ext {
+    font-weight: 800;
+  }
+
+  .fecha-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fecha-columna {
+    flex: 1;
+    /* Esto hará que cada columna tenga el mismo ancho */
+    padding: 0 10px;
+    /* Añade un poco de espacio entre las columnas */
+  }
+
+  .fecha-select {
+    width: 100%;
+    /* El select ocupa todo el ancho de la columna */
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Dos columnas de igual tamaño */
+    grid-template-rows: auto auto;
+    /* Dos filas que se ajustan al contenido */
+    gap: 10px;
+    /* Espacio entre las celdas de la cuadrícula */
+  }
+
+  @media screen and (min-width: 900px) {
     .contenedor {
-        flex-direction: column; /* Las columnas se apilan verticalmente en pantallas pequeñas */
+      width: 40%;
+      display: flex;
+      /* Establece un contenedor flex */
+      align-items: center;
+      /* Centra los elementos verticalmente */
+      border-left: 30px solid #AE3E97;
+      /* Borde izquierdo morado */
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      /* Asegura que los hijos no sobresalgan de los bordes redondeados */
+      margin: auto 0 10% 0;
+      /* Esto añadirá el margen automáticamente en la parte superior e inferior */
+      flex-direction: column;
     }
-}
 
-main {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  min-height: 100vh; /* Usa al menos el 100% de la altura de la ventana del navegador */
-  flex-direction: column; /* Organiza el contenido en una columna */
-}
+    .bloque {
+      padding: 1% 10%;
+    }
 
-.columna-texto h2 {
-  font-weight: bold; /* Hace que el texto sea negrita */
-  font-size: 14px;
-}
+    .bloque1 {
+      padding: 10% 10% 0 10%;
+    }
 
-.columna-texto p {
-  font-weight: bold; /* Hace que el texto sea negrita */
-  font-size: 12px;
-}
+    .bloquetextCertificado {
+      padding: 7% 10% 2% 10%;
+    }
 
-.bloque{
-  width: 100%;
-  padding: 10px;
-}
-
-.input-ochenta {
-  width: 80%; /* Establece el ancho del input al 80% del contenedor padre */
-  padding: 3px; /* Puedes ajustar el padding según sea necesario */
-  height:40px;
-  border-radius: 9999px; /* Para bordes redondeados */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para el input */
-  border: 1px solid #ccc; /* Borde del input */
-  text-align: left; /* Alineación del texto dentro del input */
-  display: block; /* Asegura que el input sea un bloque para aplicar el ancho */
-  margin: 0 auto; /* Centra el input dentro del contenedor si es necesario */
-}
-
-.btn-sesenta {
-  width: 60%; /* Establece el ancho del botón al 60% del contenedor padre */
-  margin: 0 auto; /* Centra el botón horizontalmente */
-}
-
-.contenedorCasita {
-  text-align: right; /* Alinea el contenido a la derecha */
-  margin-top: 20px; /* Añade un margen superior si es necesario */
-  /* Otros estilos que puedas necesitar */
-}
-
-.element {
-  width: 100%;
-  /* Otras propiedades como padding, border, etc. */
-}
-
-.titulo-desfibrilador-ext{
-  font-weight: 800;
-}
-
-.fecha-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.fecha-columna {
-  flex: 1; /* Esto hará que cada columna tenga el mismo ancho */
-  padding: 0 10px; /* Añade un poco de espacio entre las columnas */
-}
-
-.fecha-select {
-  width: 100%; /* El select ocupa todo el ancho de la columna */
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-  grid-template-rows: auto auto; /* Dos filas que se ajustan al contenido */
-  gap: 10px; /* Espacio entre las celdas de la cuadrícula */
-}
-
-.grid-item {
-  /* Estilos adicionales para los elementos de la cuadrícula si es necesario */
-}
+    .iconos {
+      align-items: center;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }

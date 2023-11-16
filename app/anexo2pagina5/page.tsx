@@ -5,13 +5,14 @@ import Footer from "../components/Footer";
 import "./anexo2pagina5.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { User, ChevronLeft, Home, CirclePlus } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const mapContainerStyle = {
   width: "100%",
   height: "400px",
-  borderRadius: '15px'
+  borderRadius: "15px",
 };
 
 export default function Options() {
@@ -124,14 +125,16 @@ export default function Options() {
     getUserLocation();
   }, []);
 
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-
-<br></br>
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
+      <br></br>
       <div className="contenedor">
-        <div className="bloque">
+        <div className="bloque1">
           <strong>DECLARA que:</strong>
         </div>
 
@@ -140,31 +143,32 @@ export default function Options() {
         </div>
 
         <div className="bloque">
-          <p>Tiene permiso de comercialización del INVIMA que garantiza su conformidad con la normativa de equipos de salud, vigente.<br></br>
-
-Se utilizarán y mantendrán, en todo momento según las recomendaciones del fabricante.<br></br>
-
-Su ubicación y normas de utilización están señalizadas en lugar visible.<br></br>
-
-Se tienen previstos los medios para la comunicación inmediata con la línea 123 y otro mecanismo que haga sus veces en el territorio.<br></br>
-
-Se comprometen a reportar al INVIMA o a la secretaría de salud departamental o distrital los eventos o incidentes adversos que se detecten en el funcionamiento del DEA, así como implementar acciones correctivas que se determinen por el fabricante o por las autoridades sanitarias.<br></br>
-</p>
+          <p>
+            Tiene permiso de comercialización del INVIMA que garantiza su
+            conformidad con la normativa de equipos de salud, vigente.<br></br>
+            Se utilizarán y mantendrán, en todo momento según las
+            recomendaciones del fabricante.<br></br>
+            Su ubicación y normas de utilización están señalizadas en lugar
+            visible.<br></br>
+            Se tienen previstos los medios para la comunicación inmediata con la
+            línea 123 y otro mecanismo que haga sus veces en el territorio.
+            <br></br>
+            Se comprometen a reportar al INVIMA o a la secretaría de salud
+            departamental o distrital los eventos o incidentes adversos que se
+            detecten en el funcionamiento del DEA, así como implementar acciones
+            correctivas que se determinen por el fabricante o por las
+            autoridades sanitarias.<br></br>
+          </p>
         </div>
 
-
-        <button className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg" onClick={navigateToSectionAnexoPag6}>
-          Siguiente
-        </button>
-
-        <br></br>
-
         <div className="contenedorCasita">
-          <img
-            src="https://nivel99.com/desfibriladores/casita.png"
-            onClick={navigateToSectionOptions}
-          />
-          <br />
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+            onClick={navigateToSectionAnexoPag6}
+          >
+            Siguiente
+          </button>
+          <Home />
         </div>
 
         <br></br>

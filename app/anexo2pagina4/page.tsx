@@ -194,7 +194,7 @@ export default function Options() {
         <div className="contenedorCasita">
           <button
             className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
-            onClick={navigateToSectionOptions}
+            onClick={navigateToSectionAnexoPag5}
           >
             Siguiente
           </button>

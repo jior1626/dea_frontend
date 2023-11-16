@@ -5,13 +5,14 @@ import Footer from "../components/Footer";
 import "./anexo2pagina6.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { User, ChevronLeft, Home, CirclePlus } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const mapContainerStyle = {
   width: "100%",
   height: "400px",
-  borderRadius: '15px'
+  borderRadius: "15px",
 };
 
 export default function Options() {
@@ -124,22 +125,27 @@ export default function Options() {
     getUserLocation();
   }, []);
 
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-
-<br></br>
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
+      <br></br>
       <div className="contenedor">
-        <div className="bloque">
+        <div className="bloquePersonal">
           <strong>Respecto al personal:</strong>
         </div>
 
         <div className="bloque">
-          <p>El personal encargado del manejo del DEA dispone de entrenamiento y actualización de los conocimientos eigidos.<br></br><br></br>
-
-Durante el horario de actividad se cuenta con un número plural de personas entrenadas para su uso.<br></br>
-</p>
+          <p>
+            El personal encargado del manejo del DEA dispone de entrenamiento y
+            actualización de los conocimientos eigidos.<br></br>
+            <br></br>
+            Durante el horario de actividad se cuenta con un número plural de
+            personas entrenadas para su uso.<br></br>
+          </p>
         </div>
 
         <div className="bloque">
@@ -147,56 +153,53 @@ Durante el horario de actividad se cuenta con un número plural de personas entr
         </div>
 
         <div className="bloque">
-        <input
+          <input
             type="text"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder="Firma"
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
         </div>
 
         <div className="bloque">
-        <label>Ciudad o municipio:</label>
-        <input
+          <label>Ciudad o municipio:</label>
+          <input
             type="text"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder=""
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
         </div>
 
         <div className="bloque">
-        <label>Fecha:</label>
-        <input
+          <label>Fecha:</label>
+          <input
             type="date"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder=""
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
         </div>
 
         <div className="bloque">
-        <label>Cargar imagen:</label>
-        <input
+          <label>Cargar imagen:</label>
+          <p>Solo se permite formatos png, jpg, jpeg Tamaño maximo 2MB</p>
+          <input
             type="file"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder=""
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
         </div>
-
-        <button className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg" onClick={navigateToSectionAnexoPag7}>
-          Siguiente
-        </button>
-
-        <br></br>
 
         <div className="contenedorCasita">
-          <img
-            src="https://nivel99.com/desfibriladores/casita.png"
-            onClick={navigateToSectionOptions}
-          />
-          <br />
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+            onClick={navigateToSectionAnexoPag7}
+          >
+            Siguiente
+          </button>
+          <Home />
         </div>
 
         <br></br>
