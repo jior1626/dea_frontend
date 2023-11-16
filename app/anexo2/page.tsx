@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-// import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
+import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -99,13 +99,9 @@ export default function Options() {
             REGISTRO DE INSTALACIÓN DESFIBRILADORES EXTERNOS (DEA)
             <p className="ley">(Ley 1831 del 12 de mayo de 2017)</p>
           </h6>
-<<<<<<< Updated upstream
           <a href="/anexo2pagina8">
             <CicleInfo />
           </a>
-=======
-          {/* <CicleInfo /> */}
->>>>>>> Stashed changes
         </div>
         <div className="bloque">
           <strong>Representante legal:</strong>

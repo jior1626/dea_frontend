@@ -151,10 +151,10 @@ export default function Options() {
       <br></br>
       <div className="contenedor">
         <div className="bloque1">
-          <h2>
+          <h6>
             Datos del evento en donde se utilizó el Desfibrilador Externo
             Automático - DEA
-          </h2>
+          </h6>
         </div>
 
         <div className="bloque">
