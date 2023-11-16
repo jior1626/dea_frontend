@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo3pagina2.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -65,11 +66,24 @@ export default function Options() {
   const [uso_datoseventonumerodocumento, setUso_datoseventonumerodocumento] =
     useState("");
 
-    const [uso_datoseventohorainicioevento, setUso_datoseventohorainicioevento] = useState(""+horaActual);
-    const [uso_datoseventohoraactivacioncadenasupervivencia, setUso_datoseventohoraactivacioncadenasupervivencia] = useState(""+horaActual);
-    const [uso_datoseventohorautilizaciondea, setUso_datoseventohorautilizaciondea] = useState(""+horaActual);
-    const [uso_datoseventohoratrasladopersonaatendida, setUso_datoseventohoratrasladopersonaatendida] = useState(""+horaActual);
-    const [uso_datosmediotransportenombreencargado, setUso_datosmediotransportenombreencargado] = useState("");
+  const [uso_datoseventohorainicioevento, setUso_datoseventohorainicioevento] =
+    useState("" + horaActual);
+  const [
+    uso_datoseventohoraactivacioncadenasupervivencia,
+    setUso_datoseventohoraactivacioncadenasupervivencia,
+  ] = useState("" + horaActual);
+  const [
+    uso_datoseventohorautilizaciondea,
+    setUso_datoseventohorautilizaciondea,
+  ] = useState("" + horaActual);
+  const [
+    uso_datoseventohoratrasladopersonaatendida,
+    setUso_datoseventohoratrasladopersonaatendida,
+  ] = useState("" + horaActual);
+  const [
+    uso_datosmediotransportenombreencargado,
+    setUso_datosmediotransportenombreencargado,
+  ] = useState("");
 
   // Estados para cada uno de los campos del formulario y para los errores
   const [nombreCompleto, setNombreCompleto] = useState("");
@@ -130,9 +144,13 @@ export default function Options() {
   return (
     <main>
       <Header />
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
       <br></br>
       <div className="contenedor">
-        <div className="bloque">
+        <div className="bloque1">
           <h2>
             Datos del evento en donde se utilizó el Desfibrilador Externo
             Automático - DEA
@@ -144,7 +162,7 @@ export default function Options() {
             type="text"
             id="edad"
             placeholder="Nombre de la persona que utilizó el DEA"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) =>
               setUso_datoseventonombrepersonautilizodea(e.target.value)
             }
@@ -154,7 +172,7 @@ export default function Options() {
         <div className="bloque">
           <select
             id="numeroidentificacion"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) => setUso_datoseventotipodocumento(e.target.value)}
           >
             <option value="Cedula">Cedula</option>
@@ -167,61 +185,67 @@ export default function Options() {
             type="text"
             id="edad"
             placeholder="Número de doc. de identifición"
-            className="inputData mt-1 p-2 w-full border rounded text-black"
+            className="inputForm"
             onChange={(e) => setUso_datoseventonumerodocumento(e.target.value)}
           />
         </div>
-
+<br></br>
         <div className="fila-container">
           <div className="columna">Hora de inicio del evento:</div>
           <div className="columna">
-          <input
-          type="time"
-          id="edad"
-          className="mt-1 p-2 w-full border rounded text-black"
-          value={uso_datoseventohorainicioevento} // Asegúrate de establecer el valor del input
-          onChange={(e) => {
-            const horaSeleccionada = e.target.value;
+            <input
+              type="time"
+              id="edad"
+              className="columna1"
+              value={uso_datoseventohorainicioevento} // Asegúrate de establecer el valor del input
+              onChange={(e) => {
+                const horaSeleccionada = e.target.value;
 
-            if (horaSeleccionada < horaActual) {
-              // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
-              setUso_datoseventohorainicioevento(horaSeleccionada);
-            } else {
-              // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
-              // Puedes mostrar un mensaje de error o realizar otra acción aquí
-              alert("Debes seleccionar una hora anterior a la hora actual.");
-            }
-          }}
-        />
+                if (horaSeleccionada < horaActual) {
+                  // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
+                  setUso_datoseventohorainicioevento(horaSeleccionada);
+                } else {
+                  // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
+                  // Puedes mostrar un mensaje de error o realizar otra acción aquí
+                  alert(
+                    "Debes seleccionar una hora anterior a la hora actual."
+                  );
+                }
+              }}
+            />
           </div>
         </div>
 
         <br></br>
 
         <div className="fila-container">
-          <div className="columna">Hora de activación de la cadena de supervivencia:</div>
           <div className="columna">
-          <input
-          type="time"
-          id="edad"
-          className="mt-1 p-2 w-full border rounded text-black"
-          value={uso_datoseventohoraactivacioncadenasupervivencia} // Asegúrate de establecer el valor del input
-          onChange={(e) => {
-            const horaSeleccionada = e.target.value;
+            Hora de activación de la cadena de supervivencia:
+          </div>
+          <div className="columna">
+            <input
+              type="time"
+              id="edad"
+              className="columna1"
+              value={uso_datoseventohoraactivacioncadenasupervivencia} // Asegúrate de establecer el valor del input
+              onChange={(e) => {
+                const horaSeleccionada = e.target.value;
 
-            if (horaSeleccionada < horaActual) {
-              // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
-              setUso_datoseventohoraactivacioncadenasupervivencia(
-                horaSeleccionada
-              );
-            } else {
-              // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
-              // Puedes mostrar un mensaje de error o realizar otra acción aquí
-              alert("Debes seleccionar una hora anterior a la hora actual.");
-            }
-          }}
-          max="23:59" // Establecer la hora máxima como 23:59
-        />
+                if (horaSeleccionada < horaActual) {
+                  // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
+                  setUso_datoseventohoraactivacioncadenasupervivencia(
+                    horaSeleccionada
+                  );
+                } else {
+                  // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
+                  // Puedes mostrar un mensaje de error o realizar otra acción aquí
+                  alert(
+                    "Debes seleccionar una hora anterior a la hora actual."
+                  );
+                }
+              }}
+              max="23:59" // Establecer la hora máxima como 23:59
+            />
           </div>
         </div>
 
@@ -229,84 +253,86 @@ export default function Options() {
         <div className="fila-container">
           <div className="columna">Hora de utilización del DEA:</div>
           <div className="columna">
-          <input
-          type="time"
-          id="edad"
-          className="mt-1 p-2 w-full border rounded text-black"
-          value={uso_datoseventohorautilizaciondea} // Asegúrate de establecer el valor del input
-          onChange={(e) => {
-            const horaSeleccionada = e.target.value;
+            <input
+              type="time"
+              id="edad"
+              className="columna1"
+              value={uso_datoseventohorautilizaciondea} // Asegúrate de establecer el valor del input
+              onChange={(e) => {
+                const horaSeleccionada = e.target.value;
 
-            if (horaSeleccionada < horaActual) {
-              // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
-              setUso_datoseventohorautilizaciondea(horaSeleccionada);
-            } else {
-              // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
-              // Puedes mostrar un mensaje de error o realizar otra acción aquí
-              alert("Debes seleccionar una hora anterior a la hora actual.");
-            }
-          }}
-          max="23:59" // Establecer la hora máxima como 23:59
-        />
+                if (horaSeleccionada < horaActual) {
+                  // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
+                  setUso_datoseventohorautilizaciondea(horaSeleccionada);
+                } else {
+                  // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
+                  // Puedes mostrar un mensaje de error o realizar otra acción aquí
+                  alert(
+                    "Debes seleccionar una hora anterior a la hora actual."
+                  );
+                }
+              }}
+              max="23:59" // Establecer la hora máxima como 23:59
+            />
           </div>
         </div>
 
         <br></br>
         <div className="fila-container">
-          <div className="columna">Hora de traslado de la persona atendida a la institución de salud:</div>
           <div className="columna">
-          <input
-          type="time"
-          id="edad"
-          className="mt-1 p-2 w-full border rounded text-black"
-          value={uso_datoseventohoratrasladopersonaatendida} // Asegúrate de establecer el valor del input
-          onChange={(e) => {
-            const horaSeleccionada = e.target.value;
+            Hora de traslado de la persona atendida a la institución de salud:
+          </div>
+          <div className="columna">
+            <input
+              type="time"
+              id="edad"
+              className="columna1"
+              value={uso_datoseventohoratrasladopersonaatendida} // Asegúrate de establecer el valor del input
+              onChange={(e) => {
+                const horaSeleccionada = e.target.value;
 
-            if (horaSeleccionada < horaActual) {
-              // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
-              setUso_datoseventohoratrasladopersonaatendida(horaSeleccionada);
-            } else {
-              // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
-              // Puedes mostrar un mensaje de error o realizar otra acción aquí
-              alert("Debes seleccionar una hora anterior a la hora actual.");
-            }
-          }}
-          max="23:59" // Establecer la hora máxima como "23:59"
-        />
+                if (horaSeleccionada < horaActual) {
+                  // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
+                  setUso_datoseventohoratrasladopersonaatendida(
+                    horaSeleccionada
+                  );
+                } else {
+                  // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
+                  // Puedes mostrar un mensaje de error o realizar otra acción aquí
+                  alert(
+                    "Debes seleccionar una hora anterior a la hora actual."
+                  );
+                }
+              }}
+              max="23:59" // Establecer la hora máxima como "23:59"
+            />
           </div>
         </div>
         <br></br>
 
         <div className="bloque">
-        Datos del medio de transporte en el cual es trasladada la persona atendida a la institución de salud
-
-        <br></br>
-        <input
-          type="text"
-          id="edad"
-          placeholder="Nombre de la persona encargada del traslado"
-          className="inputData mt-1 p-2 w-full border rounded text-black"
-          onChange={(e) =>
-            setUso_datosmediotransportenombreencargado(e.target.value)
-          }
-        />
+          Datos del medio de transporte en el cual es trasladada la persona
+          atendida a la institución de salud
+          <br></br>
+          <input
+            type="text"
+            id="edad"
+            placeholder="Nombre de la persona encargada del traslado"
+            className="inputForm"
+            onChange={(e) =>
+              setUso_datosmediotransportenombreencargado(e.target.value)
+            }
+          />
         </div>
 
-        <button
-          className="btnNext btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
-          onClick={navigateToSectionAnexo3Pagina3}
-        >
-          Siguiente
-        </button>
-
-        <br></br>
-
         <div className="contenedorCasita">
-          <img
-            src="https://nivel99.com/desfibriladores/casita.png"
-            onClick={navigateToSectionOptions}
-          />
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+            onClick={navigateToSection}
+          >
+            Siguiente
+          </button>
+          <Home />
           <br />
         </div>
 

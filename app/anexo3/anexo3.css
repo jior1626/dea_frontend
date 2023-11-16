@@ -150,14 +150,6 @@ main {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: auto 0 10% 0;
-
-
-  }
-
-  .inputData {
-    width: 95%;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 
   .btnNext {
