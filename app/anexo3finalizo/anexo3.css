@@ -25,3 +25,75 @@
 .tituloanexo{
     font-size: 11px;
 }
+/* anexo2pagina7.css */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.rounded-lg {
+    border-radius: 10px; /* Puedes ajustar según tus necesidades */
+}
+
+.shadow-md {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.max-w-md {
+    max-width: 100%;
+}
+
+.mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-black {
+    color: black;
+}
+
+.container{
+    margin: auto auto;
+
+}
+
+/* Estilos para versión desktop */
+@media screen and (min-width: 900px) {
+    .w-full {
+        width: 40%;
+    }
+}
