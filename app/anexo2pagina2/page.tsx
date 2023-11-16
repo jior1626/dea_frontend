@@ -20,18 +20,23 @@ export default function Options() {
   const [REG_TIPOINSTALACION, setREG_TIPOINSTALACION] = useState("");
   const [REG_TIPODECLARACION, setREG_TIPODECLARACION] = useState("");
   const [REG_TIPOESPACIO, setREG_TIPOESPACIO] = useState("");
+  const [REG_OTRO, setREG_OTRO] = useState("");
   const [REG_NUMSERIE, setREG_NUMSERIE] = useState("");
   const [REG_MODELO, setREG_MODELO] = useState("");
   const [REG_MARCA, setREG_MARCA] = useState("");
   const [REG_IMPORTADORDISTRIBUIDOR, setREG_IMPORTADORDISTRIBUIDOR] =
     useState("");
   const [REG_DESCLUGARUBICACION, setREG_DESCLUGARUBICACION] = useState("");
+  const [mes, setMes] = useState("");
+  const [dia, setDia] = useState("");
+  const [ano, setAno] = useState("");
 
   const [errorREG_CIUDADMUNICIPIO, setErrorREG_CIUDADMUNICIPIO] = useState("");
   const [errorREG_DEPARTAMENTO, setErrorREG_DEPARTAMENTO] = useState("");
   const [errorREG_TIPOINSTALACION, setErrorREG_TIPOINSTALACION] = useState("");
   const [errorREG_TIPODECLARACION, setErrorREG_TIPODECLARACION] = useState("");
   const [errorREG_TIPOESPACIO, setErrorREG_TIPOESPACIO] = useState("");
+  const [errorREG_OTRO, setErrorREG_OTRO] = useState("");
   const [errorREG_NUMSERIE, setErrorREG_NUMSERIE] = useState("");
   const [errorREG_MODELO, setErrorREG_MODELO] = useState("");
   const [errorREG_MARCA, setErrorREG_MARCA] = useState("");
@@ -39,8 +44,16 @@ export default function Options() {
     useState("");
   const [errorREG_DESCLUGARUBICACION, setErrorREG_DESCLUGARUBICACION] =
     useState("");
-    const [fields, setFields] = useState([]);
-    const [fields2, setFields2] = useState([]);
+  const [fields, setFields] = useState([]);
+  const [fields2, setFields2] = useState([]);
+
+  const navigateToSectionOptions = () => {
+    router.push("options");
+  };
+
+  const navigateToSectionAnexoPag3 = () => {
+    router.push("anexo2pagina3");
+  };
 
   const [userLocation, setUserLocation] = useState(null);
 
@@ -50,34 +63,34 @@ export default function Options() {
   });
   useEffect(() => {
     // Obtener los campos de la API al cargar el componente
-    fetch('https://dea-crud.azurewebsites.net/apiTipoInstalacion.php')
-      .then(response => response.json())
-      .then(data => {
+    fetch("https://dea-crud.azurewebsites.net/apiTipoInstalacion.php")
+      .then((response) => response.json())
+      .then((data) => {
         // Filtrar para excluir el campo 'id'
-        const filteredFields = data.filter(field => field !== 'id');
+        const filteredFields = data.filter((field) => field !== "id");
         setFields(filteredFields);
         //console.log(JSON.stringify(data));
       })
-      .catch(error => {
+      .catch((error) => {
         // Manejo de errores aquí
-        console.error('Error al obtener los campos:', error);
+        console.error("Error al obtener los campos:", error);
       });
-    },[]);
-    useEffect(() => {
-      // Obtener los campos de la API al cargar el componente
-      fetch('https://dea-crud.azurewebsites.net/apiTipoDeclaracion.php')
-        .then(response => response.json())
-        .then(data => {
-          // Filtrar para excluir el campo 'id'
-          const filteredFields2 = data.filter(field => field !== 'id');
-          setFields2(filteredFields2);
-          console.log(JSON.stringify(data));
-        })
-        .catch(error => {
-          // Manejo de errores aquí
-          console.error('Error al obtener los campos:', error);
-        });
-      },[]);
+  }, []);
+  useEffect(() => {
+    // Obtener los campos de la API al cargar el componente
+    fetch("https://dea-crud.azurewebsites.net/apiTipoDeclaracion.php")
+      .then((response) => response.json())
+      .then((data) => {
+        // Filtrar para excluir el campo 'id'
+        const filteredFields2 = data.filter((field) => field !== "id");
+        setFields2(filteredFields2);
+        console.log(JSON.stringify(data));
+      })
+      .catch((error) => {
+        // Manejo de errores aquí
+        console.error("Error al obtener los campos:", error);
+      });
+  }, []);
   useEffect(() => {
     const getUserLocation = async () => {
       if ("geolocation" in navigator) {
@@ -86,10 +99,10 @@ export default function Options() {
             navigator.geolocation.getCurrentPosition(resolve, reject, {
               enableHighAccuracy: true, // Solicita una ubicación de alta precisión
               timeout: 5000, // Tiempo máximo en milisegundos para obtener la ubicación
-              maximumAge: 0  // Define la edad máxima aceptable de una lectura de posición en caché
+              maximumAge: 0, // Define la edad máxima aceptable de una lectura de posición en caché
             });
           });
-          
+
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
 
@@ -99,15 +112,16 @@ export default function Options() {
           console.error("Error al obtener las coordenadas GPS:", error);
         }
       } else {
-        console.log("La geolocalización no está disponible en este dispositivo.");
+        console.log(
+          "La geolocalización no está disponible en este dispositivo."
+        );
       }
     };
-  
+
     // Forzar la actualización del estado mapCenter
     setMapCenter((prev) => ({ ...prev }));
     getUserLocation();
   }, []);
-  
 
   const handleSubmit = async () => {
     const REG_DIRECCIONUBICACION = localStorage.getItem(
@@ -233,21 +247,21 @@ export default function Options() {
 
     // Construir el objeto de datos a enviar
     const data = {
-      dea_ciudadmunicipio:REG_CIUDADMUNICIPIO,
-      dea_departamento:REG_DEPARTAMENTO,
-      dea_tipoinstalacion:REG_TIPOINSTALACION,
-      dea_tipodeclaracion:REG_TIPODECLARACION,
-      dea_tipoespacio:REG_TIPOESPACIO,
-      dea_numserie:REG_NUMSERIE,
-      dea_modelo:REG_MODELO,
-      dea_marca:REG_MARCA,
-      dea_importadordistribuidor:REG_IMPORTADORDISTRIBUIDOR,
-      dea_desclugarubicacion:REG_DESCLUGARUBICACION,
-      dea_codigopostal:REG_CODIGOPOSTAL,
-      dea_nombreubicacion:REG_NOMBREUBICACION,
-      dea_nombrecompleto:REG_NOMBRECOMPLETO,
-      dea_docidentificacion:REG_DOCIDENTIFICACION,
-      dea_cantidad:REG_CANTIDAD,
+      dea_ciudadmunicipio: REG_CIUDADMUNICIPIO,
+      dea_departamento: REG_DEPARTAMENTO,
+      dea_tipoinstalacion: REG_TIPOINSTALACION,
+      dea_tipodeclaracion: REG_TIPODECLARACION,
+      dea_tipoespacio: REG_TIPOESPACIO,
+      dea_numserie: REG_NUMSERIE,
+      dea_modelo: REG_MODELO,
+      dea_marca: REG_MARCA,
+      dea_importadordistribuidor: REG_IMPORTADORDISTRIBUIDOR,
+      dea_desclugarubicacion: REG_DESCLUGARUBICACION,
+      dea_codigopostal: REG_CODIGOPOSTAL,
+      dea_nombreubicacion: REG_NOMBREUBICACION,
+      dea_nombrecompleto: REG_NOMBRECOMPLETO,
+      dea_docidentificacion: REG_DOCIDENTIFICACION,
+      dea_cantidad: REG_CANTIDAD,
       dea_gps: userLocation,
     };
 
@@ -259,7 +273,7 @@ export default function Options() {
         {
           method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(data),
         }
@@ -267,14 +281,14 @@ export default function Options() {
       //alert(JSON.stringify(data))
       if (response.ok) {
         const responseData = await response.json();
-      if (responseData.message === "dea creado") {
-        // La solicitud se completó con éxito y el mensaje es "dea creado"
-        router.push("registroexitosoanexo2"); // Cambia a la URL a la que deseas redirigir
-        alert("DEA Registrado");
-      } else {
-        // El mensaje no es "dea creado"
-        alert("El DEA no se pudo registrar. Por favor, intente de nuevo.");
-      }
+        if (responseData.message === "dea creado") {
+          // La solicitud se completó con éxito y el mensaje es "dea creado"
+          router.push("registroexitosoanexo2"); // Cambia a la URL a la que deseas redirigir
+          alert("DEA Registrado");
+        } else {
+          // El mensaje no es "dea creado"
+          alert("El DEA no se pudo registrar. Por favor, intente de nuevo.");
+        }
       } else {
         // Hubo un error en la solicitud
         alert("Error al enviar los datos.");
@@ -286,169 +300,136 @@ export default function Options() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-    <Header />
+      <Header />
 
-    <div className="container-father min-h-[700px] flex items-center justify-center mt-5">
-      <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full mb-8">
-        <div className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 anexo2">
-            <h6 className="title font-bold text-sm tituloanexo text-black">
-              DESFIBRILADORES EXTERNOS
-            </h6>
-            <br></br>
+<br></br>
+      <div className="contenedor">
+        <div className="bloque">
+          <strong>Tipo de espacio o lugar de alta afluencia de público</strong>
+        </div>
 
-            <select
-              className="element p-3 rounded-full shadow-sm border text-black"
-              placeholder="Municipio"
-              onChange={(e) => setREG_CIUDADMUNICIPIO(e.target.value)}
-            >
-              <option value='Medellín'>Medellín</option>
-              <option value='Bello'>Bello</option>
-              <option value='Itagüí'>Itagüí</option>
-              <option value='Envigado'>Envigado</option>
-              <option value='Apartadó'>Apartadó</option>
-              <option value='Rionegro'>Rionegro</option>
-              <option value='Turbo'>Turbo</option>
-              <option value='Santa Fe de Antioquia'>Santa Fe de Antioquia</option>
-              <option value='La Ceja'>La Ceja</option>
-              <option value='Sabaneta'>Sabaneta</option>
-            </select>
-            <br></br>
-            <span className="text-red-500">{errorREG_CIUDADMUNICIPIO}</span>
-            <br></br>
-            <br></br>
+        <div className="bloque">
+          <textarea
+            placeholder="De conformidad con el presente acto administrativo, indique el tipo de espacio o lugar de alta afluencia de personas."
+            className="element p-3 shadow-sm border text-black"
+            rows="5" // Ajusta este número según tus necesidades
+            onChange={(e) => setREG_TIPOESPACIO(e.target.value)}
+          ></textarea>
+          <br></br>
+          <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
 
-            <select
-              className="element p-3 rounded-full shadow-sm border text-black"
-              placeholder="Departamento"
-              onChange={(e) => setREG_DEPARTAMENTO(e.target.value)}
-            >
-              <option value='Antioquia'>Antioquia</option>
-            </select>
-            <br></br>
-            <span className="text-red-500">{errorREG_DEPARTAMENTO}</span>
+          <br></br>
 
-            <br></br>
-            <br></br>
+          <input
+            type="text"
+            className="element p-3 rounded-full shadow-sm border text-black"
+            placeholder="Otros"
+            onChange={(e) => setREG_OTRO(e.target.value)}
+          />
+          <br></br>
+          <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
+        </div>
 
-            <select 
-              className="element p-3 rounded-full shadow-sm border text-black"
-              placeholder="Tipo de instalacion"
-              onChange={(e) => setREG_TIPOINSTALACION(e.target.value)}
-            >
-              {fields.map(field => (
-                <option value={field.tii_nombre}>{field.tii_nombre}</option>  
-              ))}
+        <div className="bloque">
+          <h2 className="titulo-desfibrilador-ext">DESFIBRILADORES EXTERNOS</h2>
+          <p>El/los desfibrilador(es) externo(s) para su uso a fecha</p>
+        </div>
 
-
-            </select>
-            <br></br>
-            <span className="text-red-500">{errorREG_TIPOINSTALACION}</span>
-
-            <br></br>
-            <br></br>
-
-            <select
-              className="element p-3 rounded-full shadow-sm border text-black"
-              placeholder="Tipo de declaracion"
-              onChange={(e) => setREG_TIPODECLARACION(e.target.value)}
-            > 
-            {fields2.map(field => (
-              <option value={field.tid_nombre}>{field.tid_nombre}</option>  
-            ))}
-
-            </select>
-            <br></br>
-            <span className="text-red-500">{errorREG_TIPODECLARACION}</span>
-
-            <br></br>
-            <br></br>
-
-            <input
-              type="text"
-              className="element p-3 rounded-full shadow-sm border text-black"
-              placeholder="Tipo de espacio"
-              onChange={(e) => setREG_TIPOESPACIO(e.target.value)}
-            />
-            <br></br>
-            <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
-
-            <br></br>
-            <br></br>
-
-            <div className="grid grid-cols-2 gap-4">
-              {/* Fila 1 */}
-              <input
-                type="number"
-                className="p-3 rounded-full shadow-sm border text-black"
-                placeholder="No. de serie"
-                onChange={(e) => setREG_NUMSERIE(e.target.value)}
-              />
-              <input
-                type="text"
-                className="p-3 rounded-full shadow-sm border text-black"
-                placeholder="Modelo"
-                onChange={(e) => setREG_MODELO(e.target.value)}
-              />
-
-              {/* Fila 2 */}
-              <input
-                type="text"
-                className="p-3 rounded-full shadow-sm border text-black"
-                placeholder="Marca"
-                onChange={(e) => setREG_MARCA(e.target.value)}
-              />
-              <input
-                type="text"
-                className="p-3 rounded-full shadow-sm border text-black"
-                placeholder="Importador Autorizado"
-                onChange={(e) => setREG_IMPORTADORDISTRIBUIDOR(e.target.value)}
-              />
-            </div>
-            <br></br>
-            <span className="text-red-500">{errorREG_NUMSERIE}</span>
-            <span className="text-red-500">{errorREG_MODELO}</span>
-            <span className="text-red-500">{errorREG_MARCA}</span>
-            <span className="text-red-500">
-              {errorREG_IMPORTADORDISTRIBUIDOR}
-            </span>
-            <br></br>
-            <br></br>
-
-            <p className="font-bold text-sm text-black">
-              Descripción del lugar donde está ubicado:
-            </p>
-            {userLocation}
-
-            <input
-              type="text"
-              className="element p-3 rounded-full shadow-sm border text-black"
-              placeholder="Descripcion lugar"
-              onChange={(e) => setREG_DESCLUGARUBICACION(e.target.value)}
-            />
-            <br></br>
-            <span className="text-red-500">{errorREG_DESCLUGARUBICACION}</span>
-            <p className="font-bold text-sm text-black">
-              Coordenadas de geolocalización (GPS)
-            </p>
-
-            <LoadScript googleMapsApiKey="AIzaSyBBCGA-En7tf3H-HSh--XEOxEZWI64rBxo">
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={mapCenter}
-                zoom={10}
+        <div className="bloque">
+          <div className="fecha-container">
+            <div className="fecha-columna">
+              <select
+                className="fecha-select"
+                onChange={(e) => setDia(e.target.value)}
               >
-                {userLocation && <Marker position={mapCenter} />}
-              </GoogleMap>
-            </LoadScript>
+                {/* Opciones para el día */}
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+              </select>
+            </div>
 
-            <button
-              className="mt-4 w-full bg-custom-azul text-white py-3 rounded-full shadow-lg"
-              onClick={handleSubmit}
-            >
-              Siguiente
-            </button>
+            <div className="fecha-columna">
+              <select
+                className="fecha-select"
+                onChange={(e) => setMes(e.target.value)}
+              >
+                {/* Opciones para el mes */}
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                {/* ... y así sucesivamente */}
+              </select>
+            </div>
+
+            <div className="fecha-columna">
+              <select
+                className="fecha-select"
+                onChange={(e) => setAno(e.target.value)}
+              >
+                {/* Opciones para el año */}
+                <option value="2023">2023</option>
+                {/* ... y así sucesivamente */}
+              </select>
+            </div>
+          </div>
+          <p>son los que se refieren en la siguiente relación:</p>
+        </div>
+
+        <div className="bloque">
+        <div className="grid-container">
+          <div className="grid-item">
+            <input type="text" className="element p-3 rounded-full shadow-sm border text-black" placeholder="No. de serie" />
+          </div>
+          <div className="grid-item">
+            <input type="text" className="element p-3 rounded-full shadow-sm border text-black" placeholder="Modelo" />
+          </div>
+          <div className="grid-item">
+            <input type="text" className="element p-3 rounded-full shadow-sm border text-black" placeholder="Marca" />
+          </div>
+          <div className="grid-item">
+            <input type="text" className="element p-3 rounded-full shadow-sm border text-black" placeholder="Importador " />
           </div>
         </div>
+        </div>
+
+        <button className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg" onClick={navigateToSectionAnexoPag3}>
+          Siguiente
+        </button>
+
+        <br></br>
+
+        <div className="contenedorCasita">
+          <img
+            src="https://nivel99.com/desfibriladores/casita.png"
+            onClick={navigateToSectionOptions}
+          />
+          <br />
+        </div>
+
+        <br></br>
+        <br></br>
       </div>
 
       <Footer></Footer>
