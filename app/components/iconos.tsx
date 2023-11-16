@@ -41,6 +41,11 @@ const CicleInfo = () => {
   );
 };
 
+const Home = () => {
+  return (
+    <FontAwesomeIcon icon={faHome} size="xl" className="Home" />
+  );
+};
 const ChevronLeft = () => {
   return (
     <div className="containerOptionsUserLeft">
@@ -53,4 +58,4 @@ const ChevronLeft = () => {
 
 
 
-export { User, Idioma, ChevronDown, CicleInfo, ChevronLeft };
+export { User, Idioma, ChevronDown, CicleInfo, ChevronLeft, Home };

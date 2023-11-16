@@ -135,7 +135,7 @@ main {
     width: 100%;
     display: flex;
     justify-content: left;
-    padding: 30px 15px;
+    padding: 30px 10%;
   }
   .tituloanexo {
     color: #000;
@@ -144,7 +144,7 @@ main {
   }
   .bloque {
     width: 100%;
-    padding: 0 5%;
+    padding: 0 10%;
   }
 
   .ley {

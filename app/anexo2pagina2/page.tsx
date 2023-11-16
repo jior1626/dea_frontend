@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2pagina2.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { User, ChevronLeft, Home } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
@@ -301,34 +302,36 @@ export default function Options() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-
-<br></br>
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
+      <br></br>
       <div className="contenedor">
-        <div className="bloque">
+        <div className="bloquetext">
           <strong>Tipo de espacio o lugar de alta afluencia de público</strong>
         </div>
 
         <div className="bloque">
           <textarea
             placeholder="De conformidad con el presente acto administrativo, indique el tipo de espacio o lugar de alta afluencia de personas."
-            className="element p-3 shadow-sm border text-black"
+            className="element"
             rows="5" // Ajusta este número según tus necesidades
             onChange={(e) => setREG_TIPOESPACIO(e.target.value)}
           ></textarea>
           <br></br>
           <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
 
-          <br></br>
-
           <input
             type="text"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder="Otros"
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
           <br></br>
           <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
         </div>
+        <br></br>
 
         <div className="bloque">
           <h2 className="titulo-desfibrilador-ext">DESFIBRILADORES EXTERNOS</h2>
@@ -396,36 +399,48 @@ export default function Options() {
           </div>
           <p>son los que se refieren en la siguiente relación:</p>
         </div>
-
-        <div className="bloque">
-        <div className="grid-container">
-          <div className="grid-item">
-            <input type="text" className="element p-3 rounded-full shadow-sm border text-black" placeholder="No. de serie" />
-          </div>
-          <div className="grid-item">
-            <input type="text" className="element p-3 rounded-full shadow-sm border text-black" placeholder="Modelo" />
-          </div>
-          <div className="grid-item">
-            <input type="text" className="element p-3 rounded-full shadow-sm border text-black" placeholder="Marca" />
-          </div>
-          <div className="grid-item">
-            <input type="text" className="element p-3 rounded-full shadow-sm border text-black" placeholder="Importador " />
-          </div>
-        </div>
-        </div>
-
-        <button className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg" onClick={navigateToSectionAnexoPag3}>
-          Siguiente
-        </button>
-
         <br></br>
+        <div className="bloque">
+          <div className="grid-container">
+            <div className="grid-item">
+              <input
+                type="text"
+                className="element p-3 rounded-full shadow-sm border text-black"
+                placeholder="No. de serie"
+              />
+            </div>
+            <div className="grid-item">
+              <input
+                type="text"
+                className="element p-3 rounded-full shadow-sm border text-black"
+                placeholder="Modelo"
+              />
+            </div>
+            <div className="grid-item">
+              <input
+                type="text"
+                className="element p-3 rounded-full shadow-sm border text-black"
+                placeholder="Marca"
+              />
+            </div>
+            <div className="grid-item">
+              <input
+                type="text"
+                className="element p-3 rounded-full shadow-sm border text-black"
+                placeholder="Importador "
+              />
+            </div>
+          </div>
+        </div>
 
         <div className="contenedorCasita">
-          <img
-            src="https://nivel99.com/desfibriladores/casita.png"
-            onClick={navigateToSectionOptions}
-          />
-          <br />
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+            onClick={navigateToSectionAnexoPag3}
+          >
+            Siguiente
+          </button>
+          <Home />
         </div>
 
         <br></br>

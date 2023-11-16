@@ -8,14 +8,18 @@
   width: 50px;
 }
 
+.Home{
+  color: #3366CC;
+  width: 50px;
 
-@media screen and (min-width: 1000px) {
+}
+@media screen and (min-width: 900px) {
 
   .white-containerOptionsUser {
     background-color: white;
     border-radius: 20px;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin: auto 0 0 0;
     width: 30%;
     display: flex;
@@ -36,7 +40,7 @@
     background-color: white;
     border-radius: 20px;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin: auto 0 0 0;
     width: 30%;
     display: flex;
@@ -58,9 +62,8 @@
     color: #3366CC;
   }
   .Home{
-    color: #3366CC;
-    width: 5%;
-  
+    display: none;
+
   }
   .idioma {
     margin-right: 5px;
