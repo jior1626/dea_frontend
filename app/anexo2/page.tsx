@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { CicleInfo, User, ChevronLeft } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -16,7 +17,7 @@ export default function Options() {
   const handleKeyDown2 = (e) => {
     // Crear una expresión regular que coincida con caracteres no permitidos
     const invalidChars = /[0-9]/;
-  
+
     // Si el carácter es un número, prevenir la entrada
     if (invalidChars.test(e.key)) {
       e.preventDefault();
@@ -89,26 +90,23 @@ export default function Options() {
   return (
     <main>
       <Header />
-
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
       <div className="contenedor">
-        <div className="columnas">
-          <div className="columna-texto">
-            <h2>REGISTRO DE INSTALACIÓN DESFIBRILADORES EXTERNOS (DEA)</h2>
-            <p>(Ley 1831 del 12 de mayo de 2017)</p>
-          </div>
-          <div className="columna-imagen">
-            <img
-              src="https://nivel99.com/desfibriladores/info.png"
-              alt="Imagen Descriptiva"
-            />
-          </div>
+        <div className="containerTituloAnexo">
+          <h6 className=" tituloanexo">
+            REGISTRO DE INSTALACIÓN DESFIBRILADORES EXTERNOS (DEA)
+            <p className="ley">(Ley 1831 del 12 de mayo de 2017)</p>
+          </h6>
+          <CicleInfo />
         </div>
-
         <div className="bloque">
           <strong>Representante legal:</strong>
           <input
             type="text"
-            className="w-full p-3 rounded-full shadow-sm border text-black"
+            className="inputForm"
             placeholder="Nombre"
             onKeyDown={handleKeyDown2}
             onChange={(e) => setNombreCompleto(e.target.value)}
@@ -122,73 +120,76 @@ export default function Options() {
         </div>
 
         <div className="bloque">
-        <input
-              type="number"
-              className="w-full p-3 rounded-full shadow-sm border text-black"
-              placeholder="Documento de identificación"
-              onKeyDown={handleKeyDown}
-              onChange={(e) => setDocumentoIdentificacion(e.target.value)}
-              value={documentoIdentificacion}
-            />
-            {/* Mensaje de error para el documento de identificación, si existe */}
-            {errores.includes('El documento de identificación debe tener 10 dígitos.') && (
-              <p className="text-red-500">El documento de identificación debe tener 10 dígitos.</p>
-            )}
+          <input
+            type="number"
+            className="inputForm"
+            placeholder="Documento de identificación"
+            onKeyDown={handleKeyDown}
+            onChange={(e) => setDocumentoIdentificacion(e.target.value)}
+            value={documentoIdentificacion}
+          />
+          {/* Mensaje de error para el documento de identificación, si existe */}
+          {errores.includes(
+            "El documento de identificación debe tener 10 dígitos."
+          ) && (
+            <p className="text-red-500">
+              El documento de identificación debe tener 10 dígitos.
+            </p>
+          )}
         </div>
 
-        <div className="bloque" >
-        <input
-              type="text"
-              className="w-full p-3 rounded-full shadow-sm border text-black"
-              placeholder="Nombre Sitio"
-              onChange={(e) => setNombreSitio(e.target.value)}
-              value={nombreSitio}
-            />
-            {/* Mensaje de error para el nombre del sitio, si existe */}
-            {errores.includes('El nombre del sitio es obligatorio.') && (
-              <p className="text-red-500">El nombre del sitio es obligatorio.</p>
-            )}
-            <br /><br />
-            <input
-              type="text"
-              className="w-full p-3 rounded-full shadow-sm border text-black"
-              placeholder="Dirección"
-              onChange={(e) => setDireccion(e.target.value)}
-              value={direccion}
-            />
-            {/* Mensaje de error para la dirección, si existe */}
-            {errores.includes('La dirección es obligatoria.') && (
-              <p className="text-red-500">La dirección es obligatoria.</p>
-            )}
-            <br /><br />
-            <input
-              type="number"
-              className="w-full p-3 rounded-full shadow-sm border text-black"
-              placeholder="Código Postal"
-              onChange={(e) => setCodigoPostal(e.target.value)}
-              value={codigoPostal}
-            />
-            {/* Mensaje de error para el código postal, si existe */}
-            {errores.includes('El código postal debe tener 5 dígitos.') && (
-              <p className="text-red-500">El código postal debe tener 5 dígitos.</p>
-            )}
+        <div className="bloque">
+          <input
+            type="text"
+            className="inputForm"
+            placeholder="Nombre del espacio/lugar"
+            onChange={(e) => setNombreSitio(e.target.value)}
+            value={nombreSitio}
+          />
+          {/* Mensaje de error para el nombre del sitio, si existe */}
+          {errores.includes("El nombre del sitio es obligatorio.") && (
+            <p className="text-red-500">El nombre del sitio es obligatorio.</p>
+          )}
+
+          <input
+            type="text"
+            className="inputForm"
+            placeholder="Dirección"
+            onChange={(e) => setDireccion(e.target.value)}
+            value={direccion}
+          />
+          {/* Mensaje de error para la dirección, si existe */}
+          {errores.includes("La dirección es obligatoria.") && (
+            <p className="text-red-500">La dirección es obligatoria.</p>
+          )}
+
+          <input
+            type="number"
+            className="inputForm"
+            placeholder="Código Postal"
+            onChange={(e) => setCodigoPostal(e.target.value)}
+            value={codigoPostal}
+          />
+          {/* Mensaje de error para el código postal, si existe */}
+          {errores.includes("El código postal debe tener 5 dígitos.") && (
+            <p className="text-red-500">
+              El código postal debe tener 5 dígitos.
+            </p>
+          )}
         </div>
 
-        <button
-              className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
-              onClick={navigateToSection}
-            >
-              Siguiente
-            </button>
+        <div className="contenedorCasita">
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+            onClick={navigateToSection}
+          >
+            Siguiente
+          </button>
+          <br />
+        </div>
 
-            <br></br>
-
-            <div className="contenedorCasita">
-              <img src="https://nivel99.com/desfibriladores/casita.png" onClick={navigateToSectionOptions} /><br/>
-            </div>
-
-            <br></br><br></br>
-
+        <br></br>
+        <br></br>
       </div>
 
       <Footer />
