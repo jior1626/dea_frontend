@@ -177,8 +177,10 @@
 
   @media screen and (min-width: 900px) {
     .contenedor {
-      width: 40%;
+      width: 60%;
+      height: 800px;
       display: flex;
+      justify-content: center;
       /* Establece un contenedor flex */
       align-items: center;
       /* Centra los elementos verticalmente */

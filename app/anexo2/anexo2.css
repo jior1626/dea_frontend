@@ -116,12 +116,14 @@ main {
 @media screen and (min-width: 900px) {
   .contenedor {
     flex-direction: column;
-    /* Las columnas se apilan verticalmente en pantallas pequeñas */
-    width: 40%;
+    /* Cambiado a columna para apilar elementos verticalmente */
+    width: 60%;
+    height: 800px;
     display: flex;
     /* Establece un contenedor flex */
     align-items: center;
     /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra horizontalmente los elementos */
     border-left: 30px solid #AE3E97;
     /* Borde izquierdo morado */
     border-radius: 15px;
@@ -130,7 +132,7 @@ main {
     /* Asegura que los hijos no sobresalgan de los bordes redondeados */
     margin: auto 0 10% 0;
     /* Esto añadirá el margen automáticamente en la parte superior e inferior */
-  }
+}
   .containerTituloAnexo {
     width: 100%;
     display: flex;
@@ -157,5 +159,8 @@ main {
     display: flex;
     width: 100%;
     justify-content: space-between;
+  }
+  .inputForm{
+    margin-top: 3rem;
   }
 }
