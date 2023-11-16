@@ -5,13 +5,14 @@ import Footer from "../components/Footer";
 import "./anexo2pagina3.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { User, ChevronLeft, Home } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const mapContainerStyle = {
   width: "100%",
   height: "400px",
-  borderRadius: '15px'
+  borderRadius: "15px",
 };
 
 export default function Options() {
@@ -124,21 +125,23 @@ export default function Options() {
     getUserLocation();
   }, []);
 
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-
-<br></br>
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
+      <br></br>
       <div className="contenedor">
-        <div className="bloque">
+        <div className="bloquetextLugar">
           <strong>Descripción del lugar donde está ubicado:</strong>
         </div>
 
         <div className="bloque">
           <input
             type="text"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder="Desripción"
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
@@ -150,31 +153,26 @@ export default function Options() {
           <strong>Coordenadas de geolocalización (GPS)</strong>
         </div>
 
-        <div className="bloque" >
-        <LoadScript googleMapsApiKey="AIzaSyBBCGA-En7tf3H-HSh--XEOxEZWI64rBxo">
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={mapCenter}
-                zoom={10}
-              >
-                {userLocation && <Marker position={mapCenter} />}
-              </GoogleMap>
-            </LoadScript>
+        <div className="bloque">
+          <LoadScript googleMapsApiKey="AIzaSyBBCGA-En7tf3H-HSh--XEOxEZWI64rBxo">
+            <GoogleMap
+              mapContainerStyle={mapContainerStyle}
+              center={mapCenter}
+              zoom={10}
+            >
+              {userLocation && <Marker position={mapCenter} />}
+            </GoogleMap>
+          </LoadScript>
         </div>
 
-
-        <button className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg" onClick={navigateToSectionAnexoPag4}>
-          Siguiente
-        </button>
-
-        <br></br>
-
         <div className="contenedorCasita">
-          <img
-            src="https://nivel99.com/desfibriladores/casita.png"
-            onClick={navigateToSectionOptions}
-          />
-          <br />
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+            onClick={navigateToSectionAnexoPag4}
+          >
+            Siguiente
+          </button>
+          <Home />
         </div>
 
         <br></br>

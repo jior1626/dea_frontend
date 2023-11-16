@@ -1,194 +1,7 @@
-/* .anexo2{
-    border-color: #AE3E97;
-    border-left-width: 12px;
-}
-
-.anexo3{
-    border-color: #00904C;
-    border-left-width: 12px;
-}
-
-.anexo3{
-    border-color: #00904C;
-    border-left-width: 12px;
-}
-
-.usuarioperador{
-    border-color: #FF8403;
-    border-left-width: 12px;
-}
-
-.ley{
-    font-size: 10px;
-}
-
-.tituloanexo{
-    font-size: 11px;
-}
-
-.min-h-screen {
-    min-height: 100vh;
-  }
-  
-  .flex {
-    display: flex;
-  }
-  
-  .flex-col {
-    flex-direction: column;
-  }
-  
-  .items-center {
-    align-items: center;
-  }
-  
-  .justify-between {
-    justify-content: space-between;
-  } */
-  
-  /* Contenedor principal */
-  /* .bg-white {
-    background-color: #fff;
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-  
-  .p-8 {
-    padding: 2rem;
-  }
-  
-  .shadow-md {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-  
-  .max-w-md {
-    max-width: 28rem;
-  }
-  
-  .mx-5 {
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
-  }
-  
-  .w-full {
-    width: 100%;
-  }
-  
-  .mb-8 {
-    margin-bottom: 2rem;
-  }
-  
-  .border-l-12 {
-    border-left-width: 0.75rem;
-  } */
-  
-  /* Encabezado del formulario */
-  /* .font-bold {
-    font-weight: 700;
-  }
-  
-  .text-sm {
-    font-size: 0.875rem;
-  }
-  
-  .tituloanexo {
-    font-size: 1.25rem;
-  }
-  
-  .text-black {
-    color: #000;
-  } */
-  
-  /* Formulario */
-  /* .p-3 {
-    padding: 0.75rem;
-  }
-  
-  .rounded-full {
-    border-radius: 9999px;
-  }
-  
-  .border {
-    border-width: 1px;
-  }
-  
-  .text-red-500 {
-    color: #ef4444;
-  } */
-  
-  /* Selector */
-  /* .grid {
-    display: grid;
-  }
-  
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  
-  .gap-4 {
-    gap: 1rem;
-  }
-  
-  #google-map {
-    width: 100%;
-    height: 400px;
-  } */
-  
-  /* Botón */
-  /* .py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
-  
-  .bg-custom-azul {
-    background-color: #2563eb;
-  }
-  
-  .text-white {
-    color: #fff;
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-  
-  .shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  }
-
-  .element{
-    width: 100%;
-}
-
-  @media screen and (min-width: 768px) {
-    .container-father{
-        width: 700px;
-    }
-    .max-w-md{
-        max-width: 50rem;
-    }
-    .anexo2{
-        border-color: #AE3E97;
-        border-left-width: 40px;
-    }
-    .p-8 {
-        padding: 0.7rem;
-      }
-
-    .element{
-        width: 100%;
-    }
-    .title{
-        padding-top: 10px;
-    }
-  } */
-
   .contenedor {
     width: 90%;
     display: flex; /* Establece un contenedor flex */
+    flex-direction: column;
     align-items: center; /* Centra los elementos verticalmente */
     border-left: 8px solid #AE3E97; /* Borde izquierdo morado */
     border-radius: 15px;
@@ -224,12 +37,6 @@
     height: auto;
 }
 
-/* Estilos para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .contenedor {
-        flex-direction: column; /* Las columnas se apilan verticalmente en pantallas pequeñas */
-    }
-}
 
 main {
   display: flex;
@@ -251,7 +58,19 @@ main {
 
 .bloque{
   width: 100%;
-  padding: 10px;
+  padding: 1% 5%;
+  color: #000;
+}
+.bloque1{
+  width: 100%;
+  padding: 1% 5%;
+  color: #000;
+  font-weight: normal;
+}
+.bloquetextCertificado{
+  color: #000;
+  width: 100%;
+  padding: 7% 5% 2% 5%;
 }
 
 .input-ochenta {
@@ -272,14 +91,22 @@ main {
 }
 
 .contenedorCasita {
-  text-align: right; /* Alinea el contenido a la derecha */
-  margin-top: 20px; /* Añade un margen superior si es necesario */
+  text-align: right;
+  /* Alinea el contenido a la derecha */
+  display: flex;
+  width: 70%;
+  padding: 15px 0;
   /* Otros estilos que puedas necesitar */
+  align-items: center;
 }
 
 .element {
   width: 100%;
-  /* Otras propiedades como padding, border, etc. */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #878787;
+  color: #000;
 }
 
 .titulo-desfibrilador-ext{
@@ -307,6 +134,39 @@ main {
   gap: 10px; /* Espacio entre las celdas de la cuadrícula */
 }
 
-.grid-item {
-  /* Estilos adicionales para los elementos de la cuadrícula si es necesario */
+@media screen and (min-width: 900px) {
+  .contenedor {
+    width: 40%;
+    display: flex;
+    /* Establece un contenedor flex */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    border-left: 30px solid #AE3E97;
+    /* Borde izquierdo morado */
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Asegura que los hijos no sobresalgan de los bordes redondeados */
+    margin: auto 0 10% 0;
+    /* Esto añadirá el margen automáticamente en la parte superior e inferior */
+    flex-direction: column;
+  }
+
+  .bloque{
+    padding: 1% 10%;
+  }
+  .bloque1{
+    padding: 1% 10%;
+  }
+  .bloquetextCertificado{
+    padding: 7% 10% 2% 10%;
+  }
+
+  .iconos {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
 }

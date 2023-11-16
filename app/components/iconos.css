@@ -11,6 +11,12 @@
 .Home{
   color: #3366CC;
   width: 50px;
+}
+
+.plus{
+  margin-top: 5%;
+  color: #00AEEF;
+  width: 50px;
 
 }
 @media screen and (min-width: 900px) {

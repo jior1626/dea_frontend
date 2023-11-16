@@ -5,13 +5,14 @@ import Footer from "../components/Footer";
 import "./anexo2pagina4.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { User, ChevronLeft, Home, CirclePlus } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const mapContainerStyle = {
   width: "100%",
   height: "400px",
-  borderRadius: '15px'
+  borderRadius: "15px",
 };
 
 export default function Options() {
@@ -124,25 +125,30 @@ export default function Options() {
     getUserLocation();
   }, []);
 
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-
-<br></br>
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
+      <br></br>
       <div className="contenedor">
-        <div className="bloque">
+        <div className="bloquetextCertificado">
           <strong>PERSONAL CERTIFICADO EN EL USO DEL DEA</strong>
         </div>
 
-        <div className="bloque">
-          <strong>Personal entrenado y certificado para la utilización de estos desfibriladores es el que consta en la siguiente relación:</strong>
+        <div className="bloque1">
+          <p>
+            Personal entrenado y certificado para la utilización de estos
+            desfibriladores es el que consta en la siguiente relación:
+          </p>
         </div>
 
         <div className="bloque">
           <input
             type="text"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder="Documento de identidad"
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
@@ -153,7 +159,7 @@ export default function Options() {
         <div className="bloque">
           <input
             type="text"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder="Nombres y apellidos"
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
@@ -164,7 +170,7 @@ export default function Options() {
         <div className="bloque">
           <input
             type="text"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder="Entidad que certifica la capacitación en DEA"
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
@@ -175,27 +181,24 @@ export default function Options() {
         <div className="bloque">
           <input
             type="text"
-            className="element p-3 rounded-full shadow-sm border text-black"
+            className="element"
             placeholder="Fecha de certificación / última capacitación"
             onChange={(e) => setREG_OTRO(e.target.value)}
           />
           <br></br>
           <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
         </div>
-
-
-        <button className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg" onClick={navigateToSectionAnexoPag5}>
-          Siguiente
-        </button>
-
-        <br></br>
-
+        <div>
+          <CirclePlus/>
+        </div>
         <div className="contenedorCasita">
-          <img
-            src="https://nivel99.com/desfibriladores/casita.png"
+          <button
+            className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
             onClick={navigateToSectionOptions}
-          />
-          <br />
+          >
+            Siguiente
+          </button>
+          <Home />
         </div>
 
         <br></br>

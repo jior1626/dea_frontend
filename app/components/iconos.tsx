@@ -5,14 +5,15 @@ import {
   faChevronDown,
   faCircleInfo,
   faHome,
-  faChevronLeft
+  faChevronLeft,
+  faCirclePlus
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./iconos.css";
 
 // Configura el sistema de iconos
 import { library } from "@fortawesome/fontawesome-svg-core";
-library.add(faUser, faGlobe, faChevronDown, faCircleInfo, faHome, faChevronLeft);
+library.add(faUser, faGlobe, faChevronDown, faCircleInfo, faHome, faChevronLeft, faCirclePlus);
 
 const User = () => {
   return (
@@ -46,6 +47,11 @@ const Home = () => {
     <FontAwesomeIcon icon={faHome} size="xl" className="Home" />
   );
 };
+const CirclePlus = () => {
+  return (
+    <FontAwesomeIcon icon={faCirclePlus} size="2xl" className="plus" />
+  );
+};
 const ChevronLeft = () => {
   return (
     <div className="containerOptionsUserLeft">
@@ -58,4 +64,4 @@ const ChevronLeft = () => {
 
 
 
-export { User, Idioma, ChevronDown, CicleInfo, ChevronLeft, Home };
+export { User, Idioma, ChevronDown, CicleInfo, ChevronLeft, Home, CirclePlus };
