@@ -193,11 +193,12 @@ header {
     cursor: pointer
   }
   
-  .titulalcaldia_ ion-icon {
-    margin-left: 4px;
+  .titulalcaldia_ .iconChevron {
+    margin-left: 140px;
     font-size: 13px;
     position: absolute;
-    margin-top: -2px
+    margin-top: -12px;
+
   }
   
   .titulalcaldia_2_ .titulo_alcaldiamob {
@@ -252,6 +253,11 @@ header {
     height: 100%;
     width: 100%;
   }
+  .idioma_nav {
+    display: flex;
+    margin: auto;
+    align-items: center;
+  }
   .top_nav .idioma_nav {
     float: right;
     font-size: 12px;
@@ -261,6 +267,14 @@ header {
     overflow: hidden;
     position: relative;
     padding-bottom: 14px;
+  }
+  .drop {
+    display: flex;
+    align-items: center;
+  }
+
+  #dropdownMenuLink {
+    width: 400px;
   }
   .dropdown-menu.show {
     display: block;

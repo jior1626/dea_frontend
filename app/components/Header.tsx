@@ -1,7 +1,8 @@
 import React from "react";
 import { IonIcon } from "@ionic/react";
 import "./Header.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Idioma, ChevronDown } from "../components/iconos";
+
 const Header = () => {
   return (
     <header>
@@ -24,9 +25,14 @@ const Header = () => {
             <div className="dronwalcaldia_">
               <div className="titulalcaldia_">
                 Alcaldía de Medellín
-                <p id="dropdownMenuLink" data-toggle="dropdown">
-                  Secretarias y Dependencias
-                </p>
+                <div className="drop">
+                  <p id="dropdownMenuLink" data-toggle="dropdown">
+                    Secretarias y Dependencias
+                  </p>
+                  <p className="iconChevron">
+                    <ChevronDown />
+                  </p>
+                </div>
               </div>
               <div className="menualcaldias_lista">
                 <div className="secre_depen_links">
@@ -552,7 +558,9 @@ const Header = () => {
               data-toggle="dropdown"
               aria-expanded="true"
             >
+              <Idioma />
               Idioma
+              <ChevronDown />
             </span>
             <div
               className="dropdown-menu estilosidiomas"
