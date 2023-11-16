@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2pagina3.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { User, ChevronLeft, Home } from "../components/iconos";
+// import { User, ChevronLeft, Home } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
@@ -17,37 +17,6 @@ const mapContainerStyle = {
 
 export default function Options() {
   const router = useRouter();
-  const [REG_CIUDADMUNICIPIO, setREG_CIUDADMUNICIPIO] = useState("Medellín");
-  const [REG_DEPARTAMENTO, setREG_DEPARTAMENTO] = useState("Antioquia");
-  const [REG_TIPOINSTALACION, setREG_TIPOINSTALACION] = useState("");
-  const [REG_TIPODECLARACION, setREG_TIPODECLARACION] = useState("");
-  const [REG_TIPOESPACIO, setREG_TIPOESPACIO] = useState("");
-  const [REG_OTRO, setREG_OTRO] = useState("");
-  const [REG_NUMSERIE, setREG_NUMSERIE] = useState("");
-  const [REG_MODELO, setREG_MODELO] = useState("");
-  const [REG_MARCA, setREG_MARCA] = useState("");
-  const [REG_IMPORTADORDISTRIBUIDOR, setREG_IMPORTADORDISTRIBUIDOR] =
-    useState("");
-  const [REG_DESCLUGARUBICACION, setREG_DESCLUGARUBICACION] = useState("");
-  const [mes, setMes] = useState("");
-  const [dia, setDia] = useState("");
-  const [ano, setAno] = useState("");
-
-  const [errorREG_CIUDADMUNICIPIO, setErrorREG_CIUDADMUNICIPIO] = useState("");
-  const [errorREG_DEPARTAMENTO, setErrorREG_DEPARTAMENTO] = useState("");
-  const [errorREG_TIPOINSTALACION, setErrorREG_TIPOINSTALACION] = useState("");
-  const [errorREG_TIPODECLARACION, setErrorREG_TIPODECLARACION] = useState("");
-  const [errorREG_TIPOESPACIO, setErrorREG_TIPOESPACIO] = useState("");
-  const [errorREG_OTRO, setErrorREG_OTRO] = useState("");
-  const [errorREG_NUMSERIE, setErrorREG_NUMSERIE] = useState("");
-  const [errorREG_MODELO, setErrorREG_MODELO] = useState("");
-  const [errorREG_MARCA, setErrorREG_MARCA] = useState("");
-  const [errorREG_IMPORTADORDISTRIBUIDOR, setErrorREG_IMPORTADORDISTRIBUIDOR] =
-    useState("");
-  const [errorREG_DESCLUGARUBICACION, setErrorREG_DESCLUGARUBICACION] =
-    useState("");
-  const [fields, setFields] = useState([]);
-  const [fields2, setFields2] = useState([]);
 
   const navigateToSectionOptions = () => {
     router.push("options");
@@ -57,42 +26,17 @@ export default function Options() {
     router.push("anexo2pagina4");
   };
 
+  const [REG_DESCLUGARUBICACION, setREG_DESCLUGARUBICACION] = useState("");
+
+  const [errorREG_DESCLUGARUBICACION, setErrorREG_DESCLUGARUBICACION] = useState("");
+
   const [userLocation, setUserLocation] = useState(null);
 
   const [mapCenter, setMapCenter] = useState({
     lat: 0,
     lng: 0,
   });
-  useEffect(() => {
-    // Obtener los campos de la API al cargar el componente
-    fetch("https://dea-crud.azurewebsites.net/apiTipoInstalacion.php")
-      .then((response) => response.json())
-      .then((data) => {
-        // Filtrar para excluir el campo 'id'
-        const filteredFields = data.filter((field) => field !== "id");
-        setFields(filteredFields);
-        //console.log(JSON.stringify(data));
-      })
-      .catch((error) => {
-        // Manejo de errores aquí
-        console.error("Error al obtener los campos:", error);
-      });
-  }, []);
-  useEffect(() => {
-    // Obtener los campos de la API al cargar el componente
-    fetch("https://dea-crud.azurewebsites.net/apiTipoDeclaracion.php")
-      .then((response) => response.json())
-      .then((data) => {
-        // Filtrar para excluir el campo 'id'
-        const filteredFields2 = data.filter((field) => field !== "id");
-        setFields2(filteredFields2);
-        console.log(JSON.stringify(data));
-      })
-      .catch((error) => {
-        // Manejo de errores aquí
-        console.error("Error al obtener los campos:", error);
-      });
-  }, []);
+
   useEffect(() => {
     const getUserLocation = async () => {
       if ("geolocation" in navigator) {
@@ -125,12 +69,34 @@ export default function Options() {
     getUserLocation();
   }, []);
 
+  const handleSubmit = async () => {
+    localStorage.setItem("REG_DESCLUGARUBICACION", REG_DESCLUGARUBICACION);
+    localStorage.setItem("REG_GPS", ''+userLocation);
+    // Validar que todos los campos estén llenos
+    let hasError = false;
+
+    if (!REG_DESCLUGARUBICACION || REG_DESCLUGARUBICACION.length < 4) {
+      setErrorREG_DESCLUGARUBICACION(
+        "El tipo de espacio debe tener al menos 4 caracteres"
+      );
+      hasError = true;
+    } else {
+      setErrorREG_DESCLUGARUBICACION("");
+    }
+
+    if (hasError) {
+      return; // Si hay errores, no continúes con el envío del formulario
+    }
+
+    router.push("anexo2pagina4");
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <div className="iconos">
-        <ChevronLeft />
-        <User />
+        {/* <ChevronLeft />
+        <User /> */}
       </div>
       <br></br>
       <div className="contenedor">
@@ -143,10 +109,10 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Desripción"
-            onChange={(e) => setREG_OTRO(e.target.value)}
+             onChange={(e) => setREG_DESCLUGARUBICACION(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
+          <span className="text-red-500">{errorREG_DESCLUGARUBICACION}</span>
         </div>
 
         <div className="bloque">
@@ -168,11 +134,11 @@ export default function Options() {
         <div className="contenedorCasita">
           <button
             className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
-            onClick={navigateToSectionAnexoPag4}
+            onClick={handleSubmit}
           >
             Siguiente
           </button>
-          <Home />
+          {/* <Home /> */}
         </div>
 
         <br></br>

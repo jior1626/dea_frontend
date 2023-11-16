@@ -5,49 +5,26 @@ import Footer from "../components/Footer";
 import "./anexo2pagina4.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { User, ChevronLeft, Home, CirclePlus } from "../components/iconos";
-
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
-const mapContainerStyle = {
-  width: "100%",
-  height: "400px",
-  borderRadius: "15px",
-};
+// import { User, ChevronLeft, Home, CirclePlus } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
-  const [REG_CIUDADMUNICIPIO, setREG_CIUDADMUNICIPIO] = useState("Medellín");
-  const [REG_DEPARTAMENTO, setREG_DEPARTAMENTO] = useState("Antioquia");
-  const [REG_TIPOINSTALACION, setREG_TIPOINSTALACION] = useState("");
-  const [REG_TIPODECLARACION, setREG_TIPODECLARACION] = useState("");
-  const [REG_TIPOESPACIO, setREG_TIPOESPACIO] = useState("");
-  const [REG_OTRO, setREG_OTRO] = useState("");
-  const [REG_NUMSERIE, setREG_NUMSERIE] = useState("");
-  const [REG_MODELO, setREG_MODELO] = useState("");
-  const [REG_MARCA, setREG_MARCA] = useState("");
-  const [REG_IMPORTADORDISTRIBUIDOR, setREG_IMPORTADORDISTRIBUIDOR] =
-    useState("");
-  const [REG_DESCLUGARUBICACION, setREG_DESCLUGARUBICACION] = useState("");
-  const [mes, setMes] = useState("");
-  const [dia, setDia] = useState("");
-  const [ano, setAno] = useState("");
+  const [REG_DOCUMENTOPERSONALCERTIFICADO, setREG_DOCUMENTOPERSONALCERTIFICADO] = useState("");
+  const [REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO, setREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO] = useState("");
+  const [REG_ENTIDADCERTIFICADORA, setREG_ENTIDADCERTIFICADORA] = useState("");
+  const [REG_FECHACERTIFICACION, setREG_FECHACERTIFICACION] = useState("");
 
-  const [errorREG_CIUDADMUNICIPIO, setErrorREG_CIUDADMUNICIPIO] = useState("");
-  const [errorREG_DEPARTAMENTO, setErrorREG_DEPARTAMENTO] = useState("");
-  const [errorREG_TIPOINSTALACION, setErrorREG_TIPOINSTALACION] = useState("");
-  const [errorREG_TIPODECLARACION, setErrorREG_TIPODECLARACION] = useState("");
-  const [errorREG_TIPOESPACIO, setErrorREG_TIPOESPACIO] = useState("");
-  const [errorREG_OTRO, setErrorREG_OTRO] = useState("");
-  const [errorREG_NUMSERIE, setErrorREG_NUMSERIE] = useState("");
-  const [errorREG_MODELO, setErrorREG_MODELO] = useState("");
-  const [errorREG_MARCA, setErrorREG_MARCA] = useState("");
-  const [errorREG_IMPORTADORDISTRIBUIDOR, setErrorREG_IMPORTADORDISTRIBUIDOR] =
-    useState("");
-  const [errorREG_DESCLUGARUBICACION, setErrorREG_DESCLUGARUBICACION] =
-    useState("");
-  const [fields, setFields] = useState([]);
-  const [fields2, setFields2] = useState([]);
+  const [errorREG_DOCUMENTOPERSONALCERTIFICADO, setErrorREG_DOCUMENTOPERSONALCERTIFICADO] = useState("");
+  const [errorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO, setErrorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO] = useState("");
+  const [errorREG_ENTIDADCERTIFICADORA, setErrorREG_ENTIDADCERTIFICADORA] = useState("");
+  const [errorREG_FECHACERTIFICACION, setErrorREG_FECHACERTIFICACION] = useState("");
+ 
+  const handleKeyDown = (e) => {
+    // Permitir solo teclas de control y números
+    if (["e", "E", "+", "-"].includes(e.key)) {
+      e.preventDefault();
+    }
+  };
 
   const navigateToSectionOptions = () => {
     router.push("options");
@@ -57,80 +34,64 @@ export default function Options() {
     router.push("anexo2pagina5");
   };
 
-  const [userLocation, setUserLocation] = useState(null);
+  const handleSubmit = async () => {
+    localStorage.setItem("REG_DOCUMENTOPERSONALCERTIFICADO", REG_DOCUMENTOPERSONALCERTIFICADO);
+    localStorage.setItem("REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO", REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO);
+    localStorage.setItem("REG_ENTIDADCERTIFICADORA", REG_ENTIDADCERTIFICADORA);
+    localStorage.setItem("REG_FECHACERTIFICACION", REG_FECHACERTIFICACION);
+    
+    // Validar que todos los campos estén llenos
+    let hasError = false;
 
-  const [mapCenter, setMapCenter] = useState({
-    lat: 0,
-    lng: 0,
-  });
-  useEffect(() => {
-    // Obtener los campos de la API al cargar el componente
-    fetch("https://dea-crud.azurewebsites.net/apiTipoInstalacion.php")
-      .then((response) => response.json())
-      .then((data) => {
-        // Filtrar para excluir el campo 'id'
-        const filteredFields = data.filter((field) => field !== "id");
-        setFields(filteredFields);
-        //console.log(JSON.stringify(data));
-      })
-      .catch((error) => {
-        // Manejo de errores aquí
-        console.error("Error al obtener los campos:", error);
-      });
-  }, []);
-  useEffect(() => {
-    // Obtener los campos de la API al cargar el componente
-    fetch("https://dea-crud.azurewebsites.net/apiTipoDeclaracion.php")
-      .then((response) => response.json())
-      .then((data) => {
-        // Filtrar para excluir el campo 'id'
-        const filteredFields2 = data.filter((field) => field !== "id");
-        setFields2(filteredFields2);
-        console.log(JSON.stringify(data));
-      })
-      .catch((error) => {
-        // Manejo de errores aquí
-        console.error("Error al obtener los campos:", error);
-      });
-  }, []);
-  useEffect(() => {
-    const getUserLocation = async () => {
-      if ("geolocation" in navigator) {
-        try {
-          const position = await new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(resolve, reject, {
-              enableHighAccuracy: true, // Solicita una ubicación de alta precisión
-              timeout: 5000, // Tiempo máximo en milisegundos para obtener la ubicación
-              maximumAge: 0, // Define la edad máxima aceptable de una lectura de posición en caché
-            });
-          });
+    if (!REG_DOCUMENTOPERSONALCERTIFICADO || REG_DOCUMENTOPERSONALCERTIFICADO.length < 8) {
+      setErrorREG_DOCUMENTOPERSONALCERTIFICADO(
+        "El documento de identidad debe tener al menos 8 caracteres"
+      );
+      hasError = true;
+    } else {
+      setErrorREG_DOCUMENTOPERSONALCERTIFICADO("");
+    }
 
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
+    if (!REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO || REG_NOMBRESAPELLIDOSPERSONALCERTIFICADO.length < 4) {
+      setErrorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO(
+        "Nombres y apellidos debe tener al menos 4 caracteres"
+      );
+      hasError = true;
+    } else {
+      setErrorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO("");
+    }
 
-          setUserLocation(`${latitude},${longitude}`);
-          setMapCenter({ lat: latitude, lng: longitude });
-        } catch (error) {
-          console.error("Error al obtener las coordenadas GPS:", error);
-        }
-      } else {
-        console.log(
-          "La geolocalización no está disponible en este dispositivo."
-        );
-      }
-    };
+    if (!REG_ENTIDADCERTIFICADORA || REG_ENTIDADCERTIFICADORA.length < 4) {
+      setErrorREG_ENTIDADCERTIFICADORA(
+        "Entidad certificadora debe tener al menos 4 caracteres"
+      );
+      hasError = true;
+    } else {
+      setErrorREG_ENTIDADCERTIFICADORA("");
+    }
 
-    // Forzar la actualización del estado mapCenter
-    setMapCenter((prev) => ({ ...prev }));
-    getUserLocation();
-  }, []);
+    if (!REG_FECHACERTIFICACION || REG_FECHACERTIFICACION.length < 4) {
+      setErrorREG_FECHACERTIFICACION(
+        "La fecha es obligatoria"
+      );
+      hasError = true;
+    } else {
+      setErrorREG_FECHACERTIFICACION("");
+    }
+
+    if (hasError) {
+      return; // Si hay errores, no continúes con el envío del formulario
+    }
+
+    router.push("anexo2pagina5");
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <div className="iconos">
-        <ChevronLeft />
-        <User />
+        {/* <ChevronLeft />
+        <User /> */}
       </div>
       <br></br>
       <div className="contenedor">
@@ -147,13 +108,14 @@ export default function Options() {
 
         <div className="bloque">
           <input
-            type="text"
+            type="number"
             className="element"
             placeholder="Documento de identidad"
-            onChange={(e) => setREG_OTRO(e.target.value)}
+            onKeyDown={handleKeyDown}
+            onChange={(e) => setREG_DOCUMENTOPERSONALCERTIFICADO(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
+          <span className="text-red-500">{errorREG_DOCUMENTOPERSONALCERTIFICADO}</span>
         </div>
 
         <div className="bloque">
@@ -161,10 +123,10 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Nombres y apellidos"
-            onChange={(e) => setREG_OTRO(e.target.value)}
+            onChange={(e) => setREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
+          <span className="text-red-500">{errorREG_NOMBRESAPELLIDOSPERSONALCERTIFICADO}</span>
         </div>
 
         <div className="bloque">
@@ -172,33 +134,33 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Entidad que certifica la capacitación en DEA"
-            onChange={(e) => setREG_OTRO(e.target.value)}
+            onChange={(e) => setREG_ENTIDADCERTIFICADORA(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
+          <span className="text-red-500">{errorREG_ENTIDADCERTIFICADORA}</span>
         </div>
 
         <div className="bloque">
           <input
-            type="text"
+            type="date"
             className="element"
             placeholder="Fecha de certificación / última capacitación"
-            onChange={(e) => setREG_OTRO(e.target.value)}
+            onChange={(e) => setREG_FECHACERTIFICACION(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errorREG_TIPOESPACIO}</span>
+          <span className="text-red-500">{errorREG_FECHACERTIFICACION}</span>
         </div>
         <div>
-          <CirclePlus/>
+          {/* <CirclePlus/> */}
         </div>
         <div className="contenedorCasita">
           <button
             className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
-            onClick={navigateToSectionAnexoPag5}
+            onClick={handleSubmit}
           >
             Siguiente
           </button>
-          <Home />
+          {/* <Home /> */}
         </div>
 
         <br></br>

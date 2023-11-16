@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
+// import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -44,24 +44,23 @@ export default function Options() {
   // Función para validar todos los campos antes de navegar
   const validateFields = () => {
     const newErrors = [];
-    if (!nombreCompleto.trim())
+    if (nombreCompleto.length < 6)
       newErrors.push("El nombre completo es obligatorio.");
     if (
-      !documentoIdentificacion.trim() ||
-      documentoIdentificacion.length !== 8
+      documentoIdentificacion.length < 8
     ) {
       newErrors.push("El documento de identificación debe tener 10 dígitos.");
     }
-    if (!existenciaDesfibriladores.trim()) {
+    if (existenciaDesfibriladores.length < 1) {
       newErrors.push("Debe indicar la cantidad de desfibriladores.");
     }
-    if (!nombreSitio.trim()) {
+    if (nombreSitio.length < 4) {
       newErrors.push("El nombre del sitio es obligatorio.");
     }
-    if (!direccion.trim()) {
+    if (direccion.length < 5) {
       newErrors.push("La dirección es obligatoria.");
     }
-    if (!codigoPostal.trim() || !/^\d{5}$/.test(codigoPostal)) {
+    if (codigoPostal.length < 4 || !/^\d{5}$/.test(codigoPostal)) {
       newErrors.push("El código postal debe tener 5 dígitos.");
     }
 
@@ -73,12 +72,12 @@ export default function Options() {
   const navigateToSection = () => {
     if (validateFields()) {
       // Guardar la información en el localStorage antes de navegar
-      localStorage.setItem("REG_NOMBRECOMPLETO", nombreCompleto);
-      localStorage.setItem("REG_DOCIDENTIFICACION", documentoIdentificacion);
-      localStorage.setItem("REG_CANTIDAD", existenciaDesfibriladores);
-      localStorage.setItem("REG_NOMBREUBICACION", nombreSitio);
-      localStorage.setItem("REG_DIRECCIONUBICACION", direccion);
-      localStorage.setItem("REG_CODIGOPOSTAL", codigoPostal);
+      localStorage.setItem("dea_nombrecompleto", nombreCompleto);
+      localStorage.setItem("dea_docidentificacion", documentoIdentificacion);
+      localStorage.setItem("dea_cantidad", existenciaDesfibriladores);
+      localStorage.setItem("dea_nombreubicacion", nombreSitio);
+      localStorage.setItem("dea_direccionubicacion", direccion);
+      localStorage.setItem("dea_codigopostal", codigoPostal);
 
       router.push("/anexo2pagina2"); // Asegúrate de que esta ruta es la correcta
     } else {
@@ -91,8 +90,8 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        <ChevronLeft />
-        <User />
+        {/* <ChevronLeft />
+        <User /> */}
       </div>
       <div className="contenedor">
         <div className="containerTituloAnexo">
@@ -100,9 +99,13 @@ export default function Options() {
             REGISTRO DE INSTALACIÓN DESFIBRILADORES EXTERNOS (DEA)
             <p className="ley">(Ley 1831 del 12 de mayo de 2017)</p>
           </h6>
+<<<<<<< Updated upstream
           <a href="/anexo2pagina8">
             <CicleInfo />
           </a>
+=======
+          {/* <CicleInfo /> */}
+>>>>>>> Stashed changes
         </div>
         <div className="bloque">
           <strong>Representante legal:</strong>
@@ -190,7 +193,7 @@ export default function Options() {
           >
             Siguiente
           </button>
-          <Home />
+          {/* <Home /> */}
           <br />
         </div>
 

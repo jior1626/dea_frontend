@@ -1,7 +1,7 @@
 import React from "react";
 import { IonIcon } from "@ionic/react";
 import "./Header.css";
-import { Idioma, ChevronDown } from "../components/iconos";
+// import { Idioma, ChevronDown } from "../components/iconos";
 
 const Header = () => {
   return (
@@ -30,7 +30,7 @@ const Header = () => {
                     Secretarias y Dependencias
                   </p>
                   <p className="iconChevron">
-                    <ChevronDown />
+                    {/* <ChevronDown /> */}
                   </p>
                 </div>
               </div>
@@ -558,9 +558,9 @@ const Header = () => {
               data-toggle="dropdown"
               aria-expanded="true"
             >
-              <Idioma />
+              {/* <Idioma />
               Idioma
-              <ChevronDown />
+              <ChevronDown /> */}
             </span>
             <div
               className="dropdown-menu estilosidiomas"
