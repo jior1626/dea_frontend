@@ -90,3 +90,15 @@ main {
 }
 
 
+.fila-container {
+    display: flex; /* Habilita Flexbox */
+  }
+  
+  .columna {
+    flex: 1; /* Esto hace que cada columna ocupe la mitad del espacio disponible */
+    /* Añade estilos adicionales como padding, margin, etc., según sea necesario */
+  }
+  
+  .rutavital{
+    background-color: red;
+  }
