@@ -45,8 +45,17 @@
 
   }
 
-  .containerOptionsUser {
+  .containerOptionsUserHomeOut {
     display: none;
+  }
+
+  .containerOptionsUser {
+    min-height: 100px;
+    display: flex;
+    margin: 0 80px;
+    width: 20%;
+    justify-content: right;
+    align-self: flex-end;
   }
 
   .white-containerOptionsUserLeft {

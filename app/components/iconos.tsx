@@ -66,7 +66,7 @@ const ChevronLeft = () => {
 
 const HomeOut = () => {
   return (
-    <div className="containerOptionsUser">
+    <div className="containerOptionsUserHomeOut">
       <div className="white-containerOptionsHomeOut">
         <FontAwesomeIcon icon={faHome} size="xl" className="Home" />
         <a href="/" ><FontAwesomeIcon icon={faArrowRightFromBracket} size="xl" className="Home"  /></a>
