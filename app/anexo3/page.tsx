@@ -130,7 +130,7 @@ export default function Options() {
               Formulario de reporte uso de Desfibrilador Externo Automático -
               DEA en ambiente extrahospitalario
             </h6>
-            <a href="/anexo2pagina8">
+            <a href="/anexo3pagina4">
             <CicleInfo />
           </a>
           </div>

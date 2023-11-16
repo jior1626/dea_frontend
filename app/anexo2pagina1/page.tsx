@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2pagina1.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-// import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
+import { CicleInfo, User, ChevronLeft, Home } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -36,7 +36,7 @@ export default function Options() {
   const [dea_departamento, setdea_departamento] = useState("");
   const [dea_tipodeclaracion, setdea_tipodeclaracion] = useState("");
   const [dea_tipoinstalacion, setdea_tipoinstalacion] = useState("");
- 
+
   const [errores, setErrores] = useState([]);
 
   // Función para validar todos los campos antes de navegar
@@ -44,12 +44,9 @@ export default function Options() {
     const newErrors = [];
     if (dea_ciudadmunicipio.length < 4)
       newErrors.push("El nombre del municipio es obligatorio.");
-    if (
-      dea_departamento.length < 4
-    ) {
+    if (dea_departamento.length < 4) {
       newErrors.push("El departamento es obligatorio");
     }
-    
 
     setErrores(newErrors);
     return newErrors.length === 0;
@@ -75,13 +72,11 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        {/* <ChevronLeft />
-        <User /> */}
+        <ChevronLeft />
+        <User />
       </div>
       <div className="contenedor">
-        
         <div className="bloque">
-          
           <input
             type="text"
             className="inputForm"
@@ -107,28 +102,25 @@ export default function Options() {
             value={dea_departamento}
           />
           {/* Mensaje de error para el documento de identificación, si existe */}
-          {errores.includes(
-            "El departamento es obligatorio"
-          ) && (
-            <p className="text-red-500">
-              El departamento es obligatorio
-            </p>
+          {errores.includes("El departamento es obligatorio") && (
+            <p className="text-red-500">El departamento es obligatorio</p>
           )}
         </div>
         <div className="bloque">
-            <br></br>
-          <p>
-          Declaración:
-          </p>
+          <br></br>
+          <p>Declaración:</p>
 
-          <select className="inputForm"
-          onChange={(e) => setdea_tipodeclaracion(e.target.value)}
-           >
+          <select
+            className="inputForm"
+            onChange={(e) => setdea_tipodeclaracion(e.target.value)}
+          >
             <option>Selecciona</option>
             <option value="Permanente">Permanente</option>
             <option value="Retirada">Retirada</option>
             <option value="Temporal">Temporal</option>
-            <option value="Modificación ubicación">Modificación ubicación</option>
+            <option value="Modificación ubicación">
+              Modificación ubicación
+            </option>
             <option value="Cambio titular">Cambio titular</option>
           </select>
           {/* Mensaje de error para el nombre del sitio, si existe */}
@@ -136,13 +128,14 @@ export default function Options() {
             <p className="text-red-500">El nombre del sitio es obligatorio.</p>
           )}
 
-<br></br>
-          <p>
-          Tipo de Instalación::
-          </p>
+          <br></br>
+          <p>Tipo de Instalación::</p>
 
-          <select className="inputForm" onChange={(e) => setdea_tipoinstalacion(e.target.value)} >
-          <option>Selecciona</option>
+          <select
+            className="inputForm"
+            onChange={(e) => setdea_tipoinstalacion(e.target.value)}
+          >
+            <option>Selecciona</option>
             <option value="Obligatoria">Obligatoria</option>
             <option value="Voluntaria">Voluntaria</option>
           </select>
@@ -155,7 +148,7 @@ export default function Options() {
           >
             Siguiente
           </button>
-          {/* <Home /> */}
+          <Home />
           <br />
         </div>
 

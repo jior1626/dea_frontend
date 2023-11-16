@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2pagina3.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-// import { User, ChevronLeft, Home } from "../components/iconos";
+import { User, ChevronLeft, Home } from "../components/iconos";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
@@ -95,8 +95,8 @@ export default function Options() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <div className="iconos">
-        {/* <ChevronLeft />
-        <User /> */}
+        <ChevronLeft />
+        <User />
       </div>
       <br></br>
       <div className="contenedor">
@@ -138,7 +138,7 @@ export default function Options() {
           >
             Siguiente
           </button>
-          {/* <Home /> */}
+          <Home />
         </div>
 
         <br></br>

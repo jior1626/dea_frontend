@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2pagina4.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-// import { User, ChevronLeft, Home, CirclePlus } from "../components/iconos";
+import { User, ChevronLeft, Home, CirclePlus } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -90,8 +90,8 @@ export default function Options() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <div className="iconos">
-        {/* <ChevronLeft />
-        <User /> */}
+        <ChevronLeft />
+        <User />
       </div>
       <br></br>
       <div className="contenedor">
@@ -151,7 +151,7 @@ export default function Options() {
           <span className="text-red-500">{errordea_fechacertificacion}</span>
         </div>
         <div>
-          {/* <CirclePlus/> */}
+          <CirclePlus/>
         </div>
         <div className="contenedorCasita">
           <button
@@ -160,7 +160,7 @@ export default function Options() {
           >
             Siguiente
           </button>
-          {/* <Home /> */}
+          <Home />
         </div>
 
         <br></br>

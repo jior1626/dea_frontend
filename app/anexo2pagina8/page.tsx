@@ -128,7 +128,10 @@ export default function Options() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
-
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
       <br></br>
       <div className="contenedor">
         <div className="bloque">
