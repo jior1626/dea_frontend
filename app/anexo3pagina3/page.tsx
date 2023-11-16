@@ -148,7 +148,7 @@ export default function Options() {
 
         <div className="bloque">
           <select 
-          className="mt-1 p-2 w-full border rounded text-black"
+          className="inputData mt-1 p-2 w-full border rounded text-black"
           onChange={(e) =>
             setUso_datosmediotransportemediotransporte(e.target.value)
           }>
@@ -163,7 +163,7 @@ export default function Options() {
           type="text"
           id="edad"
           placeholder="Nombre de la empresa de la ambulancia"
-          className="mt-1 p-2 w-full border rounded text-black"
+          className="inputData mt-1 p-2 w-full border rounded text-black"
           onChange={(e) =>
             setUso_datosmediotransporteempresaambulancia(e.target.value)
           }
@@ -175,7 +175,7 @@ export default function Options() {
         <textarea
           id="edad"
           placeholder=""
-          className="mt-1 p-2 w-full border rounded text-black"
+          className="inputData mt-1 p-2 w-full border rounded text-black"
           onChange={(e) =>
             setUso_datosmediotransporteobservaciones(e.target.value)
           }
@@ -188,7 +188,7 @@ export default function Options() {
           type="text"
           id="edad"
           placeholder="Firma"
-          className="mt-1 p-2 w-full border rounded text-black"
+          className="inputData mt-1 p-2 w-full border rounded text-black"
           onChange={(e) =>
             setUso_firma(e.target.value)
           }
@@ -197,7 +197,7 @@ export default function Options() {
 
         <br></br>
         <button
-          className="btn-sesenta mt-4 rutavital text-white py-3 rounded-full shadow-lg"
+          className="btnNext btn-sesenta mt-4 rutavital text-white py-3 rounded-full shadow-lg"
           onClick={navigateToSectionActivarRutaVital}
         >
           Ruta vital
@@ -205,7 +205,7 @@ export default function Options() {
         <br></br>
 
         <button
-          className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+          className="btnNext btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
           onClick={navigateToSectionAnexo3Finalizo}
         >
           Siguiente

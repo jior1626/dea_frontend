@@ -144,7 +144,7 @@ export default function Options() {
             type="text"
             id="edad"
             placeholder="Nombre de la persona que utilizó el DEA"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) =>
               setUso_datoseventonombrepersonautilizodea(e.target.value)
             }
@@ -154,7 +154,7 @@ export default function Options() {
         <div className="bloque">
           <select
             id="numeroidentificacion"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) => setUso_datoseventotipodocumento(e.target.value)}
           >
             <option value="Cedula">Cedula</option>
@@ -167,7 +167,7 @@ export default function Options() {
             type="text"
             id="edad"
             placeholder="Número de doc. de identifición"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) => setUso_datoseventonumerodocumento(e.target.value)}
           />
         </div>
@@ -286,7 +286,7 @@ export default function Options() {
           type="text"
           id="edad"
           placeholder="Nombre de la persona encargada del traslado"
-          className="mt-1 p-2 w-full border rounded text-black"
+          className="inputData mt-1 p-2 w-full border rounded text-black"
           onChange={(e) =>
             setUso_datosmediotransportenombreencargado(e.target.value)
           }
@@ -294,7 +294,7 @@ export default function Options() {
         </div>
 
         <button
-          className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+          className="btnNext btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
           onClick={navigateToSectionAnexo3Pagina3}
         >
           Siguiente

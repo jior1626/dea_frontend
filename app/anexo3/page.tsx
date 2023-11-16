@@ -124,7 +124,7 @@ export default function Options() {
         <input
             type="date"
             id="fecha"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) => setUso_fechaevento(e.target.value)}
             max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
           />
@@ -140,7 +140,7 @@ export default function Options() {
             type="text"
             id="lugar"
             placeholder="Nombre del lugar del evento"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) => setUso_nombrelugarevento(e.target.value)}
           />
         </div>
@@ -151,14 +151,14 @@ export default function Options() {
             type="text"
             id="nombre"
             placeholder="Nombre completo"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) => setUso_personaatendidaeventonombre(e.target.value)}
           />
            
             <br /><br />
             <select
             id="numeroidentificacion"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) =>
               setUso_personaatendidaeventotipodocumento(e.target.value)
             }
@@ -171,7 +171,7 @@ export default function Options() {
             type="text"
             id="documentoidentificacion"
             placeholder="Número de doc. de identifición"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) =>
               setUso_personaatendidaeventonumerodocumento(e.target.value)
             }
@@ -182,14 +182,14 @@ export default function Options() {
             type="number"
             id="edad"
             placeholder="Edad"
-            className="mt-1 p-2 w-full border rounded text-black"
+            className="inputData mt-1 p-2 w-full border rounded text-black"
             onChange={(e) => setUso_personaatendidaeventoedad(e.target.value)}
           />
 
           <br></br>
           <br></br>
           <select 
-          className="mt-1 p-2 w-full border rounded text-black"
+          className="inputData mt-1 p-2 w-full border rounded text-black"
           onChange={(e) =>
             setUso_personaatendidaeventosexo(e.target.value)
           }
@@ -205,7 +205,7 @@ export default function Options() {
           type="text"
           id="edad"
           placeholder="Asegurador en Salud"
-          className="mt-1 p-2 w-full border rounded text-black"
+          className="inputData mt-1 p-2 w-full border rounded text-black"
           onChange={(e) =>
             setUso_personaatendidaeventoaseguradorsalud(e.target.value)
           }
@@ -215,7 +215,7 @@ export default function Options() {
         </div>
 
         <button
-              className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
+              className="btnNext btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
               onClick={navigateToSectionAnexo3Pagina2}
             >
               Siguiente

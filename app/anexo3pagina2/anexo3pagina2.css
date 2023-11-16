@@ -36,12 +36,6 @@
     height: auto;
 }
 
-/* Estilos para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .contenedor {
-        flex-direction: column; /* Las columnas se apilan verticalmente en pantallas pequeñas */
-    }
-}
 
 main {
   display: flex;
@@ -99,3 +93,26 @@ main {
     /* Añade estilos adicionales como padding, margin, etc., según sea necesario */
   }
   
+    /* Estilos para pantallas más pequeñas */
+    @media (max-width: 768px) {
+      .contenedor {
+          flex-direction: column; /* Las columnas se apilan verticalmente en pantallas pequeñas */
+      }
+    }
+
+  @media (min-width: 900px) {
+    .contenedor{
+      flex-direction: column;
+      border-left: 30px solid #FF8403;
+      width: 60%;
+      height: 800px;
+    }
+    .inputData{
+      width: 95%;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .btnNext{
+      margin-top: 20px;
+    }
+  }
