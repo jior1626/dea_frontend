@@ -79,7 +79,7 @@ main {
 }
 
 .btn-sesenta {
-  width: 60%; /* Establece el ancho del botón al 60% del contenedor padre */
+  width: 80px; /* Establece el ancho del botón al 60% del contenedor padre */
   margin: 0 auto; /* Centra el botón horizontalmente */
 }
 
@@ -90,3 +90,15 @@ main {
 }
 
 
+.fila-container {
+    display: flex; /* Habilita Flexbox */
+  }
+  
+  .columna {
+    flex: 1; /* Esto hace que cada columna ocupe la mitad del espacio disponible */
+    /* Añade estilos adicionales como padding, margin, etc., según sea necesario */
+  }
+  
+  .rutavital{
+    background-color: red;
+  }
