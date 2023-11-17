@@ -206,4 +206,14 @@ main {
       width: 100%;
       justify-content: space-between;
     }
+    .contenedorCasita {
+      text-align: right;
+      /* Alinea el contenido a la derecha */
+      display: flex;
+      width: 70%;
+      padding-top: 20px;
+      /* Otros estilos que puedas necesitar */
+      align-items: center;
+      margin: 0 auto;
+    }
   }

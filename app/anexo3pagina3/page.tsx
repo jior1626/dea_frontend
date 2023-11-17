@@ -5,7 +5,8 @@ import Footer from "../components/Footer";
 import "./anexo3pagina3.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-// import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
+import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
+import {ChildModal} from "../components/modals";
 
 export default function Options() {
   const router = useRouter();
@@ -229,12 +230,7 @@ export default function Options() {
         </div>
 
         <br></br>
-        <button
-          className="btn-sesenta1  btn-sesenta mt-4 rutavital text-white py-3 rounded-full shadow-lg"
-          onClick={navigateToSectionActivarRutaVital}
-        >
-          Ruta vital
-        </button>
+        <ChildModal/>
         <br></br>
 
         <div className="contenedorCasita">
