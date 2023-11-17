@@ -26,11 +26,29 @@
   /* Ocupa todo el ancho del contenedor padre */
 }
 
+.columnFirst{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.columnSecond{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.columnSecond p{
+  padding-right: 19px;
+  width: 47%;
+}
 
 .columna-texto {
   display: flex;
   justify-content: center;
-  padding: 30px 15px;
+  padding: 30px 15px 15px 15px;
   /* Alinea el texto a la izquierda */
 }
 
@@ -79,6 +97,24 @@ main {
   width: 100%;
   padding: 0 19px;
   color: #000;
+}
+
+.bloque1 {
+  width: 100%;
+  padding: 0 19px;
+  color: #000;
+}
+
+.bloque2 {
+  width: 100%;
+  padding-right: 19px;
+  text-align: left;
+}
+
+.bloque3 {
+  width: 100%;
+  padding-left: 19px;
+  text-align: left;
 }
 
 .input-ochenta {
@@ -151,17 +187,43 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: auto 0 10% 0;
   }
-
+  .columnSecond p{
+    padding-right: 10%;
+    width: 25%;
+  }
   .btnNext {
     margin-top: 20px;
   }
-
+  .columnFirst{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  
+  }
   .tituloanexo {
     color: #000;
     font-size: 18px;
     font-weight: bold;
   }
   .bloque {
+    width: 100%;
+    padding: 0 10%;
+    text-align: left;
+  }
+
+  .bloque2 {
+    width: 100%;
+    padding-right: 10%;
+    text-align: left;
+  }
+
+  .bloque3 {
+    width: 100%;
+    padding-left: 10%;
+    text-align: left;
+  }
+
+  .bloque1 {
     width: 100%;
     padding: 0 10%;
     text-align: left;

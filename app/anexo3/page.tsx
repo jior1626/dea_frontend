@@ -158,34 +158,36 @@ export default function Options() {
           </div>
         </div>
 
-        <div className="bloque">
-          <input
-            type="date"
-            id="fecha"
-            className="inputForm"
-            onChange={(e) => setuso_fechaevento(e.target.value)}
-            max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
-          />
-          {errores.includes("La fecha es obligatoria.") && (
-            <p className="text-red-500">La fecha es obligatoria.</p>
-          )}
-        </div>
+        <div className="columnFirst">
+          <div className="bloque1">
+            <input
+              type="date"
+              id="fecha"
+              className="inputForm"
+              onChange={(e) => setuso_fechaevento(e.target.value)}
+              max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
+            />
+            {errores.includes("La fecha es obligatoria.") && (
+              <p className="text-red-500">La fecha es obligatoria.</p>
+            )}
+          </div>
 
-        <div className="bloque">
-          <input
-            type="text"
-            id="lugar"
-            placeholder="Nombre del lugar del evento"
-            className="inputForm"
-            onChange={(e) => setuso_nombrelugarevento(e.target.value)}
-          />
-          {errores.includes(
-            "El lugar del evento debe tener al menos 8 dígitos."
-          ) && (
-            <p className="text-red-500">
-              El lugar del evento debe tener al menos 8 dígitos.
-            </p>
-          )}
+          <div className="bloque1">
+            <input
+              type="text"
+              id="lugar"
+              placeholder="Nombre del lugar del evento"
+              className="inputForm"
+              onChange={(e) => setuso_nombrelugarevento(e.target.value)}
+            />
+            {errores.includes(
+              "El lugar del evento debe tener al menos 8 dígitos."
+            ) && (
+              <p className="text-red-500">
+                El lugar del evento debe tener al menos 8 dígitos.
+              </p>
+            )}
+          </div>
         </div>
 
         <div className="bloque">
@@ -201,34 +203,42 @@ export default function Options() {
             <p className="text-red-500">Debe contener al menos 8 caracteres.</p>
           )}
 
-          <select
-            id="numeroidentificacion"
-            className="inputForm"
-            onChange={(e) =>
-              setuso_personaatendidaeventotipodocumento(e.target.value)
-            }
-          >
-            <option value="Cedula">Tipo de doc. de identificación</option>
-            <option value="Cedula">Cedula</option>
-            <option value="Pasaporte">Pasaporte</option>
-          </select>
-          {errores.includes("El tipo de documento es obligatorio.") && (
-            <p className="text-red-500">El tipo de documento es obligatorio.</p>
-          )}
+          <div className="columnFirst">
+            <div className="bloque2">
+              <select
+                id="numeroidentificacion"
+                className="inputForm"
+                onChange={(e) =>
+                  setuso_personaatendidaeventotipodocumento(e.target.value)
+                }
+              >
+                <option value="Cedula">Tipo de doc. de identificación</option>
+                <option value="Cedula">Cedula</option>
+                <option value="Pasaporte">Pasaporte</option>
+              </select>
+              {errores.includes("El tipo de documento es obligatorio.") && (
+                <p className="text-red-500">
+                  El tipo de documento es obligatorio.
+                </p>
+              )}
+            </div>
 
-          <input
-            type="number"
-            id="documentoidentificacion"
-            placeholder="Número de doc. de identifición"
-            className="inputForm"
-            onKeyDown={handleKeyDown}
-            onChange={(e) =>
-              setuso_personaatendidaeventonumerodocumento(e.target.value)
-            }
-          />
-          {errores.includes("El documento es obligatorio.") && (
-            <p className="text-red-500">El documento es obligatorio.</p>
-          )}
+            <div className="bloque3">
+              <input
+                type="number"
+                id="documentoidentificacion"
+                placeholder="Número de doc. de identifición"
+                className="inputForm"
+                onKeyDown={handleKeyDown}
+                onChange={(e) =>
+                  setuso_personaatendidaeventonumerodocumento(e.target.value)
+                }
+              />
+              {errores.includes("El documento es obligatorio.") && (
+                <p className="text-red-500">El documento es obligatorio.</p>
+              )}
+            </div>
+          </div>
 
           <input
             type="number"
@@ -242,17 +252,85 @@ export default function Options() {
             <p className="text-red-500">La edad es obligatoria.</p>
           )}
 
-          <select
-            className="inputForm"
-            onChange={(e) => setuso_personaatendidaeventosexo(e.target.value)}
-          >
-            <option value="Sexo">Sexo</option>
-            <option value="Hombre">Hombre</option>
-            <option value="Mujer">Mujer</option>
-          </select>
-          {errores.includes("El sexo es obligatorio.") && (
-            <p className="text-red-500">El sexo es obligatorio.</p>
-          )}
+          <div className="columnSecond">
+            <p>Sexo</p>
+            <select
+              className="inputForm"
+              onChange={(e) => setuso_personaatendidaeventosexo(e.target.value)}
+            >
+              <option value="selecciona">Selecciona uno</option>
+              <option value="Hombre">Hombre</option>
+              <option value="Mujer">Mujer</option>
+              <option value="Mujer">Intersexual</option>
+              <option value="Mujer">Indefinido</option>
+            </select>
+            {errores.includes("El sexo es obligatorio.") && (
+              <p className="text-red-500">El sexo es obligatorio.</p>
+            )}
+          </div>
+          <div className="columnSecond">
+            <p>Etnia</p>
+            <select
+              className="inputForm"
+              onChange={(e) => setuso_personaatendidaeventosexo(e.target.value)}
+            >
+              <option value="selecciona">Selecciona uno</option>
+              <option value="Hombre">Afrocolobiano - Afrodescendente</option>
+              <option value="Hombre">Palenquero</option>
+              <option value="Hombre">Raizal</option>
+              <option value="Hombre"> Indígena - Originario</option>
+              <option value="Hombre">Rom - Gitanos</option>
+              <option value="Mujer">Negro</option>
+              <option value="Mujer">Ninguno</option>
+            </select>
+            {errores.includes("El sexo es obligatorio.") && (
+              <p className="text-red-500">El sexo es obligatorio.</p>
+            )}
+          </div>
+          <div className="columnSecond">
+            <p>Orientación Sexual</p>
+            <select
+              className="inputForm"
+              onChange={(e) => setuso_personaatendidaeventosexo(e.target.value)}
+            >
+              <option value="selecciona">Selecciona uno</option>
+              <option value="Hombre">Heterosexual</option>
+              <option value="Mujer">Lesbiana</option>
+              <option value="Mujer">Bisexual</option>
+              <option value="Mujer">Gay</option>
+              <option value="Mujer">Asexual</option>
+              <option value="Mujer">Pansexual</option>
+              <option value="Mujer">Homosexual</option>
+              <option value="Mujer">Sin Dato</option>
+              <option value="Mujer">No Sabe No Responde</option>
+            </select>
+            {errores.includes("El sexo es obligatorio.") && (
+              <p className="text-red-500">El sexo es obligatorio.</p>
+            )}
+          </div>
+
+          <div className="columnSecond">
+            <p>Identidad de género</p>
+            <select
+              className="inputForm"
+              onChange={(e) => setuso_personaatendidaeventosexo(e.target.value)}
+            >
+              <option value="selecciona">Selecciona uno</option>
+              <option value="Hombre">Mujer Trans</option>
+              <option value="Mujer">Hombre Trans</option>
+              <option value="Mujer">Fluido - No binario</option>
+              <option value="Mujer">mujer cis</option>
+              <option value="Mujer">Hombre Cis</option>
+              <option value="Mujer">Sin Dato</option>
+              <option value="Mujer">No Sabe No Responde</option>
+              <option value="Mujer">Travesti</option>
+              <option value="Mujer">Transexual</option>
+              <option value="Mujer">Transformista</option>
+            </select>
+            {errores.includes("El sexo es obligatorio.") && (
+              <p className="text-red-500">El sexo es obligatorio.</p>
+            )}
+          </div>
 
           <input
             type="text"
