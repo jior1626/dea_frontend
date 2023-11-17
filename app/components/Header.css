@@ -110,7 +110,7 @@ header {
   background-color: #eff6fe;
 }
   .otrocentrado_ {
-    overflow: hidden;
+    overflow: auto;
     max-width: 1200px
   }
   
@@ -264,7 +264,7 @@ header {
     margin-left: 20px;
     padding-top: 8px;
     cursor: pointer;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     padding-bottom: 14px;
   }
@@ -342,7 +342,7 @@ header {
     cursor: pointer;
     width: 100%;
     max-width: 20%;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     padding-bottom: 14px
   }
@@ -391,7 +391,7 @@ header {
   }
   
   .accesi_top .cabeza_acce_ {
-    overflow: hidden;
+    overflow: auto;
     margin-bottom: 20px
   }
   
@@ -421,7 +421,7 @@ header {
     margin-left: 20px;
     padding-top: 8px;
     cursor: pointer;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     padding-bottom: 14px
   }
@@ -608,7 +608,7 @@ header {
   .menualcaldias_lista .secre_depen_links {
     height: 500px;
     background: red;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow: auto;
     padding: 0px;
     background: #fff;
@@ -892,7 +892,7 @@ header {
     width: 100%;
     max-width: 80%;
     float: right;
-    overflow: hidden;
+    overflow: auto;
     padding-top: 15px;
     text-align: right
   }
@@ -972,7 +972,7 @@ header {
   
   .cover_home_slider {
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
     background-color: #14b8ce;
     height: 390px
   }
@@ -1099,7 +1099,7 @@ header {
   .texto_slider_ .elcon_ .tag_s_ {
     display: block;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
     margin-bottom: 10px;
     margin-top: -5px
   }
@@ -1205,7 +1205,7 @@ header {
   
   .busacor_modal_ {
     z-index: 999999900;
-    overflow: hidden;
+    overflow: auto;
     width: 100%
   }
   
