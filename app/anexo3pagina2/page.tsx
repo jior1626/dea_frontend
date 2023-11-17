@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo3pagina2.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
+// import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -40,83 +40,32 @@ export default function Options() {
     minute: "2-digit",
   });
 
-  const [
-    uso_datoseventonombrepersonautilizodea,
-    setUso_datoseventonombrepersonautilizodea,
-  ] = useState("");
-  const [uso_nombrelugarevento, setUso_nombrelugarevento] = useState("");
-  const [
-    uso_personaatendidaeventotipodocumento,
-    setUso_personaatendidaeventotipodocumento,
-  ] = useState("");
-  const [
-    uso_personaatendidaeventonumerodocumento,
-    setUso_personaatendidaeventonumerodocumento,
-  ] = useState("");
-  const [uso_personaatendidaeventoedad, setUso_personaatendidaeventoedad] =
-    useState("");
-  const [uso_personaatendidaeventosexo, setUso_personaatendidaeventosexo] =
-    useState("");
-  const [
-    uso_personaatendidaeventoaseguradorsalud,
-    setUso_personaatendidaeventoaseguradorsalud,
-  ] = useState("");
-  const [uso_datoseventotipodocumento, setUso_datoseventotipodocumento] =
-    useState("");
-  const [uso_datoseventonumerodocumento, setUso_datoseventonumerodocumento] =
-    useState("");
+  const [uso_datoseventonombrepersonautilizodea, setuso_datoseventonombrepersonautilizodea] = useState("");
+  const [uso_datoseventotipodocumento, setuso_datoseventotipodocumento] = useState("");
+  const [uso_datoseventonumerodocumento, setuso_datoseventonumerodocumento] = useState("");
+  const [uso_datoseventohorainicioevento, setuso_datoseventohorainicioevento] = useState("" + horaActual);
+  const [uso_datoseventohoraactivacioncadenasupervivencia, setuso_datoseventohoraactivacioncadenasupervivencia] = useState("" + horaActual);
+  const [uso_datoseventohorautilizaciondea, setuso_datoseventohorautilizaciondea] = useState("" + horaActual);
+  const [uso_datoseventohoratrasladopersonaatendida, setuso_datoseventohoratrasladopersonaatendida] = useState("" + horaActual);
+  const [uso_datosmediotransportenombreencargado, setuso_datosmediotransportenombreencargado] = useState("");
 
-  const [uso_datoseventohorainicioevento, setUso_datoseventohorainicioevento] =
-    useState("" + horaActual);
-  const [
-    uso_datoseventohoraactivacioncadenasupervivencia,
-    setUso_datoseventohoraactivacioncadenasupervivencia,
-  ] = useState("" + horaActual);
-  const [
-    uso_datoseventohorautilizaciondea,
-    setUso_datoseventohorautilizaciondea,
-  ] = useState("" + horaActual);
-  const [
-    uso_datoseventohoratrasladopersonaatendida,
-    setUso_datoseventohoratrasladopersonaatendida,
-  ] = useState("" + horaActual);
-  const [
-    uso_datosmediotransportenombreencargado,
-    setUso_datosmediotransportenombreencargado,
-  ] = useState("");
-
-  // Estados para cada uno de los campos del formulario y para los errores
-  const [nombreCompleto, setNombreCompleto] = useState("");
-  const [documentoIdentificacion, setDocumentoIdentificacion] = useState("");
-  const [existenciaDesfibriladores, setExistenciaDesfibriladores] =
-    useState("1");
-  const [nombreSitio, setNombreSitio] = useState("");
-  const [direccion, setDireccion] = useState("");
-  const [codigoPostal, setCodigoPostal] = useState("");
   const [errores, setErrores] = useState([]);
 
   // Función para validar todos los campos antes de navegar
   const validateFields = () => {
     const newErrors = [];
-    if (!nombreCompleto.trim())
-      newErrors.push("El nombre completo es obligatorio.");
+    if (uso_datoseventonombrepersonautilizodea.length < 6 )
+      newErrors.push("El nombre completo debe contener al menos 6 caracteres.");
     if (
-      !documentoIdentificacion.trim() ||
-      documentoIdentificacion.length !== 8
+      !uso_datoseventotipodocumento.trim()
     ) {
-      newErrors.push("El documento de identificación debe tener 10 dígitos.");
+      newErrors.push("Selecciona el tipo de documento.");
     }
-    if (!existenciaDesfibriladores.trim()) {
-      newErrors.push("Debe indicar la cantidad de desfibriladores.");
+    if (uso_datoseventonumerodocumento.length < 8) {
+      newErrors.push("Debe contener al menos 8 digitos.");
     }
-    if (!nombreSitio.trim()) {
-      newErrors.push("El nombre del sitio es obligatorio.");
-    }
-    if (!direccion.trim()) {
-      newErrors.push("La dirección es obligatoria.");
-    }
-    if (!codigoPostal.trim() || !/^\d{5}$/.test(codigoPostal)) {
-      newErrors.push("El código postal debe tener 5 dígitos.");
+    if (uso_datosmediotransportenombreencargado.length < 8 ) {
+      newErrors.push("El nombre debe contener al menos 8 caracteres.");
     }
 
     setErrores(newErrors);
@@ -127,14 +76,16 @@ export default function Options() {
   const navigateToSection = () => {
     if (validateFields()) {
       // Guardar la información en el localStorage antes de navegar
-      localStorage.setItem("REG_NOMBRECOMPLETO", nombreCompleto);
-      localStorage.setItem("REG_DOCIDENTIFICACION", documentoIdentificacion);
-      localStorage.setItem("REG_CANTIDAD", existenciaDesfibriladores);
-      localStorage.setItem("REG_NOMBREUBICACION", nombreSitio);
-      localStorage.setItem("REG_DIRECCIONUBICACION", direccion);
-      localStorage.setItem("REG_CODIGOPOSTAL", codigoPostal);
+      localStorage.setItem("uso_datoseventonombrepersonautilizodea", uso_datoseventonombrepersonautilizodea);
+      localStorage.setItem("uso_datoseventotipodocumento", uso_datoseventotipodocumento);
+      localStorage.setItem("uso_datoseventonumerodocumento", uso_datoseventonumerodocumento);
+      localStorage.setItem("uso_datoseventohorainicioevento", uso_datoseventohorainicioevento);
+      localStorage.setItem("uso_datoseventohoraactivacioncadenasupervivencia", uso_datoseventohoraactivacioncadenasupervivencia);
+      localStorage.setItem("uso_datoseventohorautilizaciondea", uso_datoseventohorautilizaciondea);
+      localStorage.setItem("uso_datoseventohoratrasladopersonaatendida", uso_datoseventohoratrasladopersonaatendida);
+      localStorage.setItem("uso_datosmediotransportenombreencargado", uso_datosmediotransportenombreencargado);
 
-      router.push("/anexo2pagina2"); // Asegúrate de que esta ruta es la correcta
+      router.push("/anexo3pagina3"); // Asegúrate de que esta ruta es la correcta
     } else {
       // Mostrar los mensajes de error si la validación falla
       errores.forEach((error) => alert(error));
@@ -145,8 +96,8 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        <ChevronLeft />
-        <User />
+        {/* <ChevronLeft />
+        <User /> */}
       </div>
       <br></br>
       <div className="contenedor">
@@ -164,31 +115,41 @@ export default function Options() {
             placeholder="Nombre de la persona que utilizó el DEA"
             className="inputForm"
             onChange={(e) =>
-              setUso_datoseventonombrepersonautilizodea(e.target.value)
+              setuso_datoseventonombrepersonautilizodea(e.target.value)
             }
           />
+          {errores.includes("El nombre completo debe contener al menos 6 caracteres.") && (
+            <p className="text-red-500">El nombre completo debe contener al menos 6 caracteres.</p>
+          )}
         </div>
 
         <div className="bloque">
           <select
             id="numeroidentificacion"
             className="inputForm"
-            onChange={(e) => setUso_datoseventotipodocumento(e.target.value)}
+            onChange={(e) => setuso_datoseventotipodocumento(e.target.value)}
           >
             <option value="Cedula">Tipo de doc. de identificación</option>
             <option value="Cedula">Cedula</option>
             <option value="Pasaporte">Pasaporte</option>
           </select>
+          {errores.includes("Selecciona el tipo de documento.") && (
+            <p className="text-red-500">Selecciona el tipo de documento.</p>
+          )}
         </div>
 
         <div className="bloque">
           <input
-            type="text"
+            type="number"
             id="edad"
             placeholder="Número de doc. de identifición"
             className="inputForm"
-            onChange={(e) => setUso_datoseventonumerodocumento(e.target.value)}
+            onKeyDown={handleKeyDown}
+            onChange={(e) => setuso_datoseventonumerodocumento(e.target.value)}
           />
+          {errores.includes("Debe contener al menos 8 digitos.") && (
+            <p className="text-red-500">Debe contener al menos 8 digitos.</p>
+          )}
         </div>
 <br></br>
         <div className="fila-container">
@@ -204,7 +165,7 @@ export default function Options() {
 
                 if (horaSeleccionada < horaActual) {
                   // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
-                  setUso_datoseventohorainicioevento(horaSeleccionada);
+                  setuso_datoseventohorainicioevento(horaSeleccionada);
                 } else {
                   // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
                   // Puedes mostrar un mensaje de error o realizar otra acción aquí
@@ -234,7 +195,7 @@ export default function Options() {
 
                 if (horaSeleccionada < horaActual) {
                   // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
-                  setUso_datoseventohoraactivacioncadenasupervivencia(
+                  setuso_datoseventohoraactivacioncadenasupervivencia(
                     horaSeleccionada
                   );
                 } else {
@@ -264,7 +225,7 @@ export default function Options() {
 
                 if (horaSeleccionada < horaActual) {
                   // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
-                  setUso_datoseventohorautilizaciondea(horaSeleccionada);
+                  setuso_datoseventohorautilizaciondea(horaSeleccionada);
                 } else {
                   // La hora seleccionada es igual o posterior a la hora actual, no actualices el estado
                   // Puedes mostrar un mensaje de error o realizar otra acción aquí
@@ -294,7 +255,7 @@ export default function Options() {
 
                 if (horaSeleccionada < horaActual) {
                   // La hora seleccionada es anterior a la hora actual, puedes actualizar el estado
-                  setUso_datoseventohoratrasladopersonaatendida(
+                  setuso_datoseventohoratrasladopersonaatendida(
                     horaSeleccionada
                   );
                 } else {
@@ -321,9 +282,12 @@ export default function Options() {
             placeholder="Nombre de la persona encargada del traslado"
             className="inputForm"
             onChange={(e) =>
-              setUso_datosmediotransportenombreencargado(e.target.value)
+              setuso_datosmediotransportenombreencargado(e.target.value)
             }
           />
+          {errores.includes("El nombre debe contener al menos 8 caracteres.") && (
+            <p className="text-red-500">El nombre debe contener al menos 8 caracteres.</p>
+          )}
         </div>
 
         <div className="contenedorCasita">
@@ -333,7 +297,7 @@ export default function Options() {
           >
             Siguiente
           </button>
-          <HomeOut />
+          {/* <HomeOut /> */}
           <br />
         </div>
 

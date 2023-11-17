@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo3pagina3.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
+// import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -162,8 +162,8 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        <ChevronLeft />
-        <User />
+        {/* <ChevronLeft />
+        <User /> */}
       </div>
       <br></br>
       <div className="contenedor">
@@ -244,7 +244,7 @@ export default function Options() {
           >
             Enviar
           </button>
-          <HomeOut />
+          {/* <HomeOut /> */}
           <br />
         </div>
 

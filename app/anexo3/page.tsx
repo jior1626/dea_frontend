@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo3.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
+// import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -40,57 +40,44 @@ export default function Options() {
     minute: "2-digit",
   });
 
-  const [uso_fechaevento, setUso_fechaevento] = useState("");
-  const [uso_nombrelugarevento, setUso_nombrelugarevento] = useState("");
-  const [
-    uso_personaatendidaeventotipodocumento,
-    setUso_personaatendidaeventotipodocumento,
-  ] = useState("");
-  const [
-    uso_personaatendidaeventonumerodocumento,
-    setUso_personaatendidaeventonumerodocumento,
-  ] = useState("");
-  const [uso_personaatendidaeventoedad, setUso_personaatendidaeventoedad] =
-    useState("");
-  const [uso_personaatendidaeventosexo, setUso_personaatendidaeventosexo] =
-    useState("");
-  const [
-    uso_personaatendidaeventoaseguradorsalud,
-    setUso_personaatendidaeventoaseguradorsalud,
-  ] = useState("");
-
-  // Estados para cada uno de los campos del formulario y para los errores
-  const [nombreCompleto, setNombreCompleto] = useState("");
-  const [documentoIdentificacion, setDocumentoIdentificacion] = useState("");
-  const [existenciaDesfibriladores, setExistenciaDesfibriladores] =
-    useState("1");
-  const [nombreSitio, setNombreSitio] = useState("");
-  const [direccion, setDireccion] = useState("");
-  const [codigoPostal, setCodigoPostal] = useState("");
+  const [uso_fechaevento, setuso_fechaevento] = useState("");
+  const [uso_nombrelugarevento, setuso_nombrelugarevento] = useState("");
+  const [uso_personaatendidaeventonombre, setuso_personaatendidaeventonombre] = useState("");
+  const [uso_personaatendidaeventotipodocumento, setuso_personaatendidaeventotipodocumento] = useState("");
+  const [uso_personaatendidaeventonumerodocumento, setuso_personaatendidaeventonumerodocumento] = useState("");
+  const [uso_personaatendidaeventoedad, setuso_personaatendidaeventoedad] = useState("");
+  const [uso_personaatendidaeventosexo, setuso_personaatendidaeventosexo] = useState("");
+  const [uso_personaatendidaeventoaseguradorsalud, setuso_personaatendidaeventoaseguradorsalud] = useState("");
+  
   const [errores, setErrores] = useState([]);
 
   // Función para validar todos los campos antes de navegar
   const validateFields = () => {
     const newErrors = [];
-    if (!nombreCompleto.trim())
-      newErrors.push("El nombre completo es obligatorio.");
+    if (!uso_fechaevento.trim())
+      newErrors.push("La fecha es obligatoria.");
     if (
-      !documentoIdentificacion.trim() ||
-      documentoIdentificacion.length !== 8
+      uso_nombrelugarevento.length < 8
     ) {
-      newErrors.push("El documento de identificación debe tener 10 dígitos.");
+      newErrors.push("El lugar del evento debe tener al menos 8 dígitos.");
     }
-    if (!existenciaDesfibriladores.trim()) {
-      newErrors.push("Debe indicar la cantidad de desfibriladores.");
+    if (uso_personaatendidaeventonombre.length < 8) {
+      newErrors.push("Debe contener al menos 8 caracteres.");
     }
-    if (!nombreSitio.trim()) {
-      newErrors.push("El nombre del sitio es obligatorio.");
+    if (!uso_personaatendidaeventotipodocumento.trim()) {
+      newErrors.push("El tipo de documento es obligatorio.");
     }
-    if (!direccion.trim()) {
-      newErrors.push("La dirección es obligatoria.");
+    if (uso_personaatendidaeventonumerodocumento.length < 8 ) {
+      newErrors.push("El documento es obligatorio.");
     }
-    if (!codigoPostal.trim() || !/^\d{5}$/.test(codigoPostal)) {
-      newErrors.push("El código postal debe tener 5 dígitos.");
+    if (!uso_personaatendidaeventoedad.trim()) {
+      newErrors.push("La edad es obligatoria.");
+    }
+    if (!uso_personaatendidaeventosexo.trim()) {
+      newErrors.push("El sexo es obligatorio.");
+    }
+    if (uso_personaatendidaeventoaseguradorsalud.length < 4 ) {
+      newErrors.push("La aseguradora debe tener al menos 4 dígitos.");
     }
 
     setErrores(newErrors);
@@ -101,14 +88,16 @@ export default function Options() {
   const navigateToSection = () => {
     if (validateFields()) {
       // Guardar la información en el localStorage antes de navegar
-      localStorage.setItem("REG_NOMBRECOMPLETO", nombreCompleto);
-      localStorage.setItem("REG_DOCIDENTIFICACION", documentoIdentificacion);
-      localStorage.setItem("REG_CANTIDAD", existenciaDesfibriladores);
-      localStorage.setItem("REG_NOMBREUBICACION", nombreSitio);
-      localStorage.setItem("REG_DIRECCIONUBICACION", direccion);
-      localStorage.setItem("REG_CODIGOPOSTAL", codigoPostal);
-
-      router.push("/anexo2pagina2"); // Asegúrate de que esta ruta es la correcta
+      localStorage.setItem("uso_fechaevento", uso_fechaevento);
+      localStorage.setItem("uso_nombrelugarevento", uso_nombrelugarevento);
+      localStorage.setItem("uso_personaatendidaeventonombre", uso_personaatendidaeventonombre);
+      localStorage.setItem("uso_personaatendidaeventotipodocumento", uso_personaatendidaeventotipodocumento);
+      localStorage.setItem("uso_personaatendidaeventonumerodocumento", uso_personaatendidaeventonumerodocumento);
+      localStorage.setItem("uso_personaatendidaeventoedad", uso_personaatendidaeventoedad);
+      localStorage.setItem("uso_personaatendidaeventosexo", uso_personaatendidaeventosexo);
+      localStorage.setItem("uso_personaatendidaeventoaseguradorsalud", uso_personaatendidaeventoaseguradorsalud);
+      
+      router.push("/anexo3pagina2"); // Asegúrate de que esta ruta es la correcta
     } else {
       // Mostrar los mensajes de error si la validación falla
       errores.forEach((error) => alert(error));
@@ -119,8 +108,8 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        <ChevronLeft />
-        <User />
+        {/* <ChevronLeft /> */}
+        {/* <User /> */}
       </div>
       <br></br>
       <div className="contenedor">
@@ -147,13 +136,11 @@ export default function Options() {
             type="date"
             id="fecha"
             className="inputForm"
-            onChange={(e) => setUso_fechaevento(e.target.value)}
+            onChange={(e) => setuso_fechaevento(e.target.value)}
             max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
           />
-
-          {/* Mensaje de error para el nombre del sitio, si existe */}
-          {errores.includes("El nombre completo es obligatorio.") && (
-            <p className="text-red-500">El nombre completo es obligatorio.</p>
+          {errores.includes("La fecha es obligatoria.") && (
+            <p className="text-red-500">La fecha es obligatoria.</p>
           )}
         </div>
 
@@ -163,8 +150,11 @@ export default function Options() {
             id="lugar"
             placeholder="Nombre del lugar del evento"
             className="inputForm"
-            onChange={(e) => setUso_nombrelugarevento(e.target.value)}
+            onChange={(e) => setuso_nombrelugarevento(e.target.value)}
           />
+          {errores.includes("El lugar del evento debe tener al menos 8 dígitos.") && (
+            <p className="text-red-500">El lugar del evento debe tener al menos 8 dígitos.</p>
+          )}
         </div>
 
         <div className="bloque">
@@ -174,47 +164,64 @@ export default function Options() {
             id="nombre"
             placeholder="Nombre completo"
             className="inputForm"
-            onChange={(e) => setUso_personaatendidaeventonombre(e.target.value)}
+            onChange={(e) => setuso_personaatendidaeventonombre(e.target.value)}
           />
+          {errores.includes("Debe contener al menos 8 caracteres.") && (
+            <p className="text-red-500">Debe contener al menos 8 caracteres.</p>
+          )}
 
           <select
             id="numeroidentificacion"
             className="inputForm"
             onChange={(e) =>
-              setUso_personaatendidaeventotipodocumento(e.target.value)
+              setuso_personaatendidaeventotipodocumento(e.target.value)
             }
           >
             <option value="Cedula">Tipo de doc. de identificación</option>
             <option value="Cedula">Cedula</option>
             <option value="Pasaporte">Pasaporte</option>
           </select>
+          {errores.includes("El tipo de documento es obligatorio.") && (
+            <p className="text-red-500">El tipo de documento es obligatorio.</p>
+          )}
 
           <input
-            type="text"
+            type="number"
             id="documentoidentificacion"
             placeholder="Número de doc. de identifición"
             className="inputForm"
+            onKeyDown={handleKeyDown}
             onChange={(e) =>
-              setUso_personaatendidaeventonumerodocumento(e.target.value)
+              setuso_personaatendidaeventonumerodocumento(e.target.value)
             }
           />
+          {errores.includes("El documento es obligatorio.") && (
+            <p className="text-red-500">El documento es obligatorio.</p>
+          )}
 
           <input
             type="number"
             id="edad"
             placeholder="Edad"
             className="inputForm"
-            onChange={(e) => setUso_personaatendidaeventoedad(e.target.value)}
+            onKeyDown={handleKeyDown}
+            onChange={(e) => setuso_personaatendidaeventoedad(e.target.value)}
           />
+          {errores.includes("La edad es obligatoria.") && (
+            <p className="text-red-500">La edad es obligatoria.</p>
+          )}
 
           <select
             className="inputForm"
-            onChange={(e) => setUso_personaatendidaeventosexo(e.target.value)}
+            onChange={(e) => setuso_personaatendidaeventosexo(e.target.value)}
           >
             <option value="Sexo">Sexo</option>
             <option value="Hombre">Hombre</option>
             <option value="Mujer">Mujer</option>
           </select>
+          {errores.includes("El sexo es obligatorio.") && (
+            <p className="text-red-500">El sexo es obligatorio.</p>
+          )}
 
           <input
             type="text"
@@ -222,9 +229,12 @@ export default function Options() {
             placeholder="Asegurador en Salud"
             className="inputForm"
             onChange={(e) =>
-              setUso_personaatendidaeventoaseguradorsalud(e.target.value)
+              setuso_personaatendidaeventoaseguradorsalud(e.target.value)
             }
           />
+          {errores.includes("La fecha es obligatoria.") && (
+            <p className="text-red-500">La fecha es obligatoria.</p>
+          )}
         </div>
 
         <div className="contenedorCasita">
@@ -234,7 +244,7 @@ export default function Options() {
           >
             Siguiente
           </button>
-          <HomeOut />
+          {/* <HomeOut /> */}
           <br />
         </div>
 
