@@ -6,6 +6,7 @@ import "./anexo3.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
+import {InstruccionesUso} from "../components/modals";
 
 export default function Options() {
   const router = useRouter();
@@ -146,9 +147,7 @@ export default function Options() {
               Formulario de reporte uso de Desfibrilador Externo Automático -
               DEA en ambiente extrahospitalario
             </h6>
-            <a href="/anexo3pagina4">
-              <CicleInfo />
-            </a>
+              <InstruccionesUso />
           </div>
           <div className="columna-imagen">
             <img

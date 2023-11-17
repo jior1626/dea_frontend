@@ -17,6 +17,43 @@
   padding-left: 4px; /* Ajusta según tus necesidades */
 }
 
+.boxContainer1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  border-left: 15px solid #FF8403;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.boxContainer2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  border-left: 15px solid #AE3E97;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.bloqueInstruccion{
+  width: 100%;
+  padding: 10px;
+  color: #000;
+  padding: 3% 6%;
+  text-align: justify;
+}
 .text {
   text-align: center;
   color: #000;
@@ -26,6 +63,8 @@
   line-height: 12; /* Ajusta según tus necesidades */
   font-weight: bold;
 }
+
+
 
 .buttonConfirmar {
   width: 89px; /* Ajusta según tus necesidades */
@@ -42,13 +81,26 @@
 
 @media screen and (min-width: 900px){
   .boxContainer {
-    transform: translate(-50%, -50%);
     width: 500px; /* Ajusta según tus necesidades */
     height: 400px; /* Ajusta según tus necesidades */
 
   }
   .text {
     line-height: 10; /* Ajusta según tus necesidades */
+
+  }
+  .boxContainer1 {
+    width: 60%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-left: 30px solid #FF8403;
+  }
+  
+  .boxContainer2 {
+    width: 60%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-left: 30px solid #AE3E97;
 
   }
 }

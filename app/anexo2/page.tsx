@@ -6,6 +6,7 @@ import "./anexo2.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
+import {InstruccionesInstalacion} from "../components/modals";
 
 export default function Options() {
   const router = useRouter();
@@ -99,8 +100,8 @@ export default function Options() {
             REGISTRO DE INSTALACIÓN DESFIBRILADORES EXTERNOS (DEA)
             <p className="ley">(Ley 1831 del 12 de mayo de 2017)</p>
           </h6>
-          <a href="/anexo2pagina8">
-            <CicleInfo />
+          <a>
+            <InstruccionesInstalacion />
           </a>
         </div>
         <div className="bloque">
