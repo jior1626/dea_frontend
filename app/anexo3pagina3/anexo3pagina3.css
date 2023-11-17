@@ -75,6 +75,15 @@ main {
   font-weight: bold;
 }
 
+.bloqueFirma {
+  width: 60%;
+  padding: 0 19px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .input-ochenta {
   width: 80%; /* Establece el ancho del input al 80% del contenedor padre */
@@ -94,16 +103,16 @@ main {
 }
 
 .btn-sesenta1 {
-  width: 42%; /* Establece el ancho del botón al 60% del contenedor padre */
+  width: 35%; /* Establece el ancho del botón al 60% del contenedor padre */
   margin: 0 auto; /* Centra el botón horizontalmente */
 }
 .contenedorCasita {
   text-align: right;
-  /* Alinea el contenido a la derecha */
   display: flex;
   width: 70%;
-  /* Otros estilos que puedas necesitar */
   align-items: center;
+  margin-left: auto;
+  margin-right: 7%;
 }
 
 
@@ -151,6 +160,11 @@ main {
       width: 100%;
       padding: 0 10%;
       text-align: left;
+    }
+
+    .btn-sesenta1 {
+      width: 35%; /* Establece el ancho del botón al 60% del contenedor padre */
+      margin: 0 auto; /* Centra el botón horizontalmente */
     }
     .bloque1 {
       width: 100%;

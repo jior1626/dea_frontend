@@ -131,8 +131,8 @@ export default function Options() {
               DEA en ambiente extrahospitalario
             </h6>
             <a href="/anexo3pagina4">
-            <CicleInfo />
-          </a>
+              <CicleInfo />
+            </a>
           </div>
           <div className="columna-imagen">
             <img
@@ -184,6 +184,7 @@ export default function Options() {
               setUso_personaatendidaeventotipodocumento(e.target.value)
             }
           >
+            <option value="Cedula">Tipo de doc. de identificación</option>
             <option value="Cedula">Cedula</option>
             <option value="Pasaporte">Pasaporte</option>
           </select>
@@ -210,10 +211,10 @@ export default function Options() {
             className="inputForm"
             onChange={(e) => setUso_personaatendidaeventosexo(e.target.value)}
           >
+            <option value="Sexo">Sexo</option>
             <option value="Hombre">Hombre</option>
             <option value="Mujer">Mujer</option>
           </select>
-
 
           <input
             type="text"

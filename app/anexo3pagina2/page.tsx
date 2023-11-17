@@ -175,6 +175,7 @@ export default function Options() {
             className="inputForm"
             onChange={(e) => setUso_datoseventotipodocumento(e.target.value)}
           >
+            <option value="Cedula">Tipo de doc. de identificación</option>
             <option value="Cedula">Cedula</option>
             <option value="Pasaporte">Pasaporte</option>
           </select>
@@ -311,8 +312,8 @@ export default function Options() {
         <br></br>
 
         <div className="bloque">
-          Datos del medio de transporte en el cual es trasladada la persona
-          atendida a la institución de salud
+          <strong>Datos del medio de transporte en el cual es trasladada la persona
+          atendida a la institución de salud</strong>
           <br></br>
           <input
             type="text"

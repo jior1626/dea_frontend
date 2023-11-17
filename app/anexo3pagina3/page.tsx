@@ -178,6 +178,7 @@ export default function Options() {
               setUso_datosmediotransportemediotransporte(e.target.value)
             }
           >
+            <option value="seleccione">Seleccione uno</option>
             <option value="Ambulancia">Ambulancia</option>
             <option value="Transporte particular">Transporte particular</option>
             <option value="Otro">Otro</option>
@@ -217,11 +218,11 @@ export default function Options() {
             onChange={(e) => setUso_firma(e.target.value)}
           />
         </div>
-        <div className="bloque">
+        <div className="bloqueFirma">
+          <strong>Firma:</strong>
           <input
             type="text"
             id="edad"
-            placeholder="Firma"
             className="inputData"
             onChange={(e) => setUso_firma(e.target.value)}
           />
