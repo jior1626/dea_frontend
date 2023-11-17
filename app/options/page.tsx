@@ -51,6 +51,7 @@ export default function Options() {
     router.push("reportes");
   };
 
+
   useEffect(() => {
     // Suponiendo que el valor almacenado en localStorage es una cadena JSON
     // Obtener el token JWT del localStorage
