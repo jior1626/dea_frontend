@@ -6,7 +6,7 @@ import "./anexo3pagina3.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
-import {ChildModal} from "../components/modals";
+import ChildModal from "../components/modals";
 
 export default function Options() {
   const router = useRouter();
