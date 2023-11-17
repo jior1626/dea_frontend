@@ -163,8 +163,8 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        {/* <ChevronLeft />
-        <User /> */}
+        <ChevronLeft />
+        <User />
       </div>
       <br></br>
       <div className="contenedor">
@@ -240,7 +240,7 @@ export default function Options() {
           >
             Enviar
           </button>
-          {/* <HomeOut /> */}
+          <HomeOut />
           <br />
         </div>
 

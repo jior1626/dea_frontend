@@ -42,23 +42,32 @@ export default function Options() {
 
   const [uso_fechaevento, setuso_fechaevento] = useState("");
   const [uso_nombrelugarevento, setuso_nombrelugarevento] = useState("");
-  const [uso_personaatendidaeventonombre, setuso_personaatendidaeventonombre] = useState("");
-  const [uso_personaatendidaeventotipodocumento, setuso_personaatendidaeventotipodocumento] = useState("");
-  const [uso_personaatendidaeventonumerodocumento, setuso_personaatendidaeventonumerodocumento] = useState("");
-  const [uso_personaatendidaeventoedad, setuso_personaatendidaeventoedad] = useState("");
-  const [uso_personaatendidaeventosexo, setuso_personaatendidaeventosexo] = useState("");
-  const [uso_personaatendidaeventoaseguradorsalud, setuso_personaatendidaeventoaseguradorsalud] = useState("");
-  
+  const [uso_personaatendidaeventonombre, setuso_personaatendidaeventonombre] =
+    useState("");
+  const [
+    uso_personaatendidaeventotipodocumento,
+    setuso_personaatendidaeventotipodocumento,
+  ] = useState("");
+  const [
+    uso_personaatendidaeventonumerodocumento,
+    setuso_personaatendidaeventonumerodocumento,
+  ] = useState("");
+  const [uso_personaatendidaeventoedad, setuso_personaatendidaeventoedad] =
+    useState("");
+  const [uso_personaatendidaeventosexo, setuso_personaatendidaeventosexo] =
+    useState("");
+  const [
+    uso_personaatendidaeventoaseguradorsalud,
+    setuso_personaatendidaeventoaseguradorsalud,
+  ] = useState("");
+
   const [errores, setErrores] = useState([]);
 
   // Función para validar todos los campos antes de navegar
   const validateFields = () => {
     const newErrors = [];
-    if (!uso_fechaevento.trim())
-      newErrors.push("La fecha es obligatoria.");
-    if (
-      uso_nombrelugarevento.length < 8
-    ) {
+    if (!uso_fechaevento.trim()) newErrors.push("La fecha es obligatoria.");
+    if (uso_nombrelugarevento.length < 8) {
       newErrors.push("El lugar del evento debe tener al menos 8 dígitos.");
     }
     if (uso_personaatendidaeventonombre.length < 8) {
@@ -67,7 +76,7 @@ export default function Options() {
     if (!uso_personaatendidaeventotipodocumento.trim()) {
       newErrors.push("El tipo de documento es obligatorio.");
     }
-    if (uso_personaatendidaeventonumerodocumento.length < 8 ) {
+    if (uso_personaatendidaeventonumerodocumento.length < 8) {
       newErrors.push("El documento es obligatorio.");
     }
     if (!uso_personaatendidaeventoedad.trim()) {
@@ -76,7 +85,7 @@ export default function Options() {
     if (!uso_personaatendidaeventosexo.trim()) {
       newErrors.push("El sexo es obligatorio.");
     }
-    if (uso_personaatendidaeventoaseguradorsalud.length < 4 ) {
+    if (uso_personaatendidaeventoaseguradorsalud.length < 4) {
       newErrors.push("La aseguradora debe tener al menos 4 dígitos.");
     }
 
@@ -90,13 +99,31 @@ export default function Options() {
       // Guardar la información en el localStorage antes de navegar
       localStorage.setItem("uso_fechaevento", uso_fechaevento);
       localStorage.setItem("uso_nombrelugarevento", uso_nombrelugarevento);
-      localStorage.setItem("uso_personaatendidaeventonombre", uso_personaatendidaeventonombre);
-      localStorage.setItem("uso_personaatendidaeventotipodocumento", uso_personaatendidaeventotipodocumento);
-      localStorage.setItem("uso_personaatendidaeventonumerodocumento", uso_personaatendidaeventonumerodocumento);
-      localStorage.setItem("uso_personaatendidaeventoedad", uso_personaatendidaeventoedad);
-      localStorage.setItem("uso_personaatendidaeventosexo", uso_personaatendidaeventosexo);
-      localStorage.setItem("uso_personaatendidaeventoaseguradorsalud", uso_personaatendidaeventoaseguradorsalud);
-      
+      localStorage.setItem(
+        "uso_personaatendidaeventonombre",
+        uso_personaatendidaeventonombre
+      );
+      localStorage.setItem(
+        "uso_personaatendidaeventotipodocumento",
+        uso_personaatendidaeventotipodocumento
+      );
+      localStorage.setItem(
+        "uso_personaatendidaeventonumerodocumento",
+        uso_personaatendidaeventonumerodocumento
+      );
+      localStorage.setItem(
+        "uso_personaatendidaeventoedad",
+        uso_personaatendidaeventoedad
+      );
+      localStorage.setItem(
+        "uso_personaatendidaeventosexo",
+        uso_personaatendidaeventosexo
+      );
+      localStorage.setItem(
+        "uso_personaatendidaeventoaseguradorsalud",
+        uso_personaatendidaeventoaseguradorsalud
+      );
+
       router.push("/anexo3pagina2"); // Asegúrate de que esta ruta es la correcta
     } else {
       // Mostrar los mensajes de error si la validación falla
@@ -108,8 +135,8 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        {/* <ChevronLeft /> */}
-        {/* <User /> */}
+        <ChevronLeft />
+        <User />
       </div>
       <br></br>
       <div className="contenedor">
@@ -152,8 +179,12 @@ export default function Options() {
             className="inputForm"
             onChange={(e) => setuso_nombrelugarevento(e.target.value)}
           />
-          {errores.includes("El lugar del evento debe tener al menos 8 dígitos.") && (
-            <p className="text-red-500">El lugar del evento debe tener al menos 8 dígitos.</p>
+          {errores.includes(
+            "El lugar del evento debe tener al menos 8 dígitos."
+          ) && (
+            <p className="text-red-500">
+              El lugar del evento debe tener al menos 8 dígitos.
+            </p>
           )}
         </div>
 
@@ -244,7 +275,7 @@ export default function Options() {
           >
             Siguiente
           </button>
-          {/* <HomeOut /> */}
+          <HomeOut />
           <br />
         </div>
 
