@@ -114,7 +114,7 @@ main {
 }
 
 /* Estilos para pantallas más pequeñas */
-@media screen and (min-width: 900px) {
+@media /* screen and */ (min-width: 900px) {
   .contenedor {
     flex-direction: column;
     /* Cambiado a columna para apilar elementos verticalmente */
