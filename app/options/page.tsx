@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./options.css";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-// import { User, ChevronLeft } from "../components/iconos";
+import { User, ChevronLeft } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -64,8 +64,8 @@ export default function Options() {
     <main className="flex-containerOptions">
       <Header></Header>
       <div className="iconos">
-        {/* <ChevronLeft />
-        <User /> */}
+        <ChevronLeft />
+        <User />
       </div>
       <br></br>
       {rolAsignado === "Operador1" && (
