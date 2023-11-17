@@ -142,7 +142,7 @@ main {
     border-radius: 15px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: auto;
+    overflow: hidden;
     /* Asegura que los hijos no sobresalgan de los bordes redondeados */
     margin: auto 0 10% 0;
     /* Esto añadirá el margen automáticamente en la parte superior e inferior */

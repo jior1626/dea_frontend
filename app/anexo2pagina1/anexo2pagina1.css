@@ -127,6 +127,7 @@
       justify-content: center; /* Centra horizontalmente los elementos */
       border-left: 30px solid #AE3E97;
       /* Borde izquierdo morado */
+      overflow: hidden;
       border-radius: 15px;
       background-color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

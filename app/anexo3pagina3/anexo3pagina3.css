@@ -152,6 +152,7 @@ main {
       justify-content: center;
       border-left: 30px solid #FF8403;
       border-radius: 15px;
+      overflow: hidden;
       background-color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin: auto 0 10% 0;
