@@ -177,6 +177,7 @@ export default function Options() {
               id="lugar"
               placeholder="Nombre del lugar del evento"
               className="inputForm"
+              onKeyDown={handleKeyDown2}
               onChange={(e) => setuso_nombrelugarevento(e.target.value)}
             />
             {errores.includes(
@@ -196,6 +197,7 @@ export default function Options() {
             id="nombre"
             placeholder="Nombre completo"
             className="inputForm"
+            onKeyDown={handleKeyDown2}
             onChange={(e) => setuso_personaatendidaeventonombre(e.target.value)}
           />
           {errores.includes("Debe contener al menos 8 caracteres.") && (
@@ -333,15 +335,16 @@ export default function Options() {
 
           <input
             type="text"
-            id="edad"
+            id="aseguradorsalud"
             placeholder="Asegurador en Salud"
             className="inputForm"
+            onKeyDown={handleKeyDown2}
             onChange={(e) =>
               setuso_personaatendidaeventoaseguradorsalud(e.target.value)
             }
           />
-          {errores.includes("La fecha es obligatoria.") && (
-            <p className="text-red-500">La fecha es obligatoria.</p>
+          {errores.includes("La aseguradora debe tener al menos 4 dígitos.") && (
+            <p className="text-red-500">La aseguradora debe tener al menos 4 dígitos.</p>
           )}
         </div>
 

@@ -114,6 +114,7 @@ export default function Options() {
             id="edad"
             placeholder="Nombre de la persona que utilizó el DEA"
             className="inputForm"
+            onKeyDown={handleKeyDown2}
             onChange={(e) =>
               setuso_datoseventonombrepersonautilizodea(e.target.value)
             }
@@ -281,6 +282,7 @@ export default function Options() {
             id="edad"
             placeholder="Nombre de la persona encargada del traslado"
             className="inputForm"
+            onKeyDown={handleKeyDown2}
             onChange={(e) =>
               setuso_datosmediotransportenombreencargado(e.target.value)
             }

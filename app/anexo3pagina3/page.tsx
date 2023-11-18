@@ -201,6 +201,7 @@ export default function Options() {
             id="uso_datosmediotransporteempresaambulancia"
             placeholder="Nombre de la empresa de la ambulancia"
             className="inputData"
+            onKeyDown={handleKeyDown2}
             onChange={(e) =>
               setuso_datosmediotransporteempresaambulancia(e.target.value)
             }
@@ -231,6 +232,7 @@ export default function Options() {
             id="uso_datospersonaresponsable"
             placeholder="Nombre persona de la institución responsable del DEA utilizado"
             className="inputData"
+            onKeyDown={handleKeyDown2}
             onChange={(e) => setuso_datospersonaresponsable(e.target.value)}
           />
           {errores.includes("El nombre del responsable debe contener al menos 8 caracteres.") && (
@@ -243,6 +245,7 @@ export default function Options() {
             type="text"
             id="uso_firma"
             className="inputData"
+            onKeyDown={handleKeyDown2}
             onChange={(e) => setuso_firma(e.target.value)}
           />
         </div>
