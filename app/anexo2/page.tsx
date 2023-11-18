@@ -50,7 +50,7 @@ export default function Options() {
     if (
       documentoIdentificacion.length < 8
     ) {
-      newErrors.push("El documento de identificación debe tener 10 dígitos.");
+      newErrors.push("El documento de identificación debe tener  dígitos.");
     }
     if (existenciaDesfibriladores.length < 1) {
       newErrors.push("Debe indicar la cantidad de desfibriladores.");
@@ -132,22 +132,21 @@ export default function Options() {
           />
           {/* Mensaje de error para el documento de identificación, si existe */}
           {errores.includes(
-            "El documento de identificación debe tener 10 dígitos."
+            "El documento de identificación debe tener  dígitos."
           ) && (
             <p className="text-red-500">
-              El documento de identificación debe tener 10 dígitos.
+              El documento de identificación debe tener  dígitos.
             </p>
           )}
         </div>
         <div className="bloque">
-          <p>
-            Comunica la existencia de desfibrilador/es externo/s ubicados en:
-          </p>
+          
 
           <input
             type="text"
             className="inputForm"
             placeholder="Nombre del espacio/lugar"
+            onKeyDown={handleKeyDown2}
             onChange={(e) => setNombreSitio(e.target.value)}
             value={nombreSitio}
           />

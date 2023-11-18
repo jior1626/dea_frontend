@@ -38,6 +38,15 @@ export default function Options() {
     }
   };
 
+  const handleKeyDown2 = (e) => {
+    // Crear una expresión regular que coincida con caracteres no permitidos
+    const invalidChars = /[0-9]/;
+
+    // Si el carácter es un número, prevenir la entrada
+    if (invalidChars.test(e.key)) {
+      e.preventDefault();
+    }
+  };
 
   const handleSubmit = async () => {
 
@@ -63,14 +72,14 @@ export default function Options() {
       setErrordea_tipoespacio("");
     }
 
-    if (!dea_otros || dea_otros.length < 4) {
-      setErrordea_otros(
-        "El campo otro debe tener al menos 4 caracteres"
-      );
-      hasError = true;
-    } else {
-      setErrordea_otros("");
-    }
+    // if (!dea_otros || dea_otros.length < 4) {
+    //   setErrordea_otros(
+    //     "El campo otro debe tener al menos 4 caracteres"
+    //   );
+    //   hasError = true;
+    // } else {
+    //   setErrordea_otros("");
+    // }
 
     if (!dea_fecha) {
       setErrordea_fecha(
@@ -211,6 +220,7 @@ export default function Options() {
             <div className="grid-item">
               <input
                 type="text"
+                onKeyDown={handleKeyDown2}
                 onChange={(e) => setdea_importadordistribuidor(e.target.value)}
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="Importador "

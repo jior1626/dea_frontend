@@ -12,7 +12,7 @@ export default function Anexo3Finalizo() {
   
   const handleAnexo8 = async () => {
     // La solicitud fue exitosa, puedes redirigir a la página deseada
-    router.push("anexo2pagina8");
+    router.push("options");
   };
 
   return (

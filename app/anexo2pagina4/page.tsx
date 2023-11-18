@@ -26,6 +26,16 @@ export default function Options() {
     }
   };
 
+  const handleKeyDown2 = (e) => {
+    // Crear una expresión regular que coincida con caracteres no permitidos
+    const invalidChars = /[0-9]/;
+
+    // Si el carácter es un número, prevenir la entrada
+    if (invalidChars.test(e.key)) {
+      e.preventDefault();
+    }
+  };
+
   const navigateToSectionOptions = () => {
     router.push("options");
   };
@@ -122,6 +132,7 @@ export default function Options() {
           <input
             type="text"
             className="element"
+            onKeyDown={handleKeyDown2}
             placeholder="Nombres y apellidos"
             onChange={(e) => setdea_nombresapellidospersonalcertificado(e.target.value)}
           />
@@ -133,6 +144,7 @@ export default function Options() {
           <input
             type="text"
             className="element"
+            onKeyDown={handleKeyDown2}
             placeholder="Entidad que certifica la capacitación en DEA"
             onChange={(e) => setdea_entidadcertificadora(e.target.value)}
           />

@@ -47,6 +47,12 @@ export default function Options() {
     if (dea_departamento.length < 4) {
       newErrors.push("El departamento es obligatorio");
     }
+    if(!dea_tipodeclaracion.trim()){
+      newErrors.push("El tipo de declaración es obligatoria");
+    }
+    if(!dea_tipoinstalacion.trim()){
+      newErrors.push("El tipo de instalación es obligatoria");
+    }
 
     setErrores(newErrors);
     return newErrors.length === 0;
@@ -88,7 +94,7 @@ export default function Options() {
 
           {/* Mensaje de error para el nombre del sitio, si existe */}
           {errores.includes("El nombre del municipio es obligatorio.") && (
-            <p className="text-red-500">El nombre completo es obligatorio.</p>
+            <p className="text-red-500">El nombre del municipio es obligatorio.</p>
           )}
         </div>
 
@@ -97,7 +103,7 @@ export default function Options() {
             type="text"
             className="inputForm"
             placeholder="Departamento"
-            onKeyDown={handleKeyDown}
+            onKeyDown={handleKeyDown2}
             onChange={(e) => setdea_departamento(e.target.value)}
             value={dea_departamento}
           />
@@ -124,8 +130,8 @@ export default function Options() {
             <option value="Cambio titular">Cambio titular</option>
           </select>
           {/* Mensaje de error para el nombre del sitio, si existe */}
-          {errores.includes("El nombre del sitio es obligatorio.") && (
-            <p className="text-red-500">El nombre del sitio es obligatorio.</p>
+          {errores.includes("El tipo de declaración es obligatoria") && (
+            <p className="text-red-500">El tipo de declaración es obligatoria</p>
           )}
 
           <br></br>
@@ -139,6 +145,9 @@ export default function Options() {
             <option value="Obligatoria">Obligatoria</option>
             <option value="Voluntaria">Voluntaria</option>
           </select>
+          {errores.includes("El tipo de instalación es obligatoria") && (
+            <p className="text-red-500">El tipo de instalación es obligatoria</p>
+          )}
         </div>
 
         <div className="contenedorCasita">

@@ -18,6 +18,16 @@ export default function Options() {
   const [errordea_ciudadpersonal, setErrordea_ciudadpersonal] = useState("");
   const [errordea_fechapersonal, setErrordea_fechapersonal] = useState("");
 
+  const handleKeyDown2 = (e) => {
+    // Crear una expresión regular que coincida con caracteres no permitidos
+    const invalidChars = /[0-9]/;
+
+    // Si el carácter es un número, prevenir la entrada
+    if (invalidChars.test(e.key)) {
+      e.preventDefault();
+    }
+  };
+
   const navigateToSectionOptions = () => {
     router.push("options");
   };
@@ -188,6 +198,7 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Firma"
+            onKeyDown={handleKeyDown2}
             onChange={(e) => setdea_firma(e.target.value)}
           />
           <span className="text-red-500">{errordea_firma}</span>
@@ -199,6 +210,7 @@ export default function Options() {
             type="text"
             className="element"
             placeholder=""
+            onKeyDown={handleKeyDown2}
             onChange={(e) => setdea_ciudadpersonal(e.target.value)}
           />
           <span className="text-red-500">{errordea_ciudadpersonal}</span>
