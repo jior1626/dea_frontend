@@ -537,7 +537,7 @@ const Header = () => {
               alt="Gov.co"
             />
           </div>
-          <div className="login_nav_top">
+          {/* <div className="login_nav_top">
             <li>
               <a data-toggle="collapse" href="#modu_lof_reg_" id="HIniciarS">
                 Inicia sesión
@@ -549,9 +549,9 @@ const Header = () => {
                 Regístrate
               </a>
             </li>
-          </div>
+          </div> */}
 
-          <div className="down_idioma">
+          {/* <div className="down_idioma">
             <span
               className="idioma_nav"
               id="dropidiomaheader"
@@ -617,13 +617,13 @@ const Header = () => {
                 className="default-language-es"
               ></div>{" "}
             </div>
-          </div>
+          </div> */}
 
-          <span className="accesibilidad_nav" id="HAccesibilidad">
+          {/* <span className="accesibilidad_nav" id="HAccesibilidad">
             <a href="https://www.medellin.gov.co/es/software-de-accesibilidad/">
               Opciones de Accesibilidad
             </a>
-          </span>
+          </span> */}
         </div>
       </div>
     </header>
