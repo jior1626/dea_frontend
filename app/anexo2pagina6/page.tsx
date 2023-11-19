@@ -104,32 +104,33 @@ export default function Options() {
     }
 
     const data = {
-      dea_nombrecompleto:dea_nombrecompleto,
-      dea_docidentificacion:dea_docidentificacion,
-      dea_cantidad:dea_cantidad,
-      dea_nombreubicacion:dea_nombreubicacion,
-      dea_direccionubicacion:dea_direccionubicacion,
-      dea_codigopostal:dea_codigopostal,
-      dea_ciudadmunicipio:dea_ciudadmunicipio,
-      dea_departamento:dea_departamento,
-      dea_tipoinstalacion:dea_tipoinstalacion,
-      dea_tipodeclaracion:dea_tipodeclaracion,
-      dea_tipoespacio:dea_tipoespacio,
-      dea_numserie:dea_numserie,
-      dea_modelo:dea_modelo,
-      dea_marca:dea_marca,
-      dea_importadordistribuidor:dea_importadordistribuidor,
-      dea_desclugarubicacion:dea_desclugarubicacion,
-      dea_gps:dea_gps,
-      dea_otros:dea_otros,
-      dea_fecha:dea_fecha,
-      dea_documentopersonalcertificado:dea_documentopersonalcertificado,
-      dea_nombresapellidospersonalcertificado:dea_nombresapellidospersonalcertificado,
-      dea_entidadcertificadora:dea_entidadcertificadora,
-      dea_fechacertificacion:dea_fechacertificacion,
-      dea_firma:dea_firma,
-      dea_ciudadpersonal:dea_ciudadpersonal,
-      dea_fechapersonal:dea_fechapersonal,
+      dea_nombrecompleto: dea_nombrecompleto,
+      dea_docidentificacion: dea_docidentificacion,
+      dea_cantidad: dea_cantidad,
+      dea_nombreubicacion: dea_nombreubicacion,
+      dea_direccionubicacion: dea_direccionubicacion,
+      dea_codigopostal: dea_codigopostal,
+      dea_ciudadmunicipio: dea_ciudadmunicipio,
+      dea_departamento: dea_departamento,
+      dea_tipoinstalacion: dea_tipoinstalacion,
+      dea_tipodeclaracion: dea_tipodeclaracion,
+      dea_tipoespacio: dea_tipoespacio,
+      dea_numserie: dea_numserie,
+      dea_modelo: dea_modelo,
+      dea_marca: dea_marca,
+      dea_importadordistribuidor: dea_importadordistribuidor,
+      dea_desclugarubicacion: dea_desclugarubicacion,
+      dea_gps: dea_gps,
+      dea_otros: dea_otros,
+      dea_fecha: dea_fecha,
+      dea_documentopersonalcertificado: dea_documentopersonalcertificado,
+      dea_nombresapellidospersonalcertificado:
+        dea_nombresapellidospersonalcertificado,
+      dea_entidadcertificadora: dea_entidadcertificadora,
+      dea_fechacertificacion: dea_fechacertificacion,
+      dea_firma: dea_firma,
+      dea_ciudadpersonal: dea_ciudadpersonal,
+      dea_fechapersonal: dea_fechapersonal,
     };
 
     // Realizar la solicitud POST
@@ -170,7 +171,10 @@ export default function Options() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <div className="iconos">
-        <ChevronLeft />
+        <a href="anexo2pagina5">
+          <ChevronLeft />
+        </a>
+
         <User />
       </div>
       <br></br>

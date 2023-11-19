@@ -91,7 +91,7 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        <ChevronLeft />
+        <a href="options"><ChevronLeft /></a>
         <User />
       </div>
       <div className="contenedor">

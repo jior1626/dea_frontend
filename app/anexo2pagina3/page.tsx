@@ -28,7 +28,8 @@ export default function Options() {
 
   const [dea_desclugarubicacion, setdea_desclugarubicacion] = useState("");
 
-  const [errordea_desclugarubicacion, setErrordea_desclugarubicacion] = useState("");
+  const [errordea_desclugarubicacion, setErrordea_desclugarubicacion] =
+    useState("");
 
   const [userLocation, setUserLocation] = useState(null);
 
@@ -71,7 +72,7 @@ export default function Options() {
 
   const handleSubmit = async () => {
     localStorage.setItem("dea_desclugarubicacion", dea_desclugarubicacion);
-    localStorage.setItem("dea_gps", ''+userLocation);
+    localStorage.setItem("dea_gps", "" + userLocation);
     // Validar que todos los campos estén llenos
     let hasError = false;
 
@@ -89,13 +90,15 @@ export default function Options() {
     }
 
     router.push("anexo2pagina4");
-  }
+  };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <div className="iconos">
-        <ChevronLeft />
+        <a href="anexo2pagina2">
+          <ChevronLeft />
+        </a>
         <User />
       </div>
       <br></br>
@@ -109,7 +112,7 @@ export default function Options() {
             type="text"
             className="element"
             placeholder="Desripción"
-             onChange={(e) => setdea_desclugarubicacion(e.target.value)}
+            onChange={(e) => setdea_desclugarubicacion(e.target.value)}
           />
           <br></br>
           <span className="text-red-500">{errordea_desclugarubicacion}</span>

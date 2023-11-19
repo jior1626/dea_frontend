@@ -79,7 +79,9 @@ const ChevronLeft = () => {
   return (
     <div className="containerOptionsUserLeft">
       <div className="white-containerOptionsUserLeft">
-        <FontAwesomeIcon icon={faChevronLeft} size="xl" className="icono" />
+        <Tooltip title="Regresar">
+          <FontAwesomeIcon icon={faChevronLeft} size="xl" className="icono" />
+        </Tooltip>
       </div>
     </div>
   );

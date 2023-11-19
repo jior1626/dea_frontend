@@ -9,16 +9,30 @@ import { User, ChevronLeft, HomeOut, CirclePlus } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
-  const [dea_documentopersonalcertificado, setdea_documentopersonalcertificado] = useState("");
-  const [dea_nombresapellidospersonalcertificado, setdea_nombresapellidospersonalcertificado] = useState("");
+  const [
+    dea_documentopersonalcertificado,
+    setdea_documentopersonalcertificado,
+  ] = useState("");
+  const [
+    dea_nombresapellidospersonalcertificado,
+    setdea_nombresapellidospersonalcertificado,
+  ] = useState("");
   const [dea_entidadcertificadora, setdea_entidadcertificadora] = useState("");
   const [dea_fechacertificacion, setdea_fechacertificacion] = useState("");
 
-  const [errordea_documentopersonalcertificado, setErrordea_documentopersonalcertificado] = useState("");
-  const [errordea_nombresapellidospersonalcertificado, setErrordea_nombresapellidospersonalcertificado] = useState("");
-  const [errordea_entidadcertificadora, setErrordea_entidadcertificadora] = useState("");
-  const [errordea_fechacertificacion, setErrordea_fechacertificacion] = useState("");
- 
+  const [
+    errordea_documentopersonalcertificado,
+    setErrordea_documentopersonalcertificado,
+  ] = useState("");
+  const [
+    errordea_nombresapellidospersonalcertificado,
+    setErrordea_nombresapellidospersonalcertificado,
+  ] = useState("");
+  const [errordea_entidadcertificadora, setErrordea_entidadcertificadora] =
+    useState("");
+  const [errordea_fechacertificacion, setErrordea_fechacertificacion] =
+    useState("");
+
   const handleKeyDown = (e) => {
     // Permitir solo teclas de control y números
     if (["e", "E", "+", "-"].includes(e.key)) {
@@ -45,15 +59,24 @@ export default function Options() {
   };
 
   const handleSubmit = async () => {
-    localStorage.setItem("dea_documentopersonalcertificado", dea_documentopersonalcertificado);
-    localStorage.setItem("dea_nombresapellidospersonalcertificado", dea_nombresapellidospersonalcertificado);
+    localStorage.setItem(
+      "dea_documentopersonalcertificado",
+      dea_documentopersonalcertificado
+    );
+    localStorage.setItem(
+      "dea_nombresapellidospersonalcertificado",
+      dea_nombresapellidospersonalcertificado
+    );
     localStorage.setItem("dea_entidadcertificadora", dea_entidadcertificadora);
     localStorage.setItem("dea_fechacertificacion", dea_fechacertificacion);
-    
+
     // Validar que todos los campos estén llenos
     let hasError = false;
 
-    if (!dea_documentopersonalcertificado || dea_documentopersonalcertificado.length < 8) {
+    if (
+      !dea_documentopersonalcertificado ||
+      dea_documentopersonalcertificado.length < 8
+    ) {
       setErrordea_documentopersonalcertificado(
         "El documento de identidad debe tener al menos 8 caracteres"
       );
@@ -62,7 +85,10 @@ export default function Options() {
       setErrordea_documentopersonalcertificado("");
     }
 
-    if (!dea_nombresapellidospersonalcertificado || dea_nombresapellidospersonalcertificado.length < 4) {
+    if (
+      !dea_nombresapellidospersonalcertificado ||
+      dea_nombresapellidospersonalcertificado.length < 4
+    ) {
       setErrordea_nombresapellidospersonalcertificado(
         "Nombres y apellidos debe tener al menos 4 caracteres"
       );
@@ -81,9 +107,7 @@ export default function Options() {
     }
 
     if (!dea_fechacertificacion || dea_fechacertificacion.length < 4) {
-      setErrordea_fechacertificacion(
-        "La fecha es obligatoria"
-      );
+      setErrordea_fechacertificacion("La fecha es obligatoria");
       hasError = true;
     } else {
       setErrordea_fechacertificacion("");
@@ -94,13 +118,16 @@ export default function Options() {
     }
 
     router.push("anexo2pagina5");
-  }
+  };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
       <div className="iconos">
-        <ChevronLeft />
+        <a href="anexo2pagina3">
+          <ChevronLeft />
+        </a>
+
         <User />
       </div>
       <br></br>
@@ -122,10 +149,14 @@ export default function Options() {
             className="element"
             placeholder="Documento de identidad"
             onKeyDown={handleKeyDown}
-            onChange={(e) => setdea_documentopersonalcertificado(e.target.value)}
+            onChange={(e) =>
+              setdea_documentopersonalcertificado(e.target.value)
+            }
           />
           <br></br>
-          <span className="text-red-500">{errordea_documentopersonalcertificado}</span>
+          <span className="text-red-500">
+            {errordea_documentopersonalcertificado}
+          </span>
         </div>
 
         <div className="bloque">
@@ -134,10 +165,14 @@ export default function Options() {
             className="element"
             onKeyDown={handleKeyDown2}
             placeholder="Nombres y apellidos"
-            onChange={(e) => setdea_nombresapellidospersonalcertificado(e.target.value)}
+            onChange={(e) =>
+              setdea_nombresapellidospersonalcertificado(e.target.value)
+            }
           />
           <br></br>
-          <span className="text-red-500">{errordea_nombresapellidospersonalcertificado}</span>
+          <span className="text-red-500">
+            {errordea_nombresapellidospersonalcertificado}
+          </span>
         </div>
 
         <div className="bloque">
@@ -163,7 +198,7 @@ export default function Options() {
           <span className="text-red-500">{errordea_fechacertificacion}</span>
         </div>
         <div>
-          <CirclePlus/>
+          <CirclePlus />
         </div>
         <div className="contenedorCasita">
           <button
