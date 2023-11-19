@@ -6,7 +6,7 @@ import "./anexo3.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
-import {InstruccionesUso} from "../components/modals";
+import { InstruccionesUso } from "../components/modals";
 
 export default function Options() {
   const router = useRouter();
@@ -147,7 +147,7 @@ export default function Options() {
               Formulario de reporte uso de Desfibrilador Externo Automático -
               DEA en ambiente extrahospitalario
             </h6>
-              <InstruccionesUso />
+            <InstruccionesUso />
           </div>
           <div className="columna-imagen">
             <img
@@ -214,8 +214,14 @@ export default function Options() {
                 }
               >
                 <option value="Cedula">Tipo de doc. de identificación</option>
-                <option value="Cedula">Cedula</option>
-                <option value="Pasaporte">Pasaporte</option>
+                <option value="Cedula">Tarjeta de Identidad</option>
+                <option value="Pasaporte">Cedula de Ciudadanía</option>
+                <option value="Cedula">Cedula de Extranjería</option>
+                <option value="Cedula">Registro Civil</option>
+                <option value="Cedula">Pasaporte</option>
+                <option value="Cedula">Permiso Especial de Permanencia</option>
+                <option value="Cedula">Documento Extranjero</option>
+                <option value="Cedula">Sin Documento</option>
               </select>
               {errores.includes("El tipo de documento es obligatorio.") && (
                 <p className="text-red-500">
@@ -343,8 +349,12 @@ export default function Options() {
               setuso_personaatendidaeventoaseguradorsalud(e.target.value)
             }
           />
-          {errores.includes("La aseguradora debe tener al menos 4 dígitos.") && (
-            <p className="text-red-500">La aseguradora debe tener al menos 4 dígitos.</p>
+          {errores.includes(
+            "La aseguradora debe tener al menos 4 dígitos."
+          ) && (
+            <p className="text-red-500">
+              La aseguradora debe tener al menos 4 dígitos.
+            </p>
           )}
         </div>
 

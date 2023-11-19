@@ -131,8 +131,15 @@ export default function Options() {
             onChange={(e) => setuso_datoseventotipodocumento(e.target.value)}
           >
             <option value="Cedula">Tipo de doc. de identificación</option>
-            <option value="Cedula">Cedula</option>
-            <option value="Pasaporte">Pasaporte</option>
+            <option value="Cedula">Tarjeta de Identidad</option>
+            <option value="Pasaporte">Cedula de Ciudadanía</option>
+            <option value="Cedula">Cedula de Extranjería</option>
+            <option value="Cedula">Registro Civil</option>
+            <option value="Cedula">Pasaporte</option>
+            <option value="Cedula">Permiso Especial de Permanencia</option>
+            <option value="Cedula">Documento Extranjero</option>
+            <option value="Cedula">Sin Documento</option>
+
           </select>
           {errores.includes("Selecciona el tipo de documento.") && (
             <p className="text-red-500">Selecciona el tipo de documento.</p>

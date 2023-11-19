@@ -3,19 +3,19 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./creacionoperador.css";
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 
 export default function Options() {
   const router = useRouter();
 
-  const [nombreCompleto, setNombreCompleto] = useState('');
-  const [tipoIdentificacion, setTipoIdentificacion] = useState('');
-  const [numeroIdentificacion, setNumeroIdentificacion] = useState('');
-  const [rol, setRol] = useState('');
+  const [nombreCompleto, setNombreCompleto] = useState("");
+  const [tipoIdentificacion, setTipoIdentificacion] = useState("");
+  const [numeroIdentificacion, setNumeroIdentificacion] = useState("");
+  const [rol, setRol] = useState("");
   const [edad, setEdad] = useState(0);
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   const validatePassword = (password) => {
     return password.length >= 6 && /^[A-Z]/.test(password);
@@ -26,59 +26,61 @@ export default function Options() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  
   const validateForm = async () => {
     const jwt = localStorage.getItem("jwt");
     if (
-        !nombreCompleto || 
-        tipoIdentificacion === 'Selecciona' ||
-        !numeroIdentificacion || 
-        rol === 'Selecciona' || 
-        !validateEmail(email) ||
-        !validatePassword(password)
-      ) {
-        alert('Por favor, llena todos los campos correctamente.');
-        return false;
-      }
+      !nombreCompleto ||
+      tipoIdentificacion === "Selecciona" ||
+      !numeroIdentificacion ||
+      rol === "Selecciona" ||
+      !validateEmail(email) ||
+      !validatePassword(password)
+    ) {
+      alert("Por favor, llena todos los campos correctamente.");
+      return false;
+    }
 
-      const data = {
-            "action": "register",
-            "nombrecompleto": nombreCompleto,
-            "correo":email,
-            "contrasena":password,
-            "rol":rol,
-            "tipodocumento": tipoIdentificacion,
-            "numeroidentificacion":numeroIdentificacion
-      };
+    const data = {
+      action: "register",
+      nombrecompleto: nombreCompleto,
+      correo: email,
+      contrasena: password,
+      rol: rol,
+      tipodocumento: tipoIdentificacion,
+      numeroidentificacion: numeroIdentificacion,
+    };
 
-      alert(JSON.stringify(data))
+    alert(JSON.stringify(data));
 
-      try {
-        const response = await fetch('https://dea-auth.azurewebsites.net/api.php/api.php', {
-          method: 'POST',
+    try {
+      const response = await fetch(
+        "https://dea-auth.azurewebsites.net/api.php/api.php",
+        {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(data)
-        });
-  
-        const responseData = await response.json();
-        console.log(responseData);
-  
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+          body: JSON.stringify(data),
         }
-  
-        alert('Datos enviados con éxito.');
-        router.push("anexo3finalizo");
-      } catch (error) {
-        alert('Error al enviar datos.');
-        console.error('Error enviando datos:', error);
+      );
+
+      const responseData = await response.json();
+      console.log(responseData);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
-  
-      // Aquí puedes continuar con la lógica para registrar al usuario, ya que pasó la validación
-      console.log('Todo válido, podemos registrar al usuario');
-      // navigateToSection(); // Implementa la lógica de navegación o lo que proceda aquí
+
+      alert("Datos enviados con éxito.");
+      router.push("anexo3finalizo");
+    } catch (error) {
+      alert("Error al enviar datos.");
+      console.error("Error enviando datos:", error);
+    }
+
+    // Aquí puedes continuar con la lógica para registrar al usuario, ya que pasó la validación
+    console.log("Todo válido, podemos registrar al usuario");
+    // navigateToSection(); // Implementa la lógica de navegación o lo que proceda aquí
   };
 
   return (
@@ -106,19 +108,19 @@ export default function Options() {
               className="w-full p-3 rounded-full shadow-sm border text-black"
               onChange={(e) => setTipoIdentificacion(e.target.value)}
             >
-             <option value="Selecciona">
-                Selecciona Tipo Documento
-              </option>
-              <option value="Pasaporte">
-                Pasaporte
-              </option>
-              <option value="Cedula">
-                Cedula
-              </option>
+              <option value="Selecciona">Selecciona Tipo Documento</option>
+              <option value="Cedula">Tarjeta de Identidad</option>
+              <option value="Pasaporte">Cedula de Ciudadanía</option>
+              <option value="Cedula">Cedula de Extranjería</option>
+              <option value="Cedula">Registro Civil</option>
+              <option value="Cedula">Pasaporte</option>
+              <option value="Cedula">Permiso Especial de Permanencia</option>
+              <option value="Cedula">Documento Extranjero</option>
+              <option value="Cedula">Sin Documento</option>
             </select>
             <br></br>
             <br></br>
-            
+
             <p className="font-bold ley text-black">Numero identificación:</p>
             <input
               type="number"
@@ -134,26 +136,15 @@ export default function Options() {
               className="w-full p-3 rounded-full shadow-sm border text-black"
               onChange={(e) => setRol(e.target.value)}
             >
-             <option value="Selecciona">
-                Selecciona Rol
-              </option>
-              <option value="Operador1">
-              Operador1
-              </option>
-              <option value="Operador2">
-              Operador2
-              </option>
-              <option value="Administrador">
-              Administrador
-              </option>
-              <option value="Consultor">
-              Consultor
-              </option>
+              <option value="Selecciona">Selecciona Rol</option>
+              <option value="Operador1">Operador1</option>
+              <option value="Operador2">Operador2</option>
+              <option value="Administrador">Administrador</option>
+              <option value="Consultor">Consultor</option>
             </select>
 
             <br></br>
             <br></br>
-
 
             <p className="font-bold ley text-black">Correo:</p>
             <input
@@ -174,7 +165,10 @@ export default function Options() {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <button className="mt-4 w-full bg-custom-azul text-white py-3 rounded-full shadow-lg text-black" onClick={validateForm}>
+            <button
+              className="mt-4 w-full bg-custom-azul text-white py-3 rounded-full shadow-lg text-black"
+              onClick={validateForm}
+            >
               Registrar
             </button>
           </div>
