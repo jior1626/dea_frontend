@@ -7,22 +7,45 @@ import {
   faHome,
   faChevronLeft,
   faCirclePlus,
-  faArrowRightFromBracket
+  faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./iconos.css";
+import * as React from "react";
+import Tooltip from "@mui/material/Tooltip";
 
 // Configura el sistema de iconos
 import { library } from "@fortawesome/fontawesome-svg-core";
-library.add(faUser, faGlobe, faChevronDown, faCircleInfo, faHome, faChevronLeft, faCirclePlus,faArrowRightFromBracket);
+library.add(
+  faUser,
+  faGlobe,
+  faChevronDown,
+  faCircleInfo,
+  faHome,
+  faChevronLeft,
+  faCirclePlus,
+  faArrowRightFromBracket
+);
 
 const User = () => {
   return (
     <div className="containerOptionsUser">
       <div className="white-containerOptionsUser">
-        <FontAwesomeIcon icon={faHome} size="xl" className="icono" />
-        <FontAwesomeIcon icon={faUser} size="xl" className="icono" />
-        <a href="/" ><FontAwesomeIcon icon={faArrowRightFromBracket} size="xl" className="icono1"  /></a>
+        <Tooltip title="Inicio">
+          <FontAwesomeIcon icon={faHome} size="xl" className="icono" />
+        </Tooltip>
+        <Tooltip title="Perfil">
+          <FontAwesomeIcon icon={faUser} size="xl" className="icono" />
+        </Tooltip>
+        <Tooltip title="Salir">
+          <a href="/">
+            <FontAwesomeIcon
+              icon={faArrowRightFromBracket}
+              size="xl"
+              className="icono1"
+            />
+          </a>
+        </Tooltip>
       </div>
     </div>
   );
@@ -40,19 +63,17 @@ const ChevronDown = () => {
 
 const CicleInfo = () => {
   return (
-    <FontAwesomeIcon icon={faCircleInfo} size="lg" className="cicleinfo" />
+    <Tooltip title="Instrucciones de diligenciamiento">
+      <FontAwesomeIcon icon={faCircleInfo} size="lg" className="cicleinfo" />
+    </Tooltip>
   );
 };
 
 const Home = () => {
-  return (
-    <FontAwesomeIcon icon={faHome} size="xl" className="Home" />
-  );
+  return <FontAwesomeIcon icon={faHome} size="xl" className="Home" />;
 };
 const CirclePlus = () => {
-  return (
-    <FontAwesomeIcon icon={faCirclePlus} size="2xl" className="plus" />
-  );
+  return <FontAwesomeIcon icon={faCirclePlus} size="2xl" className="plus" />;
 };
 const ChevronLeft = () => {
   return (
@@ -68,13 +89,30 @@ const HomeOut = () => {
   return (
     <div className="containerOptionsUserHomeOut">
       <div className="white-containerOptionsHomeOut">
-        <FontAwesomeIcon icon={faHome} size="xl" className="Home" />
-        <a href="/" ><FontAwesomeIcon icon={faArrowRightFromBracket} size="xl" className="Home"  /></a>
+        <Tooltip title="Inicio">
+          <FontAwesomeIcon icon={faHome} size="xl" className="icono" />
+        </Tooltip>
+        <Tooltip title="Salir">
+          <a href="/">
+            <FontAwesomeIcon
+              icon={faArrowRightFromBracket}
+              size="xl"
+              className="icono1"
+            />
+          </a>
+        </Tooltip>
       </div>
     </div>
   );
 };
 
-
-
-export { User, Idioma, ChevronDown, CicleInfo, ChevronLeft, Home, CirclePlus, HomeOut };
+export {
+  User,
+  Idioma,
+  ChevronDown,
+  CicleInfo,
+  ChevronLeft,
+  Home,
+  CirclePlus,
+  HomeOut,
+};

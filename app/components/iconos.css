@@ -82,6 +82,8 @@
   .icono {
     display: block;
     color: #3366CC;
+    cursor: pointer;
+
   }
 
   .icono1 {
@@ -91,7 +93,6 @@
   }
   .Home{
     display: none;
-
   }
   .idioma {
     margin-right: 5px;

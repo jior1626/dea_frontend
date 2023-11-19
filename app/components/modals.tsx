@@ -5,6 +5,7 @@ import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
 
+
 interface ChildModalAcceptProps {
   onClose: () => void;
 }
@@ -199,7 +200,7 @@ InstruccionesUsoProps
             diferentes a los datos reportados en las variables anteriores.
           </p>
 
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <div style={{ display: "flex", justifyContent: "space-around", marginBottom:" 1rem"}}>
             <button onClick={handleClose} className="buttonConfirmar">
               Cerrar
             </button>
@@ -326,7 +327,7 @@ const InstruccionesInstalacion: React.FC<
             hace la declaratoria de(l)/los DEA.
           </p>
 
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <div style={{ display: "flex", justifyContent: "space-around", marginBottom:" 1rem"  }}>
             <button onClick={handleClose} className="buttonConfirmar">
               Cerrar
             </button>
