@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./reportes.css";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { User, ChevronLeft } from "../components/iconos";
+import { User, ChevronLeft, FileDown } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -72,38 +72,39 @@ export default function Options() {
         <div className="contenedorColumn">
           <div className="div-interno">
             Consulta de espacio o lugares registrados
+            <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Gestionar información de registros y uso.
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Gestionar información de registros y uso. <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Usuarios activos por entidad
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Usuarios activos por entidad <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Establecimientos por DEA registrados
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Establecimientos por DEA registrados <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Informe semanal de uso y activación de la ruta vital
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Informe semanal de uso y activación de la ruta vital <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Generación de informes gráficos específicos
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Generación de informes gráficos específicos <div className="iconoFile"><FileDown/></div>
           </div>
         </div>
         <div className="contenedorColumn">
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Información de visitas realizadas por entidad
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Información de visitas realizadas por entidad <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Reporte semanal de instalaciones de DEA realizados
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Reporte semanal de instalaciones de DEA realizados <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Información de visitas realizadas por funcionario
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Información de visitas realizadas por funcionario <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Información de planes de mejoramiento
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Información de planes de mejoramiento <div className="iconoFile"><FileDown/></div>
           </div>
-          <div className="div-interno" onClick={navigateToSectionAnexo3}>
-            Seguimiento a planes de mejoramiento
+          <div className="div-interno" /* onClick={navigateToSectionAnexo3} */>
+            Seguimiento a planes de mejoramiento <div className="iconoFile"><FileDown/></div>
           </div>
         </div>
       </div>

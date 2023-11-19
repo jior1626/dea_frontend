@@ -8,6 +8,7 @@ import {
   faChevronLeft,
   faCirclePlus,
   faArrowRightFromBracket,
+  faFileArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./iconos.css";
@@ -24,7 +25,8 @@ library.add(
   faHome,
   faChevronLeft,
   faCirclePlus,
-  faArrowRightFromBracket
+  faArrowRightFromBracket,
+  faFileArrowDown
 );
 
 const User = () => {
@@ -53,6 +55,14 @@ const User = () => {
 
 const Idioma = () => {
   return <FontAwesomeIcon icon={faGlobe} size="lg" className="idioma" />;
+};
+
+const FileDown = () => {
+  return (
+    <Tooltip title="Regresar">
+      <FontAwesomeIcon icon={faFileArrowDown} size="lg" className="file" />
+    </Tooltip>
+  );
 };
 
 const ChevronDown = () => {
@@ -117,4 +127,5 @@ export {
   Home,
   CirclePlus,
   HomeOut,
+  FileDown,
 };

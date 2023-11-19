@@ -29,6 +29,9 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   /* Añade una sombra a los divs internos */
   color: #000;
+  justify-content: space-between;
+
+
 }
 
 /* Estilos específicos para cada div interno */
@@ -37,6 +40,11 @@
 .div-interno {
   border-left: 15px solid #FF8403;
   /* Borde izquierdo para el segundo div */
+}
+
+.iconoFile {
+  display: flex;
+  justify-content: right;
 }
 
 
@@ -54,25 +62,30 @@ main {
 
 @media screen and (min-width: 900px) {
   .contenedor {
-      width: 80%;
-      /* height: 600px; */
-      background-color: white;
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: row; /* Cambiado a fila para que estén en la misma línea */
-      align-items: flex-start; /*
+    width: 80%;
+    /* height: 600px; */
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    /* Cambiado a fila para que estén en la misma línea */
+    align-items: flex-start;
+    /*
       /* Acomoda los divs en una columna (verticalmente) */
-      margin: auto 0;
-      /* Centra el contenedor en la pantalla */
-      border-radius: 10px;
-      justify-content: space-around;
+    margin: auto 0;
+    /* Centra el contenedor en la pantalla */
+    border-radius: 10px;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+
   }
 
   .contenedorColumn {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Ocupar todo el espacio disponible */
+    flex: 1;
+    /* Ocupar todo el espacio disponible */
     align-items: center;
 
   }
@@ -82,22 +95,22 @@ main {
     /* height: 220px; */
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
   }
 
   .iconos {
-      align-items: center;
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 
 
   .div-interno:hover {
-      border-left: 15px solid #00904C  ;
-      /* Borde izquierdo para el segundo div */
+    border-left: 15px solid #00904C;
+    /* Borde izquierdo para el segundo div */
   }
 
 }
