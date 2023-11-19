@@ -17,6 +17,9 @@
   position: relative;
   display: flex;
   place-items: center;
+  flex-direction: column;
+  margin: 10px auto;
+
 }
 
 /* Pseudo-elemento antes del contenedor relativo */
@@ -74,6 +77,10 @@ h1{
   color: #3366CC;
   text-align: center;
   margin: auto auto;
+}
+
+.inicioS{
+  line-height: 5rem;
 }
 
 .recu{

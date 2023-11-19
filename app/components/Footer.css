@@ -24,7 +24,7 @@ footer {
   }
   
   .footer-column:nth-child(2) {
-    width: 10%; /* Por ejemplo, el segundo 30% */
+    width: 30%;
     padding-top: 10px;
   }
   
