@@ -95,6 +95,7 @@ export default function Home() {
             placeholder="Contraseña"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <div className="recuperarPass"><a className="recu">Recuperar contraseña</a></div>
           <button
             className="buttonLogin "
             onClick={handleLogin}
