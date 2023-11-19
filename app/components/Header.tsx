@@ -14,6 +14,9 @@ const Header = () => {
       </div>
       <div className="top_nav">
         <div className="centradototal_">
+          <div className="logo_gov">
+            <img width="50px" src="/Recurso 1.png" alt="Gov.co" />
+          </div>
           <div className="alcaldia_menu_top">
             <div className="iconosmed_">
               <img
@@ -530,13 +533,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className="logo_gov">
-            <img
-              width="150px"
-              src="https://cdnwordpresstest-f0ekdgevcngegudb.z01.azurefd.net/es/wp-content/themes/theme_alcaldia/img/logo_gov.png"
-              alt="Gov.co"
-            />
-          </div>
+
           {/* <div className="login_nav_top">
             <li>
               <a data-toggle="collapse" href="#modu_lof_reg_" id="HIniciarS">

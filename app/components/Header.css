@@ -1,10 +1,9 @@
-
 :root {
   --azul: #3366CC;
   --azul2: #004884;
   --azul-claro: #E6EFFD;
-  --fuente-work: 'Work Sans',sans-serif;
-  --fuente-montserrat: 'Montserrat',sans-serif;
+  --fuente-work: 'Work Sans', sans-serif;
+  --fuente-montserrat: 'Montserrat', sans-serif;
   --naranja: #fb8406;
   --blue: #00aeef;
   --morado: #ae3e97;
@@ -13,39 +12,41 @@
   --scrollbarBG: #fff;
   --thumbBG: #00aeef
 }
+
 /* Estilo para el header */
 header {
-    width: 100%;
-    background-color: #fff;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px; /* Ajusta el relleno según tus necesidades */
-  }
-  
-  /* Estilo para el contenedor del logo */
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Estilo para la imagen del logo */
-  .logo-container img {
-    /* Ajusta el tamaño y otros estilos de la imagen del logo según tus necesidades */
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  .top_nav {
-    display: none;
-  }
-  
+  width: 100%;
+  background-color: #fff;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* Ajusta el relleno según tus necesidades */
+}
 
-.container_desktop{
+/* Estilo para el contenedor del logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para la imagen del logo */
+.logo-container img {
+  /* Ajusta el tamaño y otros estilos de la imagen del logo según tus necesidades */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.top_nav {
+  display: none;
+}
+
+
+.container_desktop {
   display: none;
 }
 
@@ -65,35 +66,43 @@ header {
     justify-content: center;
     align-items: center;
   }
+
   .logo-container {
     display: none;
   }
+
   .top_nav {
     position: sticky;
     top: 0px;
     z-index: 99;
   }
-  .fa-light{
+
+  .fa-light {
     display: flex;
     width: 10px;
   }
+
   .centradototal_ {
     width: 100%;
     max-width: 1160px;
     margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
   }
-  
+
   .top_nav .alcaldia_menu_top {
     float: right;
     padding-left: 50px;
     width: 100%;
     max-width: 22%;
   }
-  
-  .secre_depen_links .grid_ .titulo_ente_ {
-    background-color: var(--blue)!important;
-}
 
+  .secre_depen_links .grid_ .titulo_ente_ {
+    background-color: var(--blue) !important;
+  }
+
+  
 .secre_depen_links .grid_ li a {
   color: #000;
 }
@@ -123,7 +132,6 @@ header {
     background-color: var(--azul);
     color: #fff;
     display: flex;
-    padding-top: 10px;
     padding-bottom: 5px;
     width: 100%;
     position: sticky;
@@ -136,11 +144,11 @@ header {
   }
   
   .top_nav .logo_gov img {
-    width: 116px;
+    width: 50px;
     height: auto;
     display: block;
     margin-top: 5px;
-    margin-left: -10px
+    margin-left: 100px;
   }
   
   .top_nav .buscador_nav {
@@ -1273,4 +1281,5 @@ header {
   .boton_biscmodal_ input[type=submit]:hover {
     background-color: #ff8403
   }
+
 }

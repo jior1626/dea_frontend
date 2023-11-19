@@ -8,7 +8,8 @@ footer {
     background-color: #3366CC;
     display: flex;
     justify-content: space-around;
-    padding: 10px; /* Ajusta el relleno según tus necesidades */
+    padding-bottom: 5px; /* Ajusta el relleno según tus necesidades */
+    align-items: center;
   }
   
   /* Estilo para las columnas del footer */
@@ -23,7 +24,7 @@ footer {
   }
   
   .footer-column:nth-child(2) {
-    width: 30%; /* Por ejemplo, el segundo 30% */
+    width: 10%; /* Por ejemplo, el segundo 30% */
     padding-top: 10px;
   }
   
