@@ -1,6 +1,7 @@
 /* Estilos generales */
-
-
+body{
+  overflow: hidden;
+}
 /* Estilo del contenedor principal */
 .flex-container {
   display: flex;
