@@ -76,6 +76,13 @@ export default function Options() {
         <div className="div-interno">Tableros de visualización</div>
     </div>
     )}
+    {rolAsignado === "Operador2" && (
+      <div className="contenedor">
+        <div className="div-interno" onClick={navigateToSectionAnexo2} >Anexo 2. Reporte de instalación del Desfibrilador Externo Automático (DEA). Formulario Dinámico. </div>
+        <div className="div-interno" onClick={navigateToSectionReportes}>Reportes</div>
+        <div className="div-interno">Tableros de visualización</div>
+    </div>
+    )}
 
       <Footer></Footer>
     </main>

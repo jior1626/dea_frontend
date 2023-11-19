@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import "./reportes.css";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { User, ChevronLeft } from "../components/iconos";
 
 export default function Options() {
   const router = useRouter();
@@ -38,6 +39,18 @@ export default function Options() {
     router.push("planes");
   };
 
+  const navigateToSectionGestion = () => {
+    router.push("gestion");
+  };
+
+  const navigateToSectionTableros = () => {
+    router.push("tableros");
+  };
+
+  const navigateToSectionReportes = () => {
+    router.push("reportes");
+  };
+
   useEffect(() => {
     // Suponiendo que el valor almacenado en localStorage es una cadena JSON
     // Obtener el token JWT del localStorage
@@ -48,28 +61,52 @@ export default function Options() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex-containerOptions">
       <Header></Header>
-
-      {rolAsignado != "Consultor" && (
-        <div className="min-h-[700px] flex items-center justify-center">
-          <div className="bg-white rounded-lg p-8 shadow-md max-w-md mx-5 w-full mb-8">
-
-            <div
-              className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
-            >
-              <p className="text-center text-black">xxxxxx</p>
-            </div>
-
-            <div
-              className="bg-white rounded-lg p-8 border-l-12 shadow-md mb-4 mt-4 anexo3"
-            >
-              <p className="text-center text-black">eeeeeeeeeeeeee</p>
-            </div>
-
+      <div className="iconos">
+        <ChevronLeft />
+        <User />
+      </div>
+      <br></br>
+      <div className="contenedor">
+        <div className="contenedorColumn">
+          <div className="div-interno">
+            Consulta de espacio o lugares registrados
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Gestionar información de registros y uso.
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Usuarios activos por entidad
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Establecimientos por DEA registrados
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Informe semanal de uso y activación de la ruta vital
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Generación de informes gráficos específicos
           </div>
         </div>
-      )}
+        <div className="contenedorColumn">
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Información de visitas realizadas por entidad
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Reporte semanal de instalaciones de DEA realizados
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Información de visitas realizadas por funcionario
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Información de planes de mejoramiento
+          </div>
+          <div className="div-interno" onClick={navigateToSectionAnexo3}>
+            Seguimiento a planes de mejoramiento
+          </div>
+        </div>
+      </div>
 
       <Footer></Footer>
     </main>
