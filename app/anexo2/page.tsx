@@ -139,9 +139,15 @@ export default function Options() {
             </p>
           )}
         </div>
+
         <div className="bloque">
           
-
+          <div>
+          <p>
+            Comunica la existencia de  <input type="text" placeholder="#" inputmode="numeric" pattern="[0-9]*" className="numberDesfribiladores" name="numero_desfibriladores" /> desfibrilador/es externo/s ubicados en:
+          </p>
+          </div>
+        
           <input
             type="text"
             className="inputForm"
