@@ -3,8 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 85vh;
+  min-height: 95vh;
 }
+
 .contenedor {
   width: 90%;
   display: flex;
@@ -20,18 +21,16 @@
   margin: auto 0;
   /* Esto añadirá el margen automáticamente en la parte superior e inferior */
   flex-direction: column;
-  height: 103vh;
-  margin-top: 5%;
-
-
-  /* Las columnas se apilan verticalmente en pantallas pequeñas */
+  margin-top: 10%;
+  margin-bottom: 20%; /* Las columnas se apilan verticalmente en pantallas pequeñas */
 
 }
 
-.textRed{
-  color:red;
+.textRed {
+  color: red;
   font-size: 12px;
 }
+
 .containerTituloAnexo {
   display: flex;
   justify-content: center;
@@ -125,7 +124,8 @@ main {
   width: 45px;
 
 }
-.numberDesfribiladores{
+
+.numberDesfribiladores {
   border-radius: 20%;
   width: 40px;
   border: 1px solid #000;
@@ -147,7 +147,8 @@ main {
     /* Establece un contenedor flex */
     align-items: center;
     /* Centra los elementos verticalmente */
-    justify-content: center; /* Centra horizontalmente los elementos */
+    justify-content: center;
+    /* Centra horizontalmente los elementos */
     border-left: 30px solid #AE3E97;
     /* Borde izquierdo morado */
     border-radius: 15px;
@@ -155,25 +156,29 @@ main {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Asegura que los hijos no sobresalgan de los bordes redondeados */
-    margin: auto 0 10% 0;
+    margin: auto 0;
     /* Esto añadirá el margen automáticamente en la parte superior e inferior */
-}
+  }
+
   .containerTituloAnexo {
     width: 100%;
     display: flex;
     justify-content: left;
     padding: 30px 10%;
   }
+
   .tituloanexo {
     color: #000;
     font-size: 18px;
     font-weight: bold;
   }
+
   .bloque {
     width: 100%;
     padding: 0 10%;
     text-align: left;
   }
+
   .contenedorCasita {
     padding-top: 2%;
 
@@ -184,13 +189,15 @@ main {
     color: #000;
     font-weight: normal;
   }
+
   .iconos {
     align-items: center;
     display: flex;
     width: 100%;
     justify-content: space-between;
   }
-  .inputForm{
+
+  .inputForm {
     margin-top: 1rem;
   }
 }
