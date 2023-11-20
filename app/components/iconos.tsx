@@ -37,8 +37,8 @@ const User = () => {
   return (
     <div className="containerOptionsUser">
       <div className="white-containerOptionsUser">
-        <Tooltip title="Inicio">
-          <FontAwesomeIcon icon={faHome} size="xl" className="icono" />
+      <Tooltip title="Inicio">
+          <a href="/options"><FontAwesomeIcon icon={faHome} size="xl" className="iconoHome" /></a>
         </Tooltip>
         <Tooltip title="Perfil">
           <FontAwesomeIcon icon={faUser} size="xl" className="icono" />
@@ -112,7 +112,7 @@ const HomeOut = () => {
     <div className="containerOptionsUserHomeOut">
       <div className="white-containerOptionsHomeOut">
         <Tooltip title="Inicio">
-          <FontAwesomeIcon icon={faHome} size="xl" className="iconoHome" />
+          <a href="/options"><FontAwesomeIcon icon={faHome} size="xl" className="iconoHome" /></a>
         </Tooltip>
         <Tooltip title="Salir">
           <a href="/">
