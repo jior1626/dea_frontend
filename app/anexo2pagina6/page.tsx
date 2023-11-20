@@ -147,6 +147,7 @@ export default function Options() {
         }
       );
       //alert(JSON.stringify(data))
+      console.log(data);
       if (response.ok) {
         const responseData = await response.json();
         if (responseData.message === "dea creado") {
@@ -227,6 +228,7 @@ export default function Options() {
             className="element"
             placeholder=""
             onChange={(e) => setdea_fechapersonal(e.target.value)}
+            max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
           />
           <span className="text-red-500">{errordea_fechapersonal}</span>
         </div>

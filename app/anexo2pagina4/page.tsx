@@ -193,13 +193,14 @@ export default function Options() {
             className="element"
             placeholder="Fecha de certificación / última capacitación"
             onChange={(e) => setdea_fechacertificacion(e.target.value)}
+            max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
           />
           <br></br>
           <span className="text-red-500">{errordea_fechacertificacion}</span>
         </div>
-        <div>
+        {/* <div>
           <CirclePlus />
-        </div>
+        </div> */}
         <div className="contenedorCasita">
           <button
             className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"
