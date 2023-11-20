@@ -112,14 +112,14 @@ const HomeOut = () => {
     <div className="containerOptionsUserHomeOut">
       <div className="white-containerOptionsHomeOut">
         <Tooltip title="Inicio">
-          <FontAwesomeIcon icon={faHome} size="xl" className="icono" />
+          <FontAwesomeIcon icon={faHome} size="xl" className="iconoHome" />
         </Tooltip>
         <Tooltip title="Salir">
           <a href="/">
             <FontAwesomeIcon
               icon={faArrowRightFromBracket}
               size="xl"
-              className="icono1"
+              className="iconoHome"
             />
           </a>
         </Tooltip>
