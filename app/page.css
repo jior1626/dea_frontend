@@ -1,14 +1,15 @@
 /* Estilos generales */
-body{
+body {
   overflow: auto;
 }
+
 /* Estilo del contenedor principal */
 .flex-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 85vh;
 }
 
 
@@ -25,9 +26,11 @@ body{
 
 /* Pseudo-elemento antes del contenedor relativo */
 .relative-container::before {
-  content: ""; /* Contenido vacío, necesario para que el pseudo-elemento sea visible */
+  content: "";
+  /* Contenido vacío, necesario para que el pseudo-elemento sea visible */
   position: absolute;
-  z-index: -1; /* Coloca el pseudo-elemento detrás del contenido principal */
+  z-index: -1;
+  /* Coloca el pseudo-elemento detrás del contenido principal */
   /* Agrega otros estilos según sea necesario */
 }
 
@@ -39,14 +42,14 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
- 
+
 }
 
-h2{
-  margin-bottom: 1rem;
+h2 {
+  margin-bottom: 0.5rem;
 }
 
-h1{
+h1 {
   font-size: x-large;
 }
 
@@ -58,6 +61,8 @@ h1{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   width: 90%;
+  height: 300px;
+
 }
 
 
@@ -67,17 +72,20 @@ h1{
   display: flex;
   width: 245px;
   height: 40px;
-  background-color: #AE3E97; /* Reemplaza con el color personalizado deseado */
+  background-color: #AE3E97;
+  /* Reemplaza con el color personalizado deseado */
   color: white;
   padding: 12px 5px;
-  border-radius: 9999px; /* Utiliza un valor grande para hacer que el botón sea redondo */
+  border-radius: 9999px;
+  /* Utiliza un valor grande para hacer que el botón sea redondo */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   margin-top: 1rem;
   align-items: center;
 }
+
 .inputForm {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   width: 100%;
   padding: 0.75rem;
   border-radius: 15px;
@@ -86,55 +94,72 @@ h1{
   color: #000;
   font-size: 12px;
 }
-.recuperarPass{
+
+.recuperarPass {
   color: #3366CC;
   text-align: center;
   margin: auto auto;
   font-size: 12px;
+  margin-top: 1rem;
+
 
 }
-.buttonContainer{
+
+.buttonContainer {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.inicioS{
-  line-height: 2rem;
+
+.inicioS {
+  line-height: 1rem;
 }
 
-.recu{
+.recu {
   outline: #3366CC;
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 900px) {
-  body{
+  body {
     overflow: hidden;
   }
+
   .flex-container {
     min-height: 90vh;
   }
 
-  .relative-container{
+  .relative-container {
     margin: auto 0;
 
   }
+
   .white-container {
     max-width: 500px;
     max-height: 400px;
+    height: 100%;
+
   }
 
   .containerLogin {
     min-height: auto;
+    width: 100%;
     margin: auto 0;
+  }
 
+  .inputForm {
+    margin-top: 1rem;
 
   }
-  h1{
+
+  h1 {
     font-size: xx-large;
   }
-  h2{
-    margin-bottom: 3rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .inicioS {
+    line-height: 4rem;
   }
 }
-
