@@ -1,6 +1,6 @@
 /* Estilos generales */
 body{
-  overflow: hidden;
+  overflow: auto;
 }
 /* Estilo del contenedor principal */
 .flex-container {
@@ -34,7 +34,7 @@ body{
 
 /* Estilos flexibles con centrado de elementos */
 .containerLogin {
-  min-height: 450px;
+  min-height: auto;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -63,8 +63,10 @@ h1{
 
 /* Estilo del botón */
 .buttonLogin {
-  align-items: "center";
-  width: 100%;
+  justify-content: center;
+  display: flex;
+  width: 245px;
+  height: 40px;
   background-color: #AE3E97; /* Reemplaza con el color personalizado deseado */
   color: white;
   padding: 12px 5px;
@@ -72,16 +74,32 @@ h1{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   margin-top: 1rem;
+  align-items: center;
 }
-
+.inputForm {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 15px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #878787;
+  color: #000;
+  font-size: 12px;
+}
 .recuperarPass{
   color: #3366CC;
   text-align: center;
   margin: auto auto;
-}
+  font-size: 12px;
 
+}
+.buttonContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .inicioS{
-  line-height: 5rem;
+  line-height: 2rem;
 }
 
 .recu{
@@ -91,7 +109,10 @@ h1{
 
 @media screen and (min-width: 900px) {
   body{
-    overflow: auto;
+    overflow: hidden;
+  }
+  .flex-container {
+    min-height: 90vh;
   }
 
   .relative-container{
@@ -104,8 +125,9 @@ h1{
   }
 
   .containerLogin {
-    min-height: 500px;
+    min-height: auto;
     margin: auto 0;
+
 
   }
   h1{

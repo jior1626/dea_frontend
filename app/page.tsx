@@ -88,22 +88,24 @@ export default function Home() {
           <h2 className="inicioS">Iniciar Sesión</h2>
           <input
             type="email"
-            className="w-full p-3 rounded-full shadow-sm border text-black"
+            className="inputForm"
             placeholder="Usuario"
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
-            className="mt-4 mb-4 w-full p-3 rounded-full shadow-sm border text-black"
+            className="inputForm"
             placeholder="Contraseña"
             onChange={(e) => setPassword(e.target.value)}
           />
           <div className="recuperarPass">
             <a className="recu">Recuperar contraseña</a>
           </div>
-          <button className="buttonLogin " onClick={handleLogin}>
-            Ingresar
-          </button>
+          <div className="buttonContainer">
+            <button className="buttonLogin " onClick={handleLogin}>
+              Ingresar
+            </button>
+          </div>
           <br></br>
           <br></br>
           <br></br>
