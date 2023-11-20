@@ -124,11 +124,13 @@ export default function Options() {
         <div className="bloque">
           <input
             type="number"
+            inputmode="numeric"
             className="inputForm"
             placeholder="Documento de identificación"
             onKeyDown={handleKeyDown}
             onChange={(e) => setDocumentoIdentificacion(e.target.value)}
             value={documentoIdentificacion}
+            
           />
           {/* Mensaje de error para el documento de identificación, si existe */}
           {errores.includes(
@@ -142,8 +144,8 @@ export default function Options() {
 
         <div className="bloque">
           
-          <div>
-          <p>
+          <div >
+          <p className="inputFormP">
             Comunica la existencia de  <input type="text" placeholder="#" inputmode="numeric" pattern="[0-9]*" className="numberDesfribiladores" name="numero_desfibriladores" /> desfibrilador/es externo/s ubicados en:
           </p>
           </div>
@@ -175,6 +177,7 @@ export default function Options() {
 
           <input
             type="number"
+            inputmode="numeric"
             className="inputForm"
             placeholder="Código Postal"
             onChange={(e) => setCodigoPostal(e.target.value)}
