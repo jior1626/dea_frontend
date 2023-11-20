@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import "./anexo2.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { EyeSlash, Eye} from "../components/iconos";
+import { EyeSlash, Eye, ChevronLeft, User, HomeOut} from "../components/iconos";
 import {InstruccionesInstalacion} from "../components/modals";
 
 export default function Options() {
@@ -88,7 +88,7 @@ export default function Options() {
   };
 
   return (
-    <main>
+    <main className="flex-container">
       <Header />
       <div className="iconos">
         <a href="options"><ChevronLeft /></a>
@@ -117,7 +117,7 @@ export default function Options() {
 
           {/* Mensaje de error para el nombre del sitio, si existe */}
           {errores.includes("El nombre completo es obligatorio.") && (
-            <p className="text-red-500">El nombre completo es obligatorio.</p>
+            <p className="textRed">El nombre completo es obligatorio.</p>
           )}
         </div>
 
@@ -134,7 +134,7 @@ export default function Options() {
           {errores.includes(
             "El documento de identificación debe tener  dígitos."
           ) && (
-            <p className="text-red-500">
+            <p className="textRed">
               El documento de identificación debe tener  dígitos.
             </p>
           )}
@@ -158,7 +158,7 @@ export default function Options() {
           />
           {/* Mensaje de error para el nombre del sitio, si existe */}
           {errores.includes("El nombre del sitio es obligatorio.") && (
-            <p className="text-red-500">El nombre del sitio es obligatorio.</p>
+            <p className="textRed">El nombre del sitio es obligatorio.</p>
           )}
 
           <input
@@ -170,7 +170,7 @@ export default function Options() {
           />
           {/* Mensaje de error para la dirección, si existe */}
           {errores.includes("La dirección es obligatoria.") && (
-            <p className="text-red-500">La dirección es obligatoria.</p>
+            <p className="textRed">La dirección es obligatoria.</p>
           )}
 
           <input
@@ -182,7 +182,7 @@ export default function Options() {
           />
           {/* Mensaje de error para el código postal, si existe */}
           {errores.includes("El código postal debe tener 5 dígitos.") && (
-            <p className="text-red-500">
+            <p className="textRed">
               El código postal debe tener 5 dígitos.
             </p>
           )}

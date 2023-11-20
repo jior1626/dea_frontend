@@ -10,13 +10,19 @@
     border-radius: 15px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: auto;
     /* Asegura que los hijos no sobresalgan de los bordes redondeados */
     margin: auto 0;
     /* Esto añadirá el margen automáticamente en la parte superior e inferior */
     flex-direction: column;
     /* Las columnas se apilan verticalmente en pantallas pequeñas */
-  
+
+
+
+  }
+
+  .textRed{
+    color:red;
+    font-size: 12px;
   }
   
   .containerTituloAnexo {

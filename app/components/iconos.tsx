@@ -84,7 +84,7 @@ const ChevronDown = () => {
 const CicleInfo = () => {
   return (
     <Tooltip title="Instrucciones de diligenciamiento">
-      <FontAwesomeIcon icon={faCircleInfo} size="lg" className="cicleinfo" />
+      <FontAwesomeIcon icon={faCircleInfo} size="xl" className="cicleinfo" />
     </Tooltip>
   );
 };

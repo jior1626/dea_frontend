@@ -1,4 +1,10 @@
-
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 85vh;
+}
 .contenedor {
   width: 90%;
   display: flex;
@@ -10,15 +16,22 @@
   border-radius: 15px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: auto;
   /* Asegura que los hijos no sobresalgan de los bordes redondeados */
   margin: auto 0;
   /* Esto añadirá el margen automáticamente en la parte superior e inferior */
   flex-direction: column;
+  height: 103vh;
+  margin-top: 5%;
+
+
   /* Las columnas se apilan verticalmente en pantallas pequeñas */
 
 }
 
+.textRed{
+  color:red;
+  font-size: 12px;
+}
 .containerTituloAnexo {
   display: flex;
   justify-content: center;
@@ -80,7 +93,7 @@ main {
 }
 
 .inputForm {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   width: 100%;
   padding: 0.75rem;
   border-radius: 15px;
@@ -103,7 +116,7 @@ main {
   /* Alinea el contenido a la derecha */
   display: flex;
   width: 70%;
-  padding-top: 20px;
+  padding-top: 2%;
   /* Otros estilos que puedas necesitar */
   align-items: center;
 }
@@ -161,6 +174,10 @@ main {
     padding: 0 10%;
     text-align: left;
   }
+  .contenedorCasita {
+    padding-top: 2%;
+
+  }
 
   .ley {
     font-size: 11px;
@@ -174,6 +191,6 @@ main {
     justify-content: space-between;
   }
   .inputForm{
-    margin-bottom: 3rem;
+    margin-top: 1rem;
   }
 }

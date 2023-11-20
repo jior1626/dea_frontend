@@ -94,7 +94,7 @@ export default function Options() {
 
           {/* Mensaje de error para el nombre del sitio, si existe */}
           {errores.includes("El nombre del municipio es obligatorio.") && (
-            <p className="text-red-500">El nombre del municipio es obligatorio.</p>
+            <p className="textRed">El nombre del municipio es obligatorio.</p>
           )}
         </div>
 
@@ -109,7 +109,7 @@ export default function Options() {
           />
           {/* Mensaje de error para el documento de identificación, si existe */}
           {errores.includes("El departamento es obligatorio") && (
-            <p className="text-red-500">El departamento es obligatorio</p>
+            <p className="textRed">El departamento es obligatorio</p>
           )}
         </div>
         <div className="bloque">
@@ -131,7 +131,7 @@ export default function Options() {
           </select>
           {/* Mensaje de error para el nombre del sitio, si existe */}
           {errores.includes("El tipo de declaración es obligatoria") && (
-            <p className="text-red-500">El tipo de declaración es obligatoria</p>
+            <p className="textRed">El tipo de declaración es obligatoria</p>
           )}
 
           <br></br>
@@ -146,7 +146,7 @@ export default function Options() {
             <option value="Voluntaria">Voluntaria</option>
           </select>
           {errores.includes("El tipo de instalación es obligatoria") && (
-            <p className="text-red-500">El tipo de instalación es obligatoria</p>
+            <p className="textRed">El tipo de instalación es obligatoria</p>
           )}
         </div>
 
