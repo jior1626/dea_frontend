@@ -44,9 +44,17 @@ body {
   justify-content: center;
 
 }
-
+.ContainerTittle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 h2 {
   margin-bottom: 0.5rem;
+  color: #3366CC;
+  font-family: 'Work Sans', sans-serif !important;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 h1 {

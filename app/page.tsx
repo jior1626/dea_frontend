@@ -90,7 +90,10 @@ export default function Home() {
 
       <div className="containerLogin">
         <div className="white-container">
-          <h2 className="inicioS">Iniciar Sesión</h2>
+          <div className="ContainerTittle">
+            <h2 className="inicioS">Iniciar Sesión</h2>
+          </div>
+          
           <input
             type="email"
             className="inputForm"
