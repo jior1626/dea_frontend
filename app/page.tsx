@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import "./page.css";
+import React from "react";
+import { Eye, EyeSlash } from "./components/iconos";
 
 export default function Home() {
   const router = useRouter();
@@ -74,6 +76,9 @@ export default function Home() {
     }
   };
 
+  const [show, setShow] = React.useState(false);
+  const handleClick = () => setShow(!show);
+
   return (
     <main className="flex-container">
       <Header></Header>
@@ -92,12 +97,18 @@ export default function Home() {
             placeholder="Usuario"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
-            type="password"
-            className="inputForm"
-            placeholder="Contraseña"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="password-container">
+            <input
+              type={show ? "text" : "password"}
+              className="inputForm"
+              placeholder="Contraseña"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button className="toggleButton" onClick={handleClick}>
+              {show ? <EyeSlash /> : <Eye />}
+            </button>
+          </div>
+
           <div className="recuperarPass">
             <a className="recu">Recuperar contraseña</a>
           </div>

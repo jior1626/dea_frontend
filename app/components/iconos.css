@@ -29,6 +29,12 @@ justify-content: right;
 
   width: 30px;
 }
+
+.eye{
+  color: #00AEEF;
+  width: 30px;
+}
+
 @media screen and (min-width: 900px) {
 
   .white-containerOptionsUser {

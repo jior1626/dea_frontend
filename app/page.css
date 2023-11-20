@@ -89,12 +89,28 @@ h1 {
   width: 100%;
   padding: 0.75rem;
   border-radius: 15px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid #878787;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 0.1px solid #878787;
   color: #000;
   font-size: 12px;
 }
 
+.password-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: end;
+}
+
+.toggleButton {
+  position: absolute;
+  right: 5px; /* Ajusta la posición del botón */
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  /* Agrega estilos adicionales según sea necesario */
+}
 .recuperarPass {
   color: #3366CC;
   text-align: center;
@@ -140,7 +156,6 @@ h1 {
     height: 100%;
 
   }
-
   .containerLogin {
     min-height: auto;
     width: 100%;
@@ -159,6 +174,7 @@ h1 {
   h2 {
     margin-bottom: 1rem;
   }
+
   .inicioS {
     line-height: 4rem;
   }
