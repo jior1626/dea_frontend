@@ -111,7 +111,7 @@ export default function Options() {
           <input
             type="text"
             className="element"
-            placeholder="Desripción"
+            placeholder="Descripción"
             onChange={(e) => setdea_desclugarubicacion(e.target.value)}
           />
           <br></br>
