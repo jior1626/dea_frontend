@@ -9,10 +9,11 @@
   border-radius: 15px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: auto;
   /* Asegura que los hijos no sobresalgan de los bordes redondeados */
   margin: auto 0;
   /* Esto añadirá el margen automáticamente en la parte superior e inferior */
+  margin-top: 10%;
+  margin-bottom: 20%; 
 }
 
 .columnas {
@@ -186,7 +187,7 @@ main {
     overflow: hidden;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: auto 0 10% 0;
+    margin: auto 0 4% 0;
   }
   .columnSecond p{
     padding-right: 10%;

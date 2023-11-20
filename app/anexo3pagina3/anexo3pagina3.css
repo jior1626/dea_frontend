@@ -10,10 +10,11 @@
   border-radius: 15px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: auto;
   /* Asegura que los hijos no sobresalgan de los bordes redondeados */
   margin: auto 0;
   /* Esto añadirá el margen automáticamente en la parte superior e inferior */
+  margin-top: 10%;
+  margin-bottom: 20%;
 }
 
 .columnas {
@@ -84,7 +85,10 @@ main {
   justify-content: center;
 }
 
+strong{
+  padding-right: 5%;
 
+}
 .input-ochenta {
   width: 80%; /* Establece el ancho del input al 80% del contenedor padre */
   padding: 3px; /* Puedes ajustar el padding según sea necesario */
@@ -99,7 +103,7 @@ main {
 
 .btn-sesenta {
   width: 60%; /* Establece el ancho del botón al 60% del contenedor padre */
-  margin: 0 auto; /* Centra el botón horizontalmente */
+  margin: 0 7%;
 }
 
 .btn-sesenta1 {
@@ -155,7 +159,7 @@ main {
       overflow: hidden;
       background-color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: auto 0 10% 0;
+      margin: auto 0 4% 0;
     }
     .bloque {
       width: 100%;
@@ -216,5 +220,7 @@ main {
       /* Otros estilos que puedas necesitar */
       align-items: center;
       margin: 0 auto;
+      justify-content: center;
+
     }
   }
