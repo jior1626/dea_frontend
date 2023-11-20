@@ -38,7 +38,7 @@ const User = () => {
     <div className="containerOptionsUser">
       <div className="white-containerOptionsUser">
       <Tooltip title="Inicio">
-          <a href="/options"><FontAwesomeIcon icon={faHome} size="xl" className="iconoHome" /></a>
+          <a href="/options"><FontAwesomeIcon icon={faHome} size="xl" className="Home" /></a>
         </Tooltip>
         <Tooltip title="Perfil">
           <FontAwesomeIcon icon={faUser} size="xl" className="icono" />
@@ -112,14 +112,14 @@ const HomeOut = () => {
     <div className="containerOptionsUserHomeOut">
       <div className="white-containerOptionsHomeOut">
         <Tooltip title="Inicio">
-          <a href="/options"><FontAwesomeIcon icon={faHome} size="xl" className="iconoHome" /></a>
+          <a href="/options"><FontAwesomeIcon icon={faHome} size="xl" className="iconoHome1" /></a>
         </Tooltip>
         <Tooltip title="Salir">
           <a href="/">
             <FontAwesomeIcon
               icon={faArrowRightFromBracket}
               size="xl"
-              className="iconoHome"
+              className="iconoHome2"
             />
           </a>
         </Tooltip>

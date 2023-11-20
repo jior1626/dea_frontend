@@ -6,12 +6,22 @@
   display: none;
 }
 
-.iconoHome {
+.iconHome{
+  display: none;
+}
+.iconoHome1 {
   display: block;
   color: #3366CC;
   cursor: pointer;
   padding-left: 40%;
 
+}
+
+.iconoHome2 {
+  display: block;
+  color: #3366CC;
+  cursor: pointer;
+  padding-left: 70%;
 }
 
 .cicleinfo{
@@ -21,8 +31,7 @@
 }
 
 .Home{
-  color: #3366CC;
-  width: 30px;
+  display: none;
 }
 
 .plus{
@@ -115,7 +124,9 @@ justify-content: right;
     width: 25px;
   }
   .Home{
-    display: none;
+    display: block;
+    color: #3366CC;
+    width: 30px;
   }
   .idioma {
     margin-right: 5px;
