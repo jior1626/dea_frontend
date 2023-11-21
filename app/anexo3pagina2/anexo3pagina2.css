@@ -76,7 +76,10 @@ main {
   /* Hace que el texto sea negrita */
   font-size: 12px;
 }
-
+.textRed {
+  color: red;
+  font-size: 12px;
+}
 .bloque {
   width: 100%;
   padding: 0 19px;

@@ -170,7 +170,7 @@ export default function Options() {
               max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
             />
             {errores.includes("La fecha es obligatoria.") && (
-              <p className="text-red-500">La fecha es obligatoria.</p>
+              <p className="textRed">La fecha es obligatoria.</p>
             )}
           </div>
 
@@ -186,7 +186,7 @@ export default function Options() {
             {errores.includes(
               "El lugar del evento debe tener al menos 8 dígitos."
             ) && (
-              <p className="text-red-500">
+              <p className="textRed">
                 El lugar del evento debe tener al menos 8 dígitos.
               </p>
             )}
@@ -204,7 +204,7 @@ export default function Options() {
             onChange={(e) => setuso_personaatendidaeventonombre(e.target.value)}
           />
           {errores.includes("Debe contener al menos 8 caracteres.") && (
-            <p className="text-red-500">Debe contener al menos 8 caracteres.</p>
+            <p className="textRed">Debe contener al menos 8 caracteres.</p>
           )}
 
           <div className="columnFirst">
@@ -227,7 +227,7 @@ export default function Options() {
                 <option value="Cedula">Sin Documento</option>
               </select>
               {errores.includes("El tipo de documento es obligatorio.") && (
-                <p className="text-red-500">
+                <p className="textRed">
                   El tipo de documento es obligatorio.
                 </p>
               )}
@@ -245,7 +245,7 @@ export default function Options() {
                 }
               />
               {errores.includes("El documento es obligatorio.") && (
-                <p className="text-red-500">El documento es obligatorio.</p>
+                <p className="textRed">El documento es obligatorio.</p>
               )}
             </div>
           </div>
@@ -259,7 +259,7 @@ export default function Options() {
             onChange={(e) => setuso_personaatendidaeventoedad(e.target.value)}
           />
           {errores.includes("La edad es obligatoria.") && (
-            <p className="text-red-500">La edad es obligatoria.</p>
+            <p className="textRed">La edad es obligatoria.</p>
           )}
 
           <div className="columnSecond">
@@ -275,7 +275,7 @@ export default function Options() {
               <option value="Mujer">Indefinido</option>
             </select>
             {errores.includes("El sexo es obligatorio.") && (
-              <p className="text-red-500">El sexo es obligatorio.</p>
+              <p className="textRed">El sexo es obligatorio.</p>
             )}
           </div>
           <div className="columnSecond">
@@ -294,7 +294,7 @@ export default function Options() {
               <option value="Mujer">Ninguno</option>
             </select>
             {errores.includes("El sexo es obligatorio.") && (
-              <p className="text-red-500">El sexo es obligatorio.</p>
+              <p className="textRed">El sexo es obligatorio.</p>
             )}
           </div>
           <div className="columnSecond">
@@ -315,7 +315,7 @@ export default function Options() {
               <option value="Mujer">No Sabe No Responde</option>
             </select>
             {errores.includes("El sexo es obligatorio.") && (
-              <p className="text-red-500">El sexo es obligatorio.</p>
+              <p className="textRed">El sexo es obligatorio.</p>
             )}
           </div>
 
@@ -338,7 +338,7 @@ export default function Options() {
               <option value="Mujer">Transformista</option>
             </select>
             {errores.includes("El sexo es obligatorio.") && (
-              <p className="text-red-500">El sexo es obligatorio.</p>
+              <p className="textRed">El sexo es obligatorio.</p>
             )}
           </div>
 
@@ -355,7 +355,7 @@ export default function Options() {
           {errores.includes(
             "La aseguradora debe tener al menos 4 dígitos."
           ) && (
-            <p className="text-red-500">
+            <p className="textRed">
               La aseguradora debe tener al menos 4 dígitos.
             </p>
           )}

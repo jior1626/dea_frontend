@@ -121,7 +121,7 @@ export default function Options() {
             }
           />
           {errores.includes("El nombre completo debe contener al menos 6 caracteres.") && (
-            <p className="text-red-500">El nombre completo debe contener al menos 6 caracteres.</p>
+            <p className="textRed">El nombre completo debe contener al menos 6 caracteres.</p>
           )}
         </div>
 
@@ -143,7 +143,7 @@ export default function Options() {
 
           </select>
           {errores.includes("Selecciona el tipo de documento.") && (
-            <p className="text-red-500">Selecciona el tipo de documento.</p>
+            <p className="textRed">Selecciona el tipo de documento.</p>
           )}
         </div>
 
@@ -157,7 +157,7 @@ export default function Options() {
             onChange={(e) => setuso_datoseventonumerodocumento(e.target.value)}
           />
           {errores.includes("Debe contener al menos 8 digitos.") && (
-            <p className="text-red-500">Debe contener al menos 8 digitos.</p>
+            <p className="textRed">Debe contener al menos 8 digitos.</p>
           )}
         </div>
 <br></br>
@@ -296,7 +296,7 @@ export default function Options() {
             }
           />
           {errores.includes("El nombre debe contener al menos 8 caracteres.") && (
-            <p className="text-red-500">El nombre debe contener al menos 8 caracteres.</p>
+            <p className="textRed">El nombre debe contener al menos 8 caracteres.</p>
           )}
         </div>
 

@@ -198,9 +198,9 @@ export default function Options() {
           <br></br>
           <span className="text-red-500">{errordea_fechacertificacion}</span>
         </div>
-        {/* <div>
+        <div>
           <CirclePlus />
-        </div> */}
+        </div>
         <div className="contenedorCasita">
           <button
             className="btn-sesenta mt-4 bg-custom-azul text-white py-3 rounded-full shadow-lg"

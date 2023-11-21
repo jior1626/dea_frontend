@@ -156,7 +156,7 @@ export default function Options() {
             onChange={(e) => setdea_tipoespacio(e.target.value)}
           ></textarea>
           <br></br>
-          <span className="text-red-500">{errordea_tipoespacio}</span>
+          <span className="textRed">{errordea_tipoespacio}</span>
 
           <input
             type="text"
@@ -165,7 +165,7 @@ export default function Options() {
             onChange={(e) => setdea_otros(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errordea_otros}</span>
+          <span className="textRed">{errordea_otros}</span>
         </div>
         <br></br>
 
@@ -183,7 +183,7 @@ export default function Options() {
             className="inputData mt-1 p-2 w-full border rounded text-black"
             max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
           />
-          <span className="text-red-500">{errordea_fecha}</span>
+          <span className="textRed">{errordea_fecha}</span>
         </div>
 
         <br></br>
@@ -197,7 +197,7 @@ export default function Options() {
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="No. de serie"
               />
-              <span className="text-red-500">{errordea_numserie}</span>
+              <span className="textRed">{errordea_numserie}</span>
             </div>
             <div className="grid-item">
               <input
@@ -206,7 +206,7 @@ export default function Options() {
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="Modelo"
               />
-              <span className="text-red-500">{errordea_modelo}</span>
+              <span className="textRed">{errordea_modelo}</span>
             </div>
             <div className="grid-item">
               <input
@@ -215,7 +215,7 @@ export default function Options() {
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="Marca"
               />
-              <span className="text-red-500">{errordea_marca}</span>
+              <span className="textRed">{errordea_marca}</span>
             </div>
             <div className="grid-item">
               <input
@@ -225,7 +225,7 @@ export default function Options() {
                 className="element p-3 rounded-full shadow-sm border text-black"
                 placeholder="Importador "
               />
-              <span className="text-red-500">{errordea_importadordistribuidor}</span>
+              <span className="textRed">{errordea_importadordistribuidor}</span>
             </div>
           </div>
         </div>

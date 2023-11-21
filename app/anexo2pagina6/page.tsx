@@ -206,7 +206,7 @@ export default function Options() {
             onKeyDown={handleKeyDown2}
             onChange={(e) => setdea_firma(e.target.value)}
           />
-          <span className="text-red-500">{errordea_firma}</span>
+          <span className="textRed">{errordea_firma}</span>
         </div>
 
         <div className="bloque">
@@ -218,7 +218,7 @@ export default function Options() {
             onKeyDown={handleKeyDown2}
             onChange={(e) => setdea_ciudadpersonal(e.target.value)}
           />
-          <span className="text-red-500">{errordea_ciudadpersonal}</span>
+          <span className="textRed">{errordea_ciudadpersonal}</span>
         </div>
 
         <div className="bloque">
@@ -230,7 +230,7 @@ export default function Options() {
             onChange={(e) => setdea_fechapersonal(e.target.value)}
             max={new Date().toISOString().split("T")[0]} // Establecer la fecha máxima como la fecha actual
           />
-          <span className="text-red-500">{errordea_fechapersonal}</span>
+          <span className="textRed">{errordea_fechapersonal}</span>
         </div>
 
         <div className="bloque">

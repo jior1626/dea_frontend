@@ -192,7 +192,7 @@ export default function Options() {
             <option value="Otro">Otro</option>
           </select>
           {errores.includes("El medio de transporte es obligatorio.") && (
-            <p className="text-red-500">El medio de transporte es obligatorio.</p>
+            <p className="textRed">El medio de transporte es obligatorio.</p>
           )}
         </div>
 
@@ -208,7 +208,7 @@ export default function Options() {
             }
           />
           {errores.includes("La empresa debe tener al menos 8 caracteres.") && (
-            <p className="text-red-500">La empresa debe tener al menos 8 caracteres.</p>
+            <p className="textRed">La empresa debe tener al menos 8 caracteres.</p>
           )}
         </div>
         <br></br>
@@ -223,7 +223,7 @@ export default function Options() {
             }
           ></textarea>
           {errores.includes("La observación debe contener al menos 8 caracteres.") && (
-            <p className="text-red-500">La observación debe contener al menos 8 caracteres.</p>
+            <p className="textRed">La observación debe contener al menos 8 caracteres.</p>
           )}
         </div>
 
@@ -237,7 +237,7 @@ export default function Options() {
             onChange={(e) => setuso_datospersonaresponsable(e.target.value)}
           />
           {errores.includes("El nombre del responsable debe contener al menos 8 caracteres.") && (
-            <p className="text-red-500">El nombre del responsable debe contener al menos 8 caracteres.</p>
+            <p className="textRed">El nombre del responsable debe contener al menos 8 caracteres.</p>
           )}
         </div>
         <div className="bloqueFirma">

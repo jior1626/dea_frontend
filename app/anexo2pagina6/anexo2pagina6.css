@@ -131,6 +131,10 @@ main {
   grid-template-rows: auto auto; /* Dos filas que se ajustan al contenido */
   gap: 10px; /* Espacio entre las celdas de la cuadrícula */
 }
+.textRed {
+  color: red;
+  font-size: 12px;
+}
 
 @media screen and (min-width: 900px) {
   .contenedor {

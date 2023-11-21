@@ -165,7 +165,10 @@
     padding: 3px;
     border: 1px solid #878787;
   }
-
+  .textRed {
+    color: red;
+    font-size: 12px;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -115,7 +115,7 @@ export default function Options() {
             onChange={(e) => setdea_desclugarubicacion(e.target.value)}
           />
           <br></br>
-          <span className="text-red-500">{errordea_desclugarubicacion}</span>
+          <span className="textRed">{errordea_desclugarubicacion}</span>
         </div>
 
         <div className="bloque">

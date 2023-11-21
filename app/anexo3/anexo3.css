@@ -99,7 +99,10 @@ main {
   padding: 0 19px;
   color: #000;
 }
-
+.textRed {
+  color: red;
+  font-size: 12px;
+}
 .bloque1 {
   width: 100%;
   padding: 0 19px;
