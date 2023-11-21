@@ -9,7 +9,6 @@ import React, { useState } from "react";
 export default function Anexo3Finalizo() {
   const router = useRouter();
 
-  
   const handleAnexo8 = async () => {
     // La solicitud fue exitosa, puedes redirigir a la página deseada
     router.push("options");
@@ -29,10 +28,22 @@ export default function Anexo3Finalizo() {
           </div>
           <br></br>
           <br></br>
-          <img src="https://nivel99.com/desfibriladores/botonmorado.png" style={{ margin: "0 auto" }} onClick={handleAnexo8} />
+          <img
+            src="https://nivel99.com/desfibriladores/botonmorado.png"
+            style={{ margin: "0 auto" }}
+            onClick={handleAnexo8}
+          />
           <br></br>
           <br></br>
-          <p className="text-black">Se notificará vía correo electrónico el estado de su aprobación.</p>
+          <p className="text-black">
+            Se notificará vía correo electrónico el estado de su aprobación.
+          </p>
+          <div
+            className="buttonBack"
+            onClick={handleAnexo8}
+          >
+            <button style={{ color: "#fff" }}>Regresar</button>
+          </div>
         </div>
       </div>
 

@@ -64,7 +64,7 @@ export default function Options() {
     <main className="flex-containerOptions">
       <Header></Header>
       <div className="iconos">
-        <ChevronLeft />
+        <a href="/options"><ChevronLeft /></a>
         <User />
       </div>
       <br></br>

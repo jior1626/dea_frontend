@@ -33,13 +33,26 @@ body {
 }
 
 main {
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
+.buttonBack {
+    margin: 0 auto;
+    background: #AE3E97;
+    width: 50%;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+  }
+  
 .bg-white {
     background-color: white;
 }
@@ -96,4 +109,8 @@ main {
     .w-full {
         width: 40%;
     }
+    .buttonBack {
+        width: 30%;
+      }
+      
 }

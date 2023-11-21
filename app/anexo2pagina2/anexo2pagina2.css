@@ -13,7 +13,7 @@
     /* Asegura que los hijos no sobresalgan de los bordes redondeados */
     margin: auto 0;
     /* Esto añadirá el margen automáticamente en la parte superior e inferior */
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 20%;
   }
 

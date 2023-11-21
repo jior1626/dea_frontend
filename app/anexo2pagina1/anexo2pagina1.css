@@ -15,9 +15,7 @@
     /* Esto añadirá el margen automáticamente en la parte superior e inferior */
     flex-direction: column;
     /* Las columnas se apilan verticalmente en pantallas pequeñas */
-
-
-
+    margin-top: 10%;
   }
 
   .textRed{

@@ -45,22 +45,26 @@
     /* Borde izquierdo para el tercer div */
 }
 
-main {
+.flex-containerOptions {
     display: flex;
     justify-content: center;
     /* Centra horizontalmente */
     align-items: center;
     /* Centra verticalmente */
-    min-height: 100vh;
+    min-height: 90vh;
     /* Usa al menos el 100% de la altura de la ventana del navegador */
     flex-direction: column;
     /* Organiza el contenido en una columna */
 }
 
 @media screen and (min-width: 900px) {
+    .flex-containerOptions {
+
+        min-height: 85vh;
+
+    }
     .contenedor {
         width: 80%;
-        height: 600px;
         background-color: white;
         padding: 20px;
         box-sizing: border-box;
@@ -69,8 +73,8 @@ main {
         /* Acomoda los divs en una columna (verticalmente) */
         align-items: center;
         /* Centra los divs internos horizontalmente */
-        margin: auto 0;
         /* Centra el contenedor en la pantalla */
+        margin: auto;
         border-radius: 10px;
     }
 

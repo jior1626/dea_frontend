@@ -72,9 +72,7 @@ header {
   }
 
   .top_nav {
-    position: sticky;
     top: 0px;
-    z-index: 99;
   }
 
   .fa-light {
@@ -134,9 +132,7 @@ header {
     display: flex;
     padding-bottom: 5px;
     width: 100%;
-    position: sticky;
     top: 0;
-    z-index: 99;
   }
   
   .top_nav .logo_gov {
