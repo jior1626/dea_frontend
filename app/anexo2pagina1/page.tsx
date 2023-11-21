@@ -4,8 +4,9 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./anexo2pagina1.css";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CicleInfo, User, ChevronLeft, HomeOut } from "../components/iconos";
+import colombianCities from "../colombianCities.json";
 
 export default function Options() {
   const router = useRouter();
@@ -47,10 +48,10 @@ export default function Options() {
     if (dea_departamento.length < 4) {
       newErrors.push("El departamento es obligatorio");
     }
-    if(!dea_tipodeclaracion.trim()){
+    if (!dea_tipodeclaracion.trim()) {
       newErrors.push("El tipo de declaración es obligatoria");
     }
-    if(!dea_tipoinstalacion.trim()){
+    if (!dea_tipoinstalacion.trim()) {
       newErrors.push("El tipo de instalación es obligatoria");
     }
 
@@ -74,42 +75,82 @@ export default function Options() {
     }
   };
 
+  const [selectedDepartment, setSelectedDepartment] = useState("");
+  const [filteredCities, setFilteredCities] = useState<string[]>([]);
+  const [allDepartments, setAllDepartments] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Obtener un array plano de nombres de departamentos únicos
+    const departments = Array.from(
+      new Set(colombianCities.map((city) => city.departamento))
+    );
+    // Ordenar el array usando localeCompare
+    departments.sort((a, b) => a.localeCompare(b));
+    setAllDepartments(departments);
+  }, []);
+
+  useEffect(() => {
+    // Filtrar las ciudades según el departamento seleccionado
+    const citiesForDepartment =
+      colombianCities.find((city) => city.departamento === selectedDepartment)
+        ?.ciudades || [];
+
+    setFilteredCities(citiesForDepartment);
+  }, [selectedDepartment]);
+
   return (
     <main>
       <Header />
       <div className="iconos">
-      <a href="anexo2"><ChevronLeft /></a>
+        <a href="anexo2">
+          <ChevronLeft />
+        </a>
         <User />
       </div>
       <div className="contenedor">
         <div className="bloque">
-          <input
-            type="text"
+          <select
+            name="department"
             className="inputForm"
-            placeholder="Ciudad o municipio"
-            onKeyDown={handleKeyDown2}
+            placeholder="Selecciona un departamento"
+            onChange={(e) => setSelectedDepartment(e.target.value)}
+            value={selectedDepartment}
+          >
+            <option value="" disabled>
+              Selecciona un departamento
+            </option>
+            {allDepartments.map((department) => (
+              <option key={department} value={department}>
+                {department}
+              </option>
+            ))}
+          </select>
+          {/* Mensaje de error para el documento de identificación, si existe */}
+          {errores.includes("El departamento es obligatorio") && (
+            <p className="textRed">El departamento es obligatorio</p>
+          )}
+        </div>
+        <div className="bloque">
+          <select
+            name="city"
+            className="inputForm"
+            placeholder="Selecciona una ciudad"
             onChange={(e) => setdea_ciudadmunicipio(e.target.value)}
             value={dea_ciudadmunicipio}
-          />
+          >
+            <option value="" disabled>
+              Selecciona una ciudad
+            </option>
+            {filteredCities.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
 
           {/* Mensaje de error para el nombre del sitio, si existe */}
           {errores.includes("El nombre del municipio es obligatorio.") && (
             <p className="textRed">El nombre del municipio es obligatorio.</p>
-          )}
-        </div>
-
-        <div className="bloque">
-          <input
-            type="text"
-            className="inputForm"
-            placeholder="Departamento"
-            onKeyDown={handleKeyDown2}
-            onChange={(e) => setdea_departamento(e.target.value)}
-            value={dea_departamento}
-          />
-          {/* Mensaje de error para el documento de identificación, si existe */}
-          {errores.includes("El departamento es obligatorio") && (
-            <p className="textRed">El departamento es obligatorio</p>
           )}
         </div>
         <div className="bloque">
