@@ -5,8 +5,14 @@ import Footer from "../components/Footer";
 import "./anexo2.css";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { EyeSlash, Eye, ChevronLeft, User, HomeOut} from "../components/iconos";
-import {InstruccionesInstalacion} from "../components/modals";
+import {
+  EyeSlash,
+  Eye,
+  ChevronLeft,
+  User,
+  HomeOut,
+} from "../components/iconos";
+import { InstruccionesInstalacion } from "../components/modals";
 
 export default function Options() {
   const router = useRouter();
@@ -35,6 +41,8 @@ export default function Options() {
   // Estados para cada uno de los campos del formulario y para los errores
   const [nombreCompleto, setNombreCompleto] = useState("");
   const [documentoIdentificacion, setDocumentoIdentificacion] = useState("");
+  const [tipodocumentoIdentificacion, setTipodocumentoIdentificacion] =
+    useState("");
   const [existenciaDesfibriladores, setExistenciaDesfibriladores] =
     useState("1");
   const [nombreSitio, setNombreSitio] = useState("");
@@ -45,20 +53,21 @@ export default function Options() {
   // Función para validar todos los campos antes de navegar
   const validateFields = () => {
     const newErrors = [];
-    if (nombreCompleto.length < 6)
+    if (nombreCompleto.length < 1)
       newErrors.push("El nombre completo es obligatorio.");
-    if (
-      documentoIdentificacion.length < 8
-    ) {
+    if (documentoIdentificacion.length < 7 && documentoIdentificacion.length > 10 ) {
       newErrors.push("El documento de identificación debe tener  dígitos.");
+    }
+    if (!tipodocumentoIdentificacion.trim()) {
+      newErrors.push("El tipo de documento es obligatorio.");
     }
     if (existenciaDesfibriladores.length < 1) {
       newErrors.push("Debe indicar la cantidad de desfibriladores.");
     }
-    if (nombreSitio.length < 4) {
+    if (nombreSitio.length < 1) {
       newErrors.push("El nombre del sitio es obligatorio.");
     }
-    if (direccion.length < 5) {
+    if (direccion.length < 1) {
       newErrors.push("La dirección es obligatoria.");
     }
     if (codigoPostal.length < 4 || !/^\d{5}$/.test(codigoPostal)) {
@@ -91,7 +100,9 @@ export default function Options() {
     <main className="flex-container">
       <Header />
       <div className="iconos">
-        <a href="options"><ChevronLeft /></a>
+        <a href="options">
+          <ChevronLeft />
+        </a>
         <User />
       </div>
       <div className="contenedor">
@@ -121,35 +132,59 @@ export default function Options() {
           )}
         </div>
 
-        <div className="bloque">
-          <input
-            type="number"
-            inputmode="numeric"
-            className="inputForm"
-            placeholder="Documento de identificación"
-            onKeyDown={handleKeyDown}
-            onChange={(e) => setDocumentoIdentificacion(e.target.value)}
-            value={documentoIdentificacion}
-            
-          />
-          {/* Mensaje de error para el documento de identificación, si existe */}
-          {errores.includes(
-            "El documento de identificación debe tener  dígitos."
-          ) && (
-            <p className="textRed">
-              El documento de identificación debe tener  dígitos.
-            </p>
-          )}
+        <div className="bloqueColumn">
+          <div className="bloque2">
+            <select
+              id="numeroidentificacion"
+              className="inputForm"
+              onChange={(e) => setTipodocumentoIdentificacion(e.target.value)}
+            >
+              <option value="Cedula">Tipo de doc. de identificación</option>
+              <option value="Cedula">Tarjeta de Identidad</option>
+              <option value="Pasaporte">Cedula de Ciudadanía</option>
+              <option value="Cedula">Cedula de Extranjería</option>
+              <option value="Cedula">Registro Civil</option>
+              <option value="Cedula">Pasaporte</option>
+              <option value="Cedula">Permiso Especial de Permanencia</option>
+              <option value="Cedula">Documento Extranjero</option>
+              <option value="Cedula">Sin Documento</option>
+            </select>
+            {errores.includes("El tipo de documento es obligatorio.") && (
+              <p className="textRed">El tipo de documento es obligatorio.</p>
+            )}
+          </div>
+
+          <div className="bloque3">
+            <input
+              type="number"
+              id="documentoidentificacion"
+              placeholder="Número de doc. de identifición"
+              className="inputForm"
+              onKeyDown={handleKeyDown}
+              onChange={(e) => setDocumentoIdentificacion(e.target.value)}
+            />
+            {errores.includes("El documento es obligatorio.") && (
+              <p className="textRed">El documento es obligatorio.</p>
+            )}
+          </div>
         </div>
 
         <div className="bloque">
-          
-          <div >
-          <p className="inputFormP">
-            Comunica la existencia de  <input type="text" placeholder="#" inputmode="numeric" pattern="[0-9]*" className="numberDesfribiladores" name="numero_desfibriladores" /> desfibrilador/es externo/s ubicados en:
-          </p>
+          <div>
+            <p className="inputFormP">
+              Comunica la existencia de{" "}
+              <input
+                type="text"
+                placeholder="#"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                className="numberDesfribiladores"
+                name="numero_desfibriladores"
+              />{" "}
+              desfibrilador/es externo/s ubicados en:
+            </p>
           </div>
-        
+
           <input
             type="text"
             className="inputForm"
@@ -185,9 +220,7 @@ export default function Options() {
           />
           {/* Mensaje de error para el código postal, si existe */}
           {errores.includes("El código postal debe tener 5 dígitos.") && (
-            <p className="textRed">
-              El código postal debe tener 5 dígitos.
-            </p>
+            <p className="textRed">El código postal debe tener 5 dígitos.</p>
           )}
         </div>
 

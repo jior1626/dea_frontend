@@ -111,13 +111,13 @@ export default function Options() {
         <div className="bloque">
           <select
             name="department"
-            className="inputForm"
+            className="inputForm1"
             placeholder="Selecciona un departamento"
             onChange={(e) => setSelectedDepartment(e.target.value)}
             value={selectedDepartment}
           >
             <option value="" disabled>
-              Selecciona un departamento
+              Departamento
             </option>
             {allDepartments.map((department) => (
               <option key={department} value={department}>
@@ -139,7 +139,7 @@ export default function Options() {
             value={dea_ciudadmunicipio}
           >
             <option value="" disabled>
-              Selecciona una ciudad
+              Ciudad o municipio
             </option>
             {filteredCities.map((city) => (
               <option key={city} value={city}>
@@ -161,7 +161,7 @@ export default function Options() {
             className="inputForm"
             onChange={(e) => setdea_tipodeclaracion(e.target.value)}
           >
-            <option>Selecciona</option>
+            <option value="" disabled>Selecciona</option>
             <option value="Permanente">Permanente</option>
             <option value="Retirada">Retirada</option>
             <option value="Temporal">Temporal</option>
@@ -182,7 +182,7 @@ export default function Options() {
             className="inputForm"
             onChange={(e) => setdea_tipoinstalacion(e.target.value)}
           >
-            <option>Selecciona</option>
+            <option value="" disabled>Selecciona</option>
             <option value="Obligatoria">Obligatoria</option>
             <option value="Voluntaria">Voluntaria</option>
           </select>

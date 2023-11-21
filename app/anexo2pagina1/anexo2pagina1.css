@@ -84,7 +84,7 @@
   }
   
   .inputForm {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
     padding: 0.75rem;
     border-radius: 15px;
@@ -94,6 +94,17 @@
     font-size: 12px;
   }
   
+  .inputForm1 {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #878787;
+    color: #000;
+    font-size: 12px;
+  }
   
   .btn-sesenta {
     width: 60%;
