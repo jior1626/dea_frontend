@@ -68,16 +68,16 @@ export default function Options() {
   const validateFields = () => {
     const newErrors = [];
     if (!uso_fechaevento.trim()) newErrors.push("La fecha es obligatoria.");
-    if (uso_nombrelugarevento.length < 8) {
-      newErrors.push("El lugar del evento debe tener al menos 8 dígitos.");
+    if (uso_nombrelugarevento.length < 1) {
+      newErrors.push("El lugar del evento es obligatorio.");
     }
-    if (uso_personaatendidaeventonombre.length < 8) {
-      newErrors.push("Debe contener al menos 8 caracteres.");
+    if (uso_personaatendidaeventonombre.length < 1) {
+      newErrors.push("El nombre es obligatorio.");
     }
     if (!uso_personaatendidaeventotipodocumento.trim()) {
       newErrors.push("El tipo de documento es obligatorio.");
     }
-    if (uso_personaatendidaeventonumerodocumento.length < 8) {
+    if (uso_personaatendidaeventonumerodocumento.length < 7 && uso_personaatendidaeventonumerodocumento.length > 10) {
       newErrors.push("El documento es obligatorio.");
     }
     if (!uso_personaatendidaeventoedad.trim()) {
@@ -86,8 +86,8 @@ export default function Options() {
     if (!uso_personaatendidaeventosexo.trim()) {
       newErrors.push("El sexo es obligatorio.");
     }
-    if (uso_personaatendidaeventoaseguradorsalud.length < 4) {
-      newErrors.push("La aseguradora debe tener al menos 4 dígitos.");
+    if (uso_personaatendidaeventoaseguradorsalud.length < 1) {
+      newErrors.push("La aseguradora es obligatoria.");
     }
 
     setErrores(newErrors);
@@ -136,7 +136,7 @@ export default function Options() {
     <main>
       <Header />
       <div className="iconos">
-        <a href="options">
+        <a href="/options">
           <ChevronLeft />
         </a>
 
